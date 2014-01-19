@@ -16,7 +16,8 @@
 }
 
 -(void) update:(CCTime)delta {
-    
+    self.scale = self.scale + delta/2.2;
+    _deathLevel = floor(self.scale);
 }
 
 -(void) didLoadFromCCB {
@@ -29,7 +30,10 @@
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if (neutralizeColor == self.gameplayLayer.colorState) {
-        [self randomizeValues];
+        self.scale = self.scale / 2;
+        if (self.scale < 1) {
+            [self randomizeValues];
+        }
     }
 }
 
@@ -68,6 +72,8 @@
     y = radius * sin(CC_DEGREES_TO_RADIANS(angle));
     
     self.position = ccpAdd(ccp(x,y), ccp(327, 327));
+    self.scale = 1;
+
 
 }
 

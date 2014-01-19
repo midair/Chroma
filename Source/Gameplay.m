@@ -17,7 +17,7 @@
     UITouch *colorPickTouch;
     float numSeconds;
     NSMutableArray *dotList;
-    
+    bool paused;
 }
 
 // is called when CCB file has completed loading

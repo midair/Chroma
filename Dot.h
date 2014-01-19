@@ -14,7 +14,7 @@
 @interface Dot : CCSprite
 
 
-
+@property int deathLevel;
 @property Gameplay* gameplayLayer;
 
 @end
