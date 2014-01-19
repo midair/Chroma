@@ -7,16 +7,11 @@
 //
 
 #import "CCNode.h"
+#import "ColorState.h"
 
 @interface Gameplay : CCNode
 
-typedef enum colorStateTypes
-{
-    RED,
-    ORANGE,
-    YELLOW,
-    GREEN,
-    BLUE,
-    VIOLET
-} ColorState;
+@property ColorState colorState;
+
+
 @end

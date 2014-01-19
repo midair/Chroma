@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E8444BB188B242F00992AD8 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8444BA188B242F00992AD8 /* Gameplay.m */; };
+		7E8444BE188C3B1C00992AD8 /* Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8444BD188C3B1C00992AD8 /* Dot.m */; };
 		B737893B180761570076A88C /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
 		B737893F1807617C0076A88C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		B7378975180762440076A88C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896B180762440076A88C /* Default-568h@2x.png */; };
@@ -105,6 +106,9 @@
 /* Begin PBXFileReference section */
 		7E8444B9188B242F00992AD8 /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
 		7E8444BA188B242F00992AD8 /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Gameplay.m; sourceTree = "<group>"; };
+		7E8444BC188C3B1C00992AD8 /* Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dot.h; sourceTree = "<group>"; };
+		7E8444BD188C3B1C00992AD8 /* Dot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dot.m; sourceTree = "<group>"; };
+		7E8444BF188C4EED00992AD8 /* ColorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorState.h; sourceTree = "<group>"; };
 		B737893A180761570076A88C /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Published-iOS"; path = "Source/Resources/Published-iOS"; sourceTree = SOURCE_ROOT; };
 		B737893D1807617C0076A88C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
 		B737893E1807617C0076A88C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = "<group>"; };
@@ -247,6 +251,9 @@
 				D2E65BDD1862643A007D0B1F /* libs */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
+				7E8444BC188C3B1C00992AD8 /* Dot.h */,
+				7E8444BF188C4EED00992AD8 /* ColorState.h */,
+				7E8444BD188C3B1C00992AD8 /* Dot.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
 				7E8444B9188B242F00992AD8 /* Gameplay.h */,
@@ -649,6 +656,7 @@
 				D2E65C401862647B007D0B1F /* cpBBTree.c in Sources */,
 				D2E65C431862647B007D0B1F /* cpConstraint.c in Sources */,
 				7E8444BB188B242F00992AD8 /* Gameplay.m in Sources */,
+				7E8444BE188C3B1C00992AD8 /* Dot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,20 +7,43 @@
 //
 
 #import "Gameplay.h"
+#import "Dot.h"
 
 @implementation Gameplay {
     CCNode *_background;
     CCNode *_palette;
+    CCLabelTTF *_timeField;
     bool colorPicking;
-    ColorState colorState;
     UITouch *colorPickTouch;
+    float numSeconds;
+    NSMutableArray *dotList;
+    
 }
 
 // is called when CCB file has completed loading
 -(void)didLoadFromCCB {
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
+    numSeconds = 0.0;
+    Dot *dot = (Dot*)[CCBReader load:@"Dot"];
+    dot.gameplayLayer = self;
+    [_background addChild:dot];
+    [dotList addObject:dot];
+    
+    
+    
 }
+
+-(void) update:(CCTime) delta
+{
+    numSeconds = numSeconds + delta;
+    [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
+    
+    
+    
+
+}
+
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
@@ -44,14 +67,14 @@
             float Q =  fmod(CC_RADIANS_TO_DEGREES(atan2(centered.y, centered.x)) + _background.rotation +360, 360);
             if ((Q < 30) || (Q > 330)) {
                 CCLOG(@"RED");
-                colorState = RED;
+                self.colorState = RED;
                 [_palette setColor:[CCColor redColor]];
                 
             }
             else if (Q > 30 && Q < 90)
             {
                 CCLOG(@"VIOLET");
-                colorState = VIOLET;
+                self.colorState = VIOLET;
                 [_palette setColor:[CCColor purpleColor]];
 
 
@@ -59,28 +82,28 @@
             else if (Q > 90 && Q < 150)
             {
                 CCLOG(@"BLUE");
-                colorState = BLUE;
+                self.colorState = BLUE;
                 [_palette setColor:[CCColor blueColor]];
 
             }
             else if (Q > 150 && Q < 210)
             {
                 CCLOG(@"GREEN");
-                colorState = GREEN;
+                self.colorState = GREEN;
                 [_palette setColor:[CCColor greenColor]];
 
             }
             else if (Q > 210 && Q < 270)
             {
                 CCLOG(@"YELLOW");
-                colorState = YELLOW;
+                self.colorState = YELLOW;
                 [_palette setColor:[CCColor yellowColor]];
 
             }
             else if (Q > 270 && Q < 330)
             {
                 CCLOG(@"ORANGE");
-                colorState = ORANGE;
+                self.colorState = ORANGE;
                 [_palette setColor:[CCColor orangeColor]];
 
             }
