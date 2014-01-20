@@ -13,35 +13,61 @@
     CCNode *_background;
     CCNode *_palette;
     CCLabelTTF *_timeField;
+    CCLabelTTF *_gameOver;
     bool colorPicking;
     UITouch *colorPickTouch;
     float numSeconds;
     NSMutableArray *dotList;
-    bool paused;
+    int deathTotal;
 }
 
 // is called when CCB file has completed loading
 -(void)didLoadFromCCB {
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
+    [self setMultipleTouchEnabled:TRUE];
     numSeconds = 0.0;
     Dot *dot = (Dot*)[CCBReader load:@"Dot"];
     dot.gameplayLayer = self;
     [_background addChild:dot];
+    dotList = [NSMutableArray array];
     [dotList addObject:dot];
-    
-    
-    
+    self.paused = FALSE;
 }
 
 -(void) update:(CCTime) delta
 {
-    numSeconds = numSeconds + delta;
-    [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
-    
-    
-    
+    if (!self.pauseGame) {
+        _background.rotation += 36.0 * delta;
+        numSeconds = numSeconds + delta;
 
+        [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
+        deathTotal = 0;
+        int dotNum = [dotList count];
+        if ((numSeconds > 20) && (dotNum < 2)) {
+            Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
+            dot2.gameplayLayer = self;
+            [_background addChild:dot2];
+            dotNum++;
+            [dotList addObject:dot2];
+        }
+        for (int i = 0; i < dotNum; i++) {
+            Dot *dot = (Dot*) [dotList objectAtIndex:i];
+            deathTotal += dot.deathLevel;
+            if ((deathTotal/sqrtf(dotNum)) > 5) {
+                [_gameOver setString:@"GAME OVER"];
+            }
+        }
+    }
+}
+
+-(void) dotPopPuff:(CGPoint)positionPuff
+{
+    CCLOG(@"PUFF");
+//    CCParticleSystem *pop = (CCParticleSystem*)[CCBReader load:@"DotPop"];
+//    pop.position = positionPuff;
+//    [_background addChild: pop z:10];
+//    pop.autoRemoveOnFinish = YES;
 }
 
 
@@ -56,7 +82,7 @@
         }
         
     }
-    if (TRUE) {
+    if (colorPicking) {
         
         
         CGSize screenSize = [[CCDirector sharedDirector] viewSize];
@@ -132,6 +158,19 @@
         colorPicking = FALSE;
         colorPickTouch = nil;
     }
+}
+
+-(void)pause
+{
+    CCLOG(@"pausing");
+    //reload this level
+    if (!self.pauseGame){
+        [_gameOver setString:@"PAUSED"];
+    }
+    else {
+        [_gameOver setString:@" "];
+    }
+    self.pauseGame = !self.pauseGame;
 }
 
 @end

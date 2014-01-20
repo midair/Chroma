@@ -13,11 +13,18 @@
     int y; //in degrees
     ColorState dotColor;
     ColorState neutralizeColor;
+    
 }
 
 -(void) update:(CCTime)delta {
-    self.scale = self.scale + delta/2.2;
-    _deathLevel = floor(self.scale);
+    if (!self.gameplayLayer.pauseGame) {
+        if (self.scale < 7.0) {
+            self.scale = self.scale + delta/2.2;
+            _deathLevel = floor(self.scale);
+        }
+        
+    }
+    
 }
 
 -(void) didLoadFromCCB {
@@ -32,6 +39,7 @@
     if (neutralizeColor == self.gameplayLayer.colorState) {
         self.scale = self.scale / 2;
         if (self.scale < 1) {
+            [self.gameplayLayer dotPopPuff:ccp(x,y)];
             [self randomizeValues];
         }
     }
