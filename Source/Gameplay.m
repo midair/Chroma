@@ -12,9 +12,11 @@
 @implementation Gameplay {
     CCNode *_background;
     CCNode *_palette;
+    CCButton *_pauseButton;
     CCLabelTTF *_timeField;
     CCLabelTTF *_gameOver;
-    bool colorPicking;
+    BOOL colorPicking;
+    BOOL gameOver;
     UITouch *colorPickTouch;
     float numSeconds;
     NSMutableArray *dotList;
@@ -32,19 +34,25 @@
     [_background addChild:dot];
     dotList = [NSMutableArray array];
     [dotList addObject:dot];
-    self.paused = FALSE;
+    self.pauseGame = FALSE;
+    gameOver = FALSE;
 }
 
 -(void) update:(CCTime) delta
 {
     if (!self.pauseGame) {
-        _background.rotation += 36.0 * delta;
         numSeconds = numSeconds + delta;
 
         [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
         deathTotal = 0;
         int dotNum = [dotList count];
-        if ((numSeconds > 20) && (dotNum < 2)) {
+        if (numSeconds < 10) {
+            _background.rotation += 3.60 * delta * numSeconds;
+        }
+        else if (numSeconds > 10) {
+            _background.rotation += 36.0 * delta;
+        }
+        if ((numSeconds > 25) && (dotNum < 2)) {
             Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
             dot2.gameplayLayer = self;
             [_background addChild:dot2];
@@ -54,8 +62,12 @@
         for (int i = 0; i < dotNum; i++) {
             Dot *dot = (Dot*) [dotList objectAtIndex:i];
             deathTotal += dot.deathLevel;
-            if ((deathTotal/sqrtf(dotNum)) > 5) {
+            if ((deathTotal/sqrtf(dotNum)) > 4) {
+                gameOver = TRUE;
+                self.pauseGame = TRUE;
+                [_pauseButton setTitle:@"Retry"];
                 [_gameOver setString:@"GAME OVER"];
+                
             }
         }
     }
@@ -79,6 +91,12 @@
         if (ccpLength(centered)<40){
             colorPicking = TRUE;
             colorPickTouch = touch;
+            for (int i = 0; i < [dotList count]; i++) {
+                Dot *dot = (Dot*) [dotList objectAtIndex:i];
+                dot.userInteractionEnabled = FALSE;
+                    
+                
+            }
         }
         
     }
@@ -157,15 +175,24 @@
     if (touch == colorPickTouch) {
         colorPicking = FALSE;
         colorPickTouch = nil;
+        for (int i = 0; i < [dotList count]; i++) {
+            Dot *dot = (Dot*) [dotList objectAtIndex:i];
+            dot.userInteractionEnabled = TRUE;
+            
+        }
+    
     }
 }
 
 -(void)pause
 {
-    CCLOG(@"pausing");
     //reload this level
-    if (!self.pauseGame){
+    if (!self.pauseGame && !gameOver){
         [_gameOver setString:@"PAUSED"];
+    }
+    else if (gameOver && self.pauseGame) {
+        self.pauseGame = FALSE;
+        [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
     }
     else {
         [_gameOver setString:@" "];

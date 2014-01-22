@@ -13,13 +13,14 @@
     int y; //in degrees
     ColorState dotColor;
     ColorState neutralizeColor;
+    float rate;
     
 }
 
 -(void) update:(CCTime)delta {
     if (!self.gameplayLayer.pauseGame) {
         if (self.scale < 7.0) {
-            self.scale = self.scale + delta/2.2;
+            self.scale = self.scale + rate*delta/2.2;
             _deathLevel = floor(self.scale);
         }
         
@@ -28,6 +29,7 @@
 }
 
 -(void) didLoadFromCCB {
+    rate = 1.0;
     self.userInteractionEnabled = TRUE;
 
     [self randomizeValues];
@@ -36,9 +38,11 @@
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    if (neutralizeColor == self.gameplayLayer.colorState) {
+    if (neutralizeColor == self.gameplayLayer.colorState && !self.gameplayLayer.pauseGame) {
         self.scale = self.scale / 2;
+        rate += 0.5;
         if (self.scale < 1) {
+            rate = 1.0;
             [self.gameplayLayer dotPopPuff:ccp(x,y)];
             [self randomizeValues];
         }

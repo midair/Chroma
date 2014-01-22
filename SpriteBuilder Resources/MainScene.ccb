@@ -25,19 +25,14 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>animatedProperties</key>
-				<dict>
-					<key>0</key>
-					<dict/>
-				</dict>
 				<key>baseClass</key>
-				<string>CCLabelTTF</string>
+				<string>CCSprite</string>
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCLabelTTF</string>
+				<string>colorMenu</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -84,53 +79,126 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>1.9630547761917114</real>
+							<real>1.9630547761917114</real>
 							<false/>
 							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>string</string>
+						<string>spriteFrame</string>
 						<key>type</key>
-						<string>Text</string>
+						<string>SpriteFrame</string>
 						<key>value</key>
 						<array>
-							<string>SpriteBuilder</string>
-							<false/>
+							<string></string>
+							<string>colorMenu.png</string>
 						</array>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>fontName</string>
+						<string>color</string>
 						<key>type</key>
-						<string>FontTTF</string>
+						<string>Color3</string>
 						<key>value</key>
-						<string>Helvetica-Bold</string>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<real>1</real>
+							<real>1</real>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>baseClass</key>
+				<string>CCButton</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCButton</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>name</string>
+						<key>type</key>
+						<string>StringSimple</string>
+						<key>value</key>
+						<string></string>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>fontSize</string>
+						<string>position</string>
 						<key>type</key>
-						<string>FloatScale</string>
+						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>50</real>
+							<real>287</real>
+							<real>103.99998474121094</real>
+							<integer>0</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>adjustsFontSizeToFit</string>
+						<string>anchorPoint</string>
 						<key>type</key>
-						<string>Check</string>
+						<string>Point</string>
 						<key>value</key>
-						<false/>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>dimensions</string>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>8.7853660583496094</real>
+							<real>5.1511306762695312</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>block</string>
+						<key>type</key>
+						<string>Block</string>
+						<key>value</key>
+						<array>
+							<string>play</string>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>preferredSize</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>40</real>
+							<real>40</real>
+							<integer>0</integer>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>maxSize</string>
 						<key>type</key>
 						<string>Size</string>
 						<key>value</key>
@@ -143,19 +211,152 @@
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>horizontalAlignment</string>
+						<string>userInteractionEnabled</string>
 						<key>type</key>
-						<string>IntegerLabeled</string>
+						<string>Check</string>
 						<key>value</key>
-						<integer>0</integer>
+						<true/>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>verticalAlignment</string>
+						<string>title</string>
 						<key>type</key>
-						<string>IntegerLabeled</string>
+						<string>String</string>
 						<key>value</key>
-						<integer>0</integer>
+						<array>
+							<string></string>
+							<false/>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundSpriteFrame|Normal</string>
+						<key>type</key>
+						<string>SpriteFrame</string>
+						<key>value</key>
+						<array>
+							<string></string>
+							<string></string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundSpriteFrame|Highlighted</string>
+						<key>type</key>
+						<string>SpriteFrame</string>
+						<key>value</key>
+						<array>
+							<string></string>
+							<string></string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>labelColor|Highlighted</string>
+						<key>type</key>
+						<string>Color3</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<real>1</real>
+							<real>1</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundSpriteFrame|Disabled</string>
+						<key>type</key>
+						<string>SpriteFrame</string>
+						<key>value</key>
+						<array>
+							<string></string>
+							<string></string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundOpacity|Disabled</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>0.0</real>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>labelOpacity|Disabled</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>1</real>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundSpriteFrame|Selected</string>
+						<key>type</key>
+						<string>SpriteFrame</string>
+						<key>value</key>
+						<array>
+							<string></string>
+							<string></string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundOpacity|Selected</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>0.0</real>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>labelOpacity|Selected</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>1</real>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>17</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalPadding</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>10</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalPadding</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<integer>0</integer>
+						</array>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -164,10 +365,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
+							<real>255</real>
+							<real>255</real>
+							<real>255</real>
+							<real>255</real>
 						</array>
 					</dict>
 					<dict>
@@ -204,7 +405,7 @@
 							<real>0.0</real>
 							<real>0.0</real>
 							<real>0.0</real>
-							<real>0.0</real>
+							<real>127</real>
 						</array>
 					</dict>
 					<dict>
@@ -214,7 +415,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>2</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -226,14 +427,14 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0</real>
+							<real>-2</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
 					</dict>
 				</array>
-				<key>seqExpanded</key>
+				<key>selected</key>
 				<true/>
 			</dict>
 		</array>
