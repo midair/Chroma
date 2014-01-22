@@ -49,8 +49,11 @@
         if (numSeconds < 10) {
             _background.rotation += 3.60 * delta * numSeconds;
         }
-        else if (numSeconds > 10) {
+        else if (numSeconds < 45) {
             _background.rotation += 36.0 * delta;
+        }
+        else {
+            _background.rotation += 56.0 * delta;
         }
         if ((numSeconds > 25) && (dotNum < 2)) {
             Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
@@ -58,6 +61,13 @@
             [_background addChild:dot2];
             dotNum++;
             [dotList addObject:dot2];
+        }
+        if ((numSeconds > 60) && (dotNum < 3)) {
+            Dot *dot3 = (Dot*)[CCBReader load:@"Dot"];
+            dot3.gameplayLayer = self;
+            [_background addChild:dot3];
+            dotNum++;
+            [dotList addObject:dot3];
         }
         for (int i = 0; i < dotNum; i++) {
             Dot *dot = (Dot*) [dotList objectAtIndex:i];
@@ -100,7 +110,7 @@
         }
         
     }
-    if (colorPicking) {
+    if (TRUE) {
         
         
         CGSize screenSize = [[CCDirector sharedDirector] viewSize];
