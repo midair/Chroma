@@ -11,10 +11,18 @@
 #import "ColorState.h"
 
 
-@interface Dot : CCSprite
+@interface Dot : CCSprite {
+    int x;
+    int y; //in degrees
+    ColorState dotColor;
+    ColorState neutralizeColor;
+    float rate;
+}
 
 
 @property int deathLevel;
 @property Gameplay* gameplayLayer;
+
+-(void) randomizeValues;
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E72E1E318983F2E00018760 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1E218983F2E00018760 /* Tutorial.m */; };
+		7E72E1E81898454100018760 /* DotTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1E71898454100018760 /* DotTutorial.m */; };
 		7E8444BB188B242F00992AD8 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8444BA188B242F00992AD8 /* Gameplay.m */; };
 		7E8444BE188C3B1C00992AD8 /* Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8444BD188C3B1C00992AD8 /* Dot.m */; };
 		B737893B180761570076A88C /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
@@ -104,6 +106,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E72E1E118983F2E00018760 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		7E72E1E218983F2E00018760 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
+		7E72E1E61898454100018760 /* DotTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotTutorial.h; sourceTree = "<group>"; };
+		7E72E1E71898454100018760 /* DotTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotTutorial.m; sourceTree = "<group>"; };
 		7E8444B9188B242F00992AD8 /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
 		7E8444BA188B242F00992AD8 /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Gameplay.m; sourceTree = "<group>"; };
 		7E8444BC188C3B1C00992AD8 /* Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dot.h; sourceTree = "<group>"; };
@@ -254,8 +260,12 @@
 				7E8444BF188C4EED00992AD8 /* ColorState.h */,
 				7E8444BC188C3B1C00992AD8 /* Dot.h */,
 				7E8444BD188C3B1C00992AD8 /* Dot.m */,
+				7E72E1E61898454100018760 /* DotTutorial.h */,
+				7E72E1E71898454100018760 /* DotTutorial.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				7E72E1E118983F2E00018760 /* Tutorial.h */,
+				7E72E1E218983F2E00018760 /* Tutorial.m */,
 				7E8444B9188B242F00992AD8 /* Gameplay.h */,
 				7E8444BA188B242F00992AD8 /* Gameplay.m */,
 			);
@@ -657,6 +667,8 @@
 				D2E65C431862647B007D0B1F /* cpConstraint.c in Sources */,
 				7E8444BB188B242F00992AD8 /* Gameplay.m in Sources */,
 				7E8444BE188C3B1C00992AD8 /* Dot.m in Sources */,
+				7E72E1E318983F2E00018760 /* Tutorial.m in Sources */,
+				7E72E1E81898454100018760 /* DotTutorial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

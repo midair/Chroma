@@ -15,4 +15,9 @@
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
+-(void) tutorial {
+    CCScene *tutorialScene = [CCBReader loadAsScene:@"Tutorial"];
+    [[CCDirector sharedDirector] replaceScene:tutorialScene];
+}
+
 @end

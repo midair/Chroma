@@ -1,27 +1,24 @@
 //
-//  Gameplay.m
+//  Tutorial.m
 //  ColorSpin
 //
-//  Created by Claire Treyz on 1/18/14.
+//  Created by Claire Treyz on 1/28/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "Gameplay.h"
-#import "Dot.h"
+#import "Tutorial.h"
+#import "DotTutorial.h"
 
-@implementation Gameplay {
+@implementation Tutorial {
     CCNode *_background;
     CCNode *_palette;
     CCNode *_lifeBar;
     CCButton *_pauseButton;
-    CCLabelTTF *_timeField;
     CCLabelTTF *_gameOver;
+    NSMutableArray *dotList;
     BOOL colorPicking;
     BOOL gameOver;
     UITouch *colorPickTouch;
-    float numSeconds;
-    NSMutableArray *dotList;
-    int deathTotal;
 }
 
 // is called when CCB file has completed loading
@@ -29,9 +26,8 @@
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     [self setMultipleTouchEnabled:TRUE];
-    numSeconds = 0.0;
-    Dot *dot = (Dot*)[CCBReader load:@"Dot"];
-    dot.gameplayLayer = self;
+    DotTutorial *dot = (DotTutorial*)[CCBReader load:@"DotTutorial"];
+    dot.tutorialLayer = self;
     [_background addChild:dot];
     dotList = [NSMutableArray array];
     [dotList addObject:dot];
@@ -42,72 +38,35 @@
 -(void) update:(CCTime) delta
 {
     if (!self.pauseGame) {
-        numSeconds = numSeconds + delta;
-
-        [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
-        deathTotal = 0;
-        int dotNum = [dotList count];
-        if (numSeconds < 10) {
-            _background.rotation += 3.60 * delta * numSeconds;
-        }
-        else if (numSeconds < 45) {
-            _background.rotation += 36.0 * delta;
-        }
-        else {
-            _background.rotation += 56.0 * delta;
-        }
-        if ((numSeconds > 25) && (dotNum < 2)) {
-            Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
-            dot2.gameplayLayer = self;
-            [_background addChild:dot2];
-            dotNum++;
-            [dotList addObject:dot2];
-        }
-        if ((numSeconds > 60) && (dotNum < 3)) {
-            Dot *dot3 = (Dot*)[CCBReader load:@"Dot"];
-            dot3.gameplayLayer = self;
-            [_background addChild:dot3];
-            dotNum++;
-            [dotList addObject:dot3];
-        }
-        for (int i = 0; i < dotNum; i++) {
-            Dot *dot = (Dot*) [dotList objectAtIndex:i];
-            deathTotal += dot.deathLevel;
-            _lifeBar.scaleX = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum)) * 10.024;
-            if ((deathTotal/sqrtf(dotNum)) > 4) {
-                _lifeBar.scaleX = 0.0;
-                gameOver = TRUE;
-                self.pauseGame = TRUE;
-                [_pauseButton setTitle:@"Retry"];
-                [_gameOver setString:@"GAME OVER"];
+       
                 
-            }
-        }
+            
+        
     }
 }
 
 -(void) dotPopPuff:(CGPoint)positionPuff
 {
     CCLOG(@"PUFF");
-//    CCParticleSystem *pop = (CCParticleSystem*)[CCBReader load:@"DotPop"];
-//    pop.position = positionPuff;
-//    [_background addChild: pop z:10];
-//    pop.autoRemoveOnFinish = YES;
+    //    CCParticleSystem *pop = (CCParticleSystem*)[CCBReader load:@"DotPop"];
+    //    pop.position = positionPuff;
+    //    [_background addChild: pop z:10];
+    //    pop.autoRemoveOnFinish = YES;
 }
 
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     CGPoint pointLocation = touch.locationInWorld;
-    if (!colorPicking) {        
+    if (!colorPicking) {
         CGPoint centered = ccpSub(pointLocation, ccp(59, 50));
         if (ccpLength(centered)<40){
             colorPicking = TRUE;
             colorPickTouch = touch;
             for (int i = 0; i < [dotList count]; i++) {
-                Dot *dot = (Dot*) [dotList objectAtIndex:i];
+                DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:i];
                 dot.userInteractionEnabled = FALSE;
-                    
+                
                 
             }
         }
@@ -133,36 +92,36 @@
                 CCLOG(@"VIOLET");
                 self.colorState = VIOLET;
                 [_palette setColor:[CCColor purpleColor]];
-
-
+                
+                
             }
             else if (Q > 90 && Q < 150)
             {
                 CCLOG(@"BLUE");
                 self.colorState = BLUE;
                 [_palette setColor:[CCColor blueColor]];
-
+                
             }
             else if (Q > 150 && Q < 210)
             {
                 CCLOG(@"GREEN");
                 self.colorState = GREEN;
                 [_palette setColor:[CCColor greenColor]];
-
+                
             }
             else if (Q > 210 && Q < 270)
             {
                 CCLOG(@"YELLOW");
                 self.colorState = YELLOW;
                 [_palette setColor:[CCColor yellowColor]];
-
+                
             }
             else if (Q > 270 && Q < 330)
             {
                 CCLOG(@"ORANGE");
                 self.colorState = ORANGE;
                 [_palette setColor:[CCColor orangeColor]];
-
+                
             }
         }
     }
@@ -170,7 +129,7 @@
 
 -(void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
-
+    
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
@@ -189,13 +148,14 @@
         colorPicking = FALSE;
         colorPickTouch = nil;
         for (int i = 0; i < [dotList count]; i++) {
-            Dot *dot = (Dot*) [dotList objectAtIndex:i];
+            DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:i];
             dot.userInteractionEnabled = TRUE;
             
         }
-    
+        
     }
 }
+
 
 -(void) mainMenu {
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];

@@ -8,14 +8,7 @@
 
 #import "Dot.h"
 
-@implementation Dot {
-    int x;
-    int y; //in degrees
-    ColorState dotColor;
-    ColorState neutralizeColor;
-    float rate;
-    
-}
+@implementation Dot
 
 -(void) update:(CCTime)delta {
     if (!self.gameplayLayer.pauseGame) {
