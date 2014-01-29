@@ -126,7 +126,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>ccbSliderHandle</string>
+				<string>Palate</string>
 				<key>memberVarAssignmentName</key>
 				<string>_palette</string>
 				<key>memberVarAssignmentType</key>
@@ -224,7 +224,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCLabelTTF</string>
+				<string>Time Label</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -429,7 +429,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCLabelTTF</string>
+				<string>Time Number</string>
 				<key>memberVarAssignmentName</key>
 				<string>_timeField</string>
 				<key>memberVarAssignmentType</key>
@@ -634,7 +634,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCButton</string>
+				<string>Pause Button</string>
 				<key>memberVarAssignmentName</key>
 				<string>_pauseButton</string>
 				<key>memberVarAssignmentType</key>
@@ -958,7 +958,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCLabelTTF</string>
+				<string>Game Over Label</string>
 				<key>memberVarAssignmentName</key>
 				<string>_gameOver</string>
 				<key>memberVarAssignmentType</key>
@@ -1163,7 +1163,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>ccbSliderBgHighlighted</string>
+				<string>Life Measue</string>
 				<key>memberVarAssignmentName</key>
 				<string>_lifeBar</string>
 				<key>memberVarAssignmentType</key>
@@ -1258,7 +1258,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCButton</string>
+				<string>Main Menu</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -1573,8 +1573,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -1647,6 +1645,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

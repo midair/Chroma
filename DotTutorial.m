@@ -25,7 +25,9 @@
             rate = 1.0;
             [self.tutorialLayer dotPopPuff:ccp(x,y)];
             [self randomizeValues];
+            _dotNum++;
         }
+        
     }
 }
 

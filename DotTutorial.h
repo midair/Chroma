@@ -12,5 +12,6 @@
 @interface DotTutorial : Dot
 
 @property Tutorial* tutorialLayer;
+@property int dotNum;
 
 @end

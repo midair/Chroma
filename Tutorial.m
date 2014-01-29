@@ -15,10 +15,14 @@
     CCNode *_lifeBar;
     CCButton *_pauseButton;
     CCLabelTTF *_gameOver;
+    CCLabelTTF *_dotNeut;
+    CCLabelTTF *_dotPal;
     NSMutableArray *dotList;
     BOOL colorPicking;
     BOOL gameOver;
     UITouch *colorPickTouch;
+    float numSeconds;
+    int numDots;
 }
 
 // is called when CCB file has completed loading
@@ -33,13 +37,26 @@
     [dotList addObject:dot];
     self.pauseGame = FALSE;
     gameOver = FALSE;
+    numSeconds = 0.0;
 }
 
 -(void) update:(CCTime) delta
 {
     if (!self.pauseGame) {
-       
-                
+        DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
+        numSeconds += delta;
+        if (numSeconds > 5.0 && dot.dotNum<3) {
+            [_dotNeut setString:[NSString stringWithFormat:@"%@\r%@", @"After selecting their opposite color,",@"neutralize the dots by tapping on them."]];
+        }
+        if (dot.dotNum > 3) {
+            [_dotNeut setString:@""];
+            [_dotPal setString: [NSString stringWithFormat:@"%@\r%@", @"When you're ready to start playing,",@"head back to the Main Menu!"]];
+        }
+        
+        if (dot.dotNum > 3 && numSeconds > 20.0) {
+            [_dotNeut setString: [NSString stringWithFormat:@"%@\r%@", @"A color can also be selected without" ,@"holding down the palate, if the dot isn't covering it."]];
+        }
+        
             
         
     }
