@@ -14,6 +14,7 @@
     CCNode *_palette;
     CCNode *_lifeBar;
     CCButton *_pauseButton;
+    CCButton *_mainMenu;
     CCLabelTTF *_timeField;
     CCLabelTTF *_gameOver;
     BOOL colorPicking;
@@ -29,6 +30,8 @@
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     [self setMultipleTouchEnabled:TRUE];
+    [_mainMenu setTitle:@""];
+    _mainMenu.userInteractionEnabled = FALSE;
     numSeconds = 0.0;
     Dot *dot = (Dot*)[CCBReader load:@"Dot"];
     dot.gameplayLayer = self;
@@ -37,52 +40,111 @@
     [dotList addObject:dot];
     self.pauseGame = FALSE;
     gameOver = FALSE;
+    [_lifeBar setColor:[CCColor greenColor]];
 }
 
 -(void) update:(CCTime) delta
 {
     if (!self.pauseGame) {
-        numSeconds = numSeconds + delta;
-
-        [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
-        deathTotal = 0;
-        int dotNum = [dotList count];
-        if (numSeconds < 10) {
-            _background.rotation += 3.60 * delta * numSeconds;
-        }
-        else if (numSeconds < 45) {
-            _background.rotation += 36.0 * delta;
-        }
-        else {
-            _background.rotation += 56.0 * delta;
-        }
-        if ((numSeconds > 25) && (dotNum < 2)) {
-            Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
-            dot2.gameplayLayer = self;
-            [_background addChild:dot2];
-            dotNum++;
-            [dotList addObject:dot2];
-        }
-        if ((numSeconds > 60) && (dotNum < 3)) {
-            Dot *dot3 = (Dot*)[CCBReader load:@"Dot"];
-            dot3.gameplayLayer = self;
-            [_background addChild:dot3];
-            dotNum++;
-            [dotList addObject:dot3];
-        }
-        for (int i = 0; i < dotNum; i++) {
-            Dot *dot = (Dot*) [dotList objectAtIndex:i];
-            deathTotal += dot.deathLevel;
-            _lifeBar.scaleX = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum)) * 10.024;
-            if ((deathTotal/sqrtf(dotNum)) > 4) {
-                _lifeBar.scaleX = 0.0;
-                gameOver = TRUE;
-                self.pauseGame = TRUE;
-                [_pauseButton setTitle:@"Retry"];
-                [_gameOver setString:@"GAME OVER"];
+        if (_easy) {
+            numSeconds = numSeconds + delta;
+            
+            [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
+            deathTotal = 0;
+            int dotNum = [dotList count];
+            if (numSeconds < 10) {
+                _background.rotation += 1.80 * delta * numSeconds;
+            }
+            else if (numSeconds < 20){
+                _background.rotation += 18.0 * delta;
+            }
+            else {
+                _background.rotation += 27.0 * delta;
+            }
+            
+            for (int i = 0; i < dotNum; i++) {
+                Dot *dot = (Dot*) [dotList objectAtIndex:i];
+                deathTotal += dot.deathLevel;
+                if ((deathTotal/sqrtf(dotNum)) > 3){
+                    [_lifeBar setColor:[CCColor redColor]];
+                }
+                else if ((deathTotal/sqrtf(dotNum)) >1){
+                    [_lifeBar setColor:[CCColor yellowColor]];
+                }
+                else {
+                    [_lifeBar setColor:[CCColor greenColor]];
+                }
                 
+                
+                
+                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum));
+                if ((deathTotal/sqrtf(dotNum)) > 4) {
+                    _lifeBar.scaleY = 0.0;
+                    gameOver = TRUE;
+                    self.pauseGame = TRUE;
+                    [_pauseButton setTitle:@"Retry"];
+                    [_gameOver setString:@"GAME OVER"];
+                    
+                }
             }
         }
+        
+        else {
+            numSeconds = numSeconds + delta;
+            
+            [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
+            deathTotal = 0;
+            int dotNum = [dotList count];
+            if (numSeconds < 10) {
+                _background.rotation += 3.60 * delta * numSeconds;
+            }
+            else if (numSeconds < 45) {
+                _background.rotation += 36.0 * delta;
+            }
+            else {
+                _background.rotation += 56.0 * delta;
+            }
+            if ((numSeconds > 25) && (dotNum < 2)) {
+                Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
+                dot2.gameplayLayer = self;
+                [_background addChild:dot2];
+                dotNum++;
+                [dotList addObject:dot2];
+            }
+            if ((numSeconds > 60) && (dotNum < 3)) {
+                Dot *dot3 = (Dot*)[CCBReader load:@"Dot"];
+                dot3.gameplayLayer = self;
+                [_background addChild:dot3];
+                dotNum++;
+                [dotList addObject:dot3];
+            }
+            for (int i = 0; i < dotNum; i++) {
+                Dot *dot = (Dot*) [dotList objectAtIndex:i];
+                deathTotal += dot.deathLevel;
+                if ((deathTotal/sqrtf(dotNum)) > 3){
+                    [_lifeBar setColor:[CCColor redColor]];
+                }
+                else if ((deathTotal/sqrtf(dotNum)) >1){
+                    [_lifeBar setColor:[CCColor yellowColor]];
+                }
+                else {
+                    [_lifeBar setColor:[CCColor greenColor]];
+                }
+                
+                
+                
+                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum));
+                if ((deathTotal/sqrtf(dotNum)) > 4) {
+                    _lifeBar.scaleY = 0.0;
+                    gameOver = TRUE;
+                    self.pauseGame = TRUE;
+                    [_pauseButton setTitle:@"Retry"];
+                    [_gameOver setString:@"GAME OVER"];
+                    
+                }
+            }
+        }
+        
     }
 }
 
@@ -207,6 +269,9 @@
     //reload this level
     if (!self.pauseGame && !gameOver){
         [_gameOver setString:@"PAUSED"];
+        [_mainMenu setTitle:@"Main Menu"];
+        _mainMenu.userInteractionEnabled = TRUE;
+        
     }
     else if (gameOver && self.pauseGame) {
         self.pauseGame = FALSE;
@@ -214,6 +279,8 @@
     }
     else {
         [_gameOver setString:@" "];
+        [_mainMenu setTitle:@""];
+        _mainMenu.userInteractionEnabled = FALSE;
     }
     self.pauseGame = !self.pauseGame;
 }

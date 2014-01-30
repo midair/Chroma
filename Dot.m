@@ -12,11 +12,18 @@
 
 -(void) update:(CCTime)delta {
     if (!self.gameplayLayer.pauseGame) {
-        if (self.scale < 7.0) {
-            self.scale = self.scale + rate*delta/2.2;
-            _deathLevel = floor(self.scale);
+        if (self.gameplayLayer.easy) {
+            if (self.scale < 7.0) {
+                self.scale = self.scale + rate*delta/4;
+                _deathLevel = floor(self.scale);
+            }
         }
-        
+        else {
+            if (self.scale < 7.0) {
+                self.scale = self.scale + rate*delta/2.2;
+                _deathLevel = floor(self.scale);
+            }
+        }
     }
     
 }

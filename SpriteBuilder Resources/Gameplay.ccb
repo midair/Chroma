@@ -1185,8 +1185,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>553</real>
-							<real>149</real>
+							<real>531</real>
+							<real>154</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1199,8 +1199,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.28337028622627258</real>
+							<real>0.49926421046257019</real>
 						</array>
 					</dict>
 					<dict>
@@ -1210,19 +1210,11 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>10.02390193939209</real>
-							<real>-1.6975750923156738</real>
+							<real>-1.1601518392562866</real>
+							<real>-0.87502646446228027</real>
 							<false/>
 							<integer>0</integer>
 						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>rotation</string>
-						<key>type</key>
-						<string>Degrees</string>
-						<key>value</key>
-						<real>90</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1232,7 +1224,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbSliderBgHighlighted.png</string>
+							<string>lifeBar.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1242,9 +1234,9 @@
 						<string>Color3</string>
 						<key>value</key>
 						<array>
+							<real>0.99999600648880005</real>
 							<real>1</real>
-							<real>0.14987611770629883</real>
-							<real>0.04475778341293335</real>
+							<real>1</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -1260,9 +1252,9 @@
 				<key>displayName</key>
 				<string>Main Menu</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_mainMenu</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -1573,6 +1565,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -1645,8 +1639,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

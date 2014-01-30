@@ -11,8 +11,8 @@
 @implementation MainScene
 
 -(void) play {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
-    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
+    [[CCDirector sharedDirector] replaceScene:modeScene];
 }
 
 -(void) tutorial {
