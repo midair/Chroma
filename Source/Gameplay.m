@@ -114,7 +114,7 @@
             }
             else {
                 _background.rotation += 56.0 * delta;
-                _background.scale = fmod(_background.scale+0.05, 1.2);
+                _background.scale = max(fmod(_background.scale+0.05, 1.2), 1);
             }
             if ((numSeconds > 25) && (dotNum < 2)) {
                 Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
