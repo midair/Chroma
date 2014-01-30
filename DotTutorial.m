@@ -18,6 +18,9 @@
         else {
             self.neutralizingColor = FALSE;
         }
+        if (_dotNum > 1) {
+            self.scale = 1.9;
+        }
     }
 }
 
@@ -34,6 +37,44 @@
         }
         
     }
+}
+
+-(void) randomizeValues {
+    int radius = arc4random_uniform(180);
+    int angle = arc4random_uniform(360);
+    dotColor = arc4random_uniform(6);
+    if (dotColor == RED) {
+        neutralizeColor = GREEN;
+        [self setColor:[CCColor redColor]];
+    }
+    else if (dotColor == ORANGE) {
+        neutralizeColor = BLUE;
+        [self setColor:[CCColor orangeColor]];
+    }
+    else if (dotColor == YELLOW) {
+        neutralizeColor = VIOLET;
+        [self setColor:[CCColor yellowColor]];
+    }
+    else if (dotColor == GREEN) {
+        neutralizeColor = RED;
+        [self setColor:[CCColor greenColor]];
+    }
+    else if (dotColor == BLUE) {
+        neutralizeColor = ORANGE;
+        [self setColor:[CCColor blueColor]];
+    }
+    else if (dotColor == VIOLET) {
+        neutralizeColor = YELLOW;
+        [self setColor:[CCColor purpleColor]];
+    }
+    
+    x = max(20, radius * cos(CC_DEGREES_TO_RADIANS(angle))-25);
+    y = max(20, radius * sin(CC_DEGREES_TO_RADIANS(angle))-25);
+    
+    self.position = ccpAdd(ccp(x,y), ccp(327, 327));
+    self.scale = 1;
+    
+    
 }
 
 

@@ -17,6 +17,7 @@
     CCLabelTTF *_gameOver;
     CCLabelTTF *_dotNeut;
     CCLabelTTF *_dotPal;
+    CCLabelTTF *_palateLabel;
     NSMutableArray *dotList;
     BOOL colorPicking;
     BOOL gameOver;
@@ -46,13 +47,18 @@
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
-        if (dot.neutralizingColor && dot.dotNum<4) {
+        if (dot.neutralizingColor && dot.dotNum<2) {
             [_dotNeut setString:@"Then neutralize the dot by tapping on it."];
             [_dotPal setString: @""];
         }
-        else if (!dot.neutralizingColor && dot.dotNum<4) {
+        else if (!dot.neutralizingColor && dot.dotNum<2) {
             [_dotNeut setString:@""];
             [_dotPal setString: @"Select the dot’s opposite color from the wheel."];
+        }
+        else if (dot.dotNum<4) {
+            [_dotNeut setString:@""];
+            [_dotPal setString: @"Hold down the palate to select color from under a dot."];
+            [_palateLabel setString:[NSString stringWithFormat:@"%@\r%@", @"Thumb",@"Here"]];
         }
         if (dot.dotNum > 3) {
             [_dotNeut setString:@""];

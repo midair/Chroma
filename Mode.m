@@ -31,4 +31,9 @@
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
+
+-(void) mainMenu {
+    CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:mainScene];
+}
 @end

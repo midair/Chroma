@@ -62,6 +62,13 @@
             else {
                 _background.rotation += 27.0 * delta;
             }
+            if ((numSeconds > 40) && (dotNum < 2)) {
+                Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
+                dot2.gameplayLayer = self;
+                [_background addChild:dot2];
+                dotNum++;
+                [dotList addObject:dot2];
+            }
             
             for (int i = 0; i < dotNum; i++) {
                 Dot *dot = (Dot*) [dotList objectAtIndex:i];
