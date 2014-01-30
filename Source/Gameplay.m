@@ -41,6 +41,7 @@
     self.pauseGame = FALSE;
     gameOver = FALSE;
     [_lifeBar setColor:[CCColor greenColor]];
+    self.colorState = 6;
 }
 
 -(void) update:(CCTime) delta
@@ -140,6 +141,8 @@
                     self.pauseGame = TRUE;
                     [_pauseButton setTitle:@"Retry"];
                     [_gameOver setString:@"GAME OVER"];
+                    [_mainMenu setTitle:@"Main Menu"];
+                    _mainMenu.userInteractionEnabled = TRUE;
                     
                 }
             }

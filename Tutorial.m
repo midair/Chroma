@@ -38,6 +38,7 @@
     self.pauseGame = FALSE;
     gameOver = FALSE;
     numSeconds = 0.0;
+    self.colorState = 6;
 }
 
 -(void) update:(CCTime) delta
