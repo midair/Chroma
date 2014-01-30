@@ -23,6 +23,7 @@
     float numSeconds;
     NSMutableArray *dotList;
     int deathTotal;
+    BOOL pulseGrow;
 }
 
 // is called when CCB file has completed loading
@@ -39,6 +40,7 @@
     dotList = [NSMutableArray array];
     [dotList addObject:dot];
     self.pauseGame = FALSE;
+    pulseGrow = TRUE;
     gameOver = FALSE;
     [_lifeBar setColor:[CCColor greenColor]];
     self.colorState = 6;
@@ -106,15 +108,27 @@
             if (numSeconds < 10) {
                 _background.rotation += 3.60 * delta * numSeconds;
             }
-            else if (numSeconds < 35) {
-                _background.rotation += 36.0 * delta;
-            }
-            else if (numSeconds < 55){
+//            else if (numSeconds < 35) {
+//                _background.rotation += 36.0 * delta;
+//            }
+            else if (numSeconds < 20){
                 _background.rotation += 56.0 * delta;
             }
             else {
                 _background.rotation += 56.0 * delta;
-                _background.scale = max(fmod(_background.scale+0.05, 1.2), 1);
+                if (pulseGrow){
+                    _background.scale = _background.scale+0.007;
+                    if (_background.scale >= 1.21) {
+                        pulseGrow = FALSE;
+                    }
+                }
+                else {
+                    _background.scale = _background.scale-0.007;
+                    if (_background.scale <= 1.0) {
+                        pulseGrow = TRUE;
+                    }
+
+                }
             }
             if ((numSeconds > 25) && (dotNum < 2)) {
                 Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
