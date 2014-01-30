@@ -8,6 +8,7 @@
 
 #import "Gameplay.h"
 #import "Dot.h"
+#import "OALSimpleAudio.h"
 
 @implementation Gameplay {
     CCNode *_background;
@@ -44,6 +45,8 @@
     gameOver = FALSE;
     [_lifeBar setColor:[CCColor greenColor]];
     self.colorState = 6;
+    
+    [[OALSimpleAudio sharedInstance] playBg:@"spaceMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
 }
 
 -(void) update:(CCTime) delta
@@ -62,7 +65,7 @@
                 _background.rotation += 18.0 * delta;
             }
             else {
-                _background.rotation += 27.0 * delta;
+                _background.rotation += 27 * delta;
             }
             if ((numSeconds > 40) && (dotNum < 2)) {
                 Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
@@ -114,7 +117,7 @@
             else if (numSeconds < 20){
                 _background.rotation += 56.0 * delta;
             }
-            else {
+            else if (numSeconds <40) {
                 _background.rotation += 56.0 * delta;
                 if (pulseGrow){
                     _background.scale = _background.scale+0.007;
@@ -122,12 +125,35 @@
                         pulseGrow = FALSE;
                     }
                 }
-                else {
+                else if (!pulseGrow && _background.scale > 1.0){
                     _background.scale = _background.scale-0.007;
-                    if (_background.scale <= 1.0) {
+                }
+                else {
+                    if (_background.scale <= 1.0 && fmod(numSeconds, 25) > 10) {
                         pulseGrow = TRUE;
                     }
+                }
+            }
+            else if (numSeconds < 55){
+                _background.rotation -= 72.0 * delta;
+                
+            }
+            else {
+                _background.rotation -= 72.0 * delta;
 
+                if (pulseGrow){
+                    _background.scale = _background.scale+0.007;
+                    if (_background.scale >= 1.21) {
+                        pulseGrow = FALSE;
+                    }
+                }
+                else if (!pulseGrow && _background.scale > 1.0){
+                    _background.scale = _background.scale-0.007;
+                }
+                else {
+                    if (_background.scale <= 1.0 && fmod(numSeconds, 25) > 10) {
+                        pulseGrow = TRUE;
+                    }
                 }
             }
             if ((numSeconds > 25) && (dotNum < 2)) {
@@ -209,8 +235,8 @@
         CGSize screenSize = [[CCDirector sharedDirector] viewSize];
         
         CGPoint centered = ccpSub(pointLocation, ccp(screenSize.width/2, screenSize.height/2));
-        
-        if (ccpLength(centered) < 160) {
+        int radius = 160 * _background.scale;
+        if (ccpLength(centered) < radius) {
             float Q =  fmod(CC_RADIANS_TO_DEGREES(atan2(centered.y, centered.x)) + _background.rotation +360, 360);
             if ((Q < 30) || (Q > 330)) {
                 CCLOG(@"RED");

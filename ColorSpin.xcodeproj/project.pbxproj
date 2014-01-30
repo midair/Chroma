@@ -10,6 +10,8 @@
 		7E72E1E318983F2E00018760 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1E218983F2E00018760 /* Tutorial.m */; };
 		7E72E1E81898454100018760 /* DotTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1E71898454100018760 /* DotTutorial.m */; };
 		7E72E1EB1899E26900018760 /* Mode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1EA1899E26900018760 /* Mode.m */; };
+		7E72E1ED189B12AF00018760 /* chromaMUSIC.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E72E1EC189B12AF00018760 /* chromaMUSIC.mp3 */; };
+		7E72E1EF189B13F600018760 /* spaceMUSIC.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E72E1EE189B13F500018760 /* spaceMUSIC.mp3 */; };
 		7E8444BB188B242F00992AD8 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8444BA188B242F00992AD8 /* Gameplay.m */; };
 		7E8444BE188C3B1C00992AD8 /* Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8444BD188C3B1C00992AD8 /* Dot.m */; };
 		B737893B180761570076A88C /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
@@ -113,6 +115,8 @@
 		7E72E1E71898454100018760 /* DotTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotTutorial.m; sourceTree = "<group>"; };
 		7E72E1E91899E26900018760 /* Mode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mode.h; sourceTree = "<group>"; };
 		7E72E1EA1899E26900018760 /* Mode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mode.m; sourceTree = "<group>"; };
+		7E72E1EC189B12AF00018760 /* chromaMUSIC.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chromaMUSIC.mp3; sourceTree = "<group>"; };
+		7E72E1EE189B13F500018760 /* spaceMUSIC.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spaceMUSIC.mp3; sourceTree = "<group>"; };
 		7E8444B9188B242F00992AD8 /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
 		7E8444BA188B242F00992AD8 /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Gameplay.m; sourceTree = "<group>"; };
 		7E8444BC188C3B1C00992AD8 /* Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dot.h; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 				7E72E1EA1899E26900018760 /* Mode.m */,
 				7E72E1E118983F2E00018760 /* Tutorial.h */,
 				7E72E1E218983F2E00018760 /* Tutorial.m */,
+				7E72E1EE189B13F500018760 /* spaceMUSIC.mp3 */,
+				7E72E1EC189B12AF00018760 /* chromaMUSIC.mp3 */,
 				7E8444B9188B242F00992AD8 /* Gameplay.h */,
 				7E8444BA188B242F00992AD8 /* Gameplay.m */,
 			);
@@ -616,6 +622,8 @@
 				B7378977180762440076A88C /* Default.png in Resources */,
 				B737897B180762440076A88C /* Icon-Small.png in Resources */,
 				D2E65C3D1862647B007D0B1F /* CMakeLists.txt in Resources */,
+				7E72E1ED189B12AF00018760 /* chromaMUSIC.mp3 in Resources */,
+				7E72E1EF189B13F600018760 /* spaceMUSIC.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,7 +751,7 @@
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
 					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
-					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
+					"\"Source/libs/cocos2d-iphone\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
@@ -775,7 +783,7 @@
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
 					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
-					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
+					"\"Source/libs/cocos2d-iphone\"/**",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",

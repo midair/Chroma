@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
+#import "OALSimpleAudio.h"
 #import "Dot.h"
 
 @implementation Dot
@@ -29,6 +30,7 @@
 }
 
 -(void) didLoadFromCCB {
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"pop.wav"];
     rate = 1.0;
     self.userInteractionEnabled = TRUE;
 
@@ -44,6 +46,7 @@
         if (self.scale < 1) {
             rate = 1.0;
             [self.gameplayLayer dotPopPuff:ccp(x,y)];
+            [[OALSimpleAudio sharedInstance] playEffect:@"pop.wav"];
             [self randomizeValues];
         }
     }
