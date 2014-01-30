@@ -45,16 +45,17 @@
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
-        if (numSeconds > 5.0 && dot.dotNum<3) {
-            [_dotNeut setString:[NSString stringWithFormat:@"%@\r%@", @"After selecting their opposite color,",@"neutralize the dots by tapping on them."]];
+        if (dot.neutralizingColor && dot.dotNum<4) {
+            [_dotNeut setString:@"Then neutralize the dot by tapping on it."];
+            [_dotPal setString: @""];
+        }
+        else if (!dot.neutralizingColor && dot.dotNum<4) {
+            [_dotNeut setString:@""];
+            [_dotPal setString: @"Select the dot’s opposite color from the wheel."];
         }
         if (dot.dotNum > 3) {
             [_dotNeut setString:@""];
             [_dotPal setString: [NSString stringWithFormat:@"%@\r%@", @"When you're ready to start playing,",@"head back to the Main Menu!"]];
-        }
-        
-        if (dot.dotNum > 3 && numSeconds > 20.0) {
-            [_dotNeut setString: [NSString stringWithFormat:@"%@\r%@", @"A color can also be selected without" ,@"holding down the palate, if the dot isn't covering it."]];
         }
         
             

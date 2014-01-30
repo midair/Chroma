@@ -14,7 +14,7 @@
     if (!self.gameplayLayer.pauseGame) {
         if (self.gameplayLayer.easy) {
             if (self.scale < 7.0) {
-                self.scale = self.scale + rate*delta/4;
+                self.scale = self.scale + rate*delta/4.4;
                 _deathLevel = floor(self.scale);
             }
         }

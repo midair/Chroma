@@ -12,7 +12,12 @@
 
 -(void) update:(CCTime)delta {
     if (!self.tutorialLayer.pauseGame) {
-        
+        if (neutralizeColor == self.tutorialLayer.colorState){
+            self.neutralizingColor = TRUE;
+        }
+        else {
+            self.neutralizingColor = FALSE;
+        }
     }
 }
 

@@ -13,5 +13,6 @@
 
 @property Tutorial* tutorialLayer;
 @property int dotNum;
+@property BOOL neutralizingColor;
 
 @end
