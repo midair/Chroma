@@ -106,11 +106,15 @@
             if (numSeconds < 10) {
                 _background.rotation += 3.60 * delta * numSeconds;
             }
-            else if (numSeconds < 45) {
+            else if (numSeconds < 35) {
                 _background.rotation += 36.0 * delta;
+            }
+            else if (numSeconds < 55){
+                _background.rotation += 56.0 * delta;
             }
             else {
                 _background.rotation += 56.0 * delta;
+                _background.scale = fmod(_background.scale+0.05, 1.2);
             }
             if ((numSeconds > 25) && (dotNum < 2)) {
                 Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
@@ -119,7 +123,7 @@
                 dotNum++;
                 [dotList addObject:dot2];
             }
-            if ((numSeconds > 60) && (dotNum < 3)) {
+            if ((numSeconds > 65) && (dotNum < 3)) {
                 Dot *dot3 = (Dot*)[CCBReader load:@"Dot"];
                 dot3.gameplayLayer = self;
                 [_background addChild:dot3];
