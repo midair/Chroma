@@ -46,7 +46,6 @@
     [_lifeBar setColor:[CCColor greenColor]];
     self.colorState = 6;
     
-    [[OALSimpleAudio sharedInstance] playBg:@"spaceMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
 }
 
 -(void) update:(CCTime) delta

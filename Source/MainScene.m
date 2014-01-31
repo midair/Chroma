@@ -7,8 +7,17 @@
 //
 
 #import "MainScene.h"
+#import "OALSimpleAudio.h"
 
 @implementation MainScene
+
+
+-(void)didLoadFromCCB {
+
+    [[OALSimpleAudio sharedInstance] playBg:@"chromaMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
+    
+}
+
 
 -(void) play {
     CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
