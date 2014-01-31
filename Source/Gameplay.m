@@ -203,11 +203,22 @@
 
 -(void) dotPopPuff:(CGPoint)positionPuff
 {
-    CCLOG(@"PUFF");
-//    CCParticleSystem *pop = (CCParticleSystem*)[CCBReader load:@"DotPop"];
-//    pop.position = positionPuff;
-//    [_background addChild: pop z:10];
-//    pop.autoRemoveOnFinish = YES;
+//    CCLOG(@"PUFF");
+////    CCParticleSystem *pop = (CCParticleSystem*)[CCBReader load:@"DotPop"];
+////    pop.position = positionPuff;
+////    [_background addChild: pop z:10];
+////    pop.autoRemoveOnFinish = YES;
+//    
+//    
+//    // load particle effect
+//    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"DotPop"];
+//    // make the particle effect clean itself up, once it is completed
+//    explosion.autoRemoveOnFinish = TRUE;
+//    // place the particle effect on the seals position
+//    explosion.position = ccp(320,320);
+//    // add the particle effect to the same node the seal is on
+//    [_background addChild:explosion];
+    
 }
 
 

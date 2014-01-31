@@ -121,7 +121,7 @@
 				<key>type</key>
 				<string>Integer</string>
 				<key>value</key>
-				<integer>10</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -292,8 +292,6 @@
 				<string>ccbResources/ccbParticleSmoke.png</string>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
