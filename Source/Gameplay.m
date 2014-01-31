@@ -29,6 +29,11 @@
     int deathTotal;
     int killNumberTotal;
     BOOL pulseGrow;
+    BOOL best;
+    BOOL checked;
+    int hsEasy;
+    int hsHard;
+    float bestTime;
 }
 
 // is called when CCB file has completed loading
@@ -51,6 +56,15 @@
     gameOver = FALSE;
     [_lifeBar setColor:[CCColor greenColor]];
     self.colorState = 6;
+    best = FALSE;
+    checked = FALSE;
+
+    NSNumber *currentHighScoreEasy = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
+    hsEasy = [currentHighScoreEasy intValue];
+    
+    NSNumber *currentHighScoreHard = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
+    hsHard = [currentHighScoreHard intValue];
+    
 
     
 }
@@ -112,8 +126,29 @@
                     [_timeField setString:@"Calm"];
                 }
             }
+            
+            
             if (timeLeft > 0.0) {
                 [_timeField setString: [NSString stringWithFormat:@"%@\r%@", [NSString stringWithFormat:@"%.1f", fabsf(timeLeft)],[NSString stringWithFormat:@"%i", killNumberTotal]]];
+                if (!best) {
+                    
+                    if (killNumberTotal > hsEasy && hsEasy > 0 && !checked) {
+                        CCLOG(@"BEST");
+                        [_gameOver setString:@"NEW BEST"];
+                        bestTime = numSeconds + 0.4;
+                        checked = TRUE;
+                    }
+                    
+                    if (numSeconds > bestTime && checked) {
+                        CCLOG(@"CHECKED");
+                        [_gameOver setString:@""];
+                        best = TRUE;
+                        
+                    }
+                }
+                
+                
+            
             }
         }
         
@@ -186,6 +221,25 @@
                 dotNum++;
                 [dotList addObject:dot3];
             }
+
+            
+            if (!best) {
+                
+                if (numSeconds > hsHard && hsHard > 0 && !checked) {
+                    CCLOG(@"BEST");
+                    [_gameOver setString:@"NEW BEST"];
+                    bestTime = numSeconds + 0.4;
+                    checked = TRUE;
+                }
+                
+                if (numSeconds > bestTime && checked) {
+                    CCLOG(@"CHECKED");
+                    [_gameOver setString:@""];
+                    best = TRUE;
+
+                }
+            }
+            
             for (int i = 0; i < dotNum; i++) {
                 Dot *dot = (Dot*) [dotList objectAtIndex:i];
                 deathTotal += dot.deathLevel;
@@ -201,7 +255,9 @@
                 
                 
                 
-                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum));
+                
+                
+                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(2.0*sqrtf(dotNum));
                 if ((deathTotal/sqrtf(dotNum)) > 4) {
                     _lifeBar.scaleY = 0.0;
                     gameOver = TRUE;
@@ -235,6 +291,7 @@
         NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
         int hsE = [currentHighScoreE intValue];
         if (killNumberTotal > hsE) {
+            [_gameOver setString:@"NEW RECORD"];
             NSNumber *highScoreE = [NSNumber numberWithInt:killNumberTotal];
             [[NSUserDefaults standardUserDefaults] setObject:highScoreE forKey:@"highScoreE"];
         }
@@ -243,6 +300,7 @@
         NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
         float hsH = [currentHighScoreH floatValue];
         if (numSeconds > hsH) {
+            [_gameOver setString:@"NEW RECORD"];
             NSNumber *highScoreH = [NSNumber numberWithFloat:numSeconds];
             [[NSUserDefaults standardUserDefaults] setObject:highScoreH forKey:@"highScoreH"];
         }
@@ -283,14 +341,12 @@
         if (ccpLength(centered) < radius) {
             float Q =  fmod(CC_RADIANS_TO_DEGREES(atan2(centered.y, centered.x)) + _background.rotation +360, 360);
             if ((Q < 30) || (Q > 330)) {
-                CCLOG(@"RED");
                 self.colorState = RED;
                 [_palette setColor:[CCColor redColor]];
                 
             }
             else if (Q > 30 && Q < 90)
             {
-                CCLOG(@"VIOLET");
                 self.colorState = VIOLET;
                 [_palette setColor:[CCColor purpleColor]];
 
@@ -298,28 +354,24 @@
             }
             else if (Q > 90 && Q < 150)
             {
-                CCLOG(@"BLUE");
                 self.colorState = BLUE;
                 [_palette setColor:[CCColor blueColor]];
 
             }
             else if (Q > 150 && Q < 210)
             {
-                CCLOG(@"GREEN");
                 self.colorState = GREEN;
                 [_palette setColor:[CCColor greenColor]];
 
             }
             else if (Q > 210 && Q < 270)
             {
-                CCLOG(@"YELLOW");
                 self.colorState = YELLOW;
                 [_palette setColor:[CCColor yellowColor]];
 
             }
             else if (Q > 270 && Q < 330)
             {
-                CCLOG(@"ORANGE");
                 self.colorState = ORANGE;
                 [_palette setColor:[CCColor orangeColor]];
 
@@ -357,7 +409,13 @@
     }
 }
 
+-(void) flipBest {
+    best = !best;
+}
+
 -(void) mainMenu {
+    [self saveScore];
+
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] replaceScene:mainScene];
 }

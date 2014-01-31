@@ -625,8 +625,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -1187,9 +1185,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>37</real>
-							<real>166</real>
-							<integer>2</integer>
+							<real>23</real>
+							<real>38</real>
+							<integer>3</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -1202,7 +1200,7 @@
 						<key>value</key>
 						<array>
 							<real>0.28337028622627258</real>
-							<real>0.49926421046257019</real>
+							<real>0.0</real>
 						</array>
 					</dict>
 					<dict>
@@ -1212,8 +1210,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>-1.1601518392562866</real>
-							<real>-0.87502646446228027</real>
+							<real>2.8904697895050049</real>
+							<real>2.0410213470458984</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -1226,7 +1224,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>lifeBar.png</string>
+							<string>lifeBar2.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1262,6 +1260,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>

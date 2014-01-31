@@ -32,7 +32,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>modemenu2</string>
+				<string>modemenu3</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -93,7 +93,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>modemenu2.png</string>
+							<string>modemenu3.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -141,8 +141,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>198</real>
-							<real>95.999984741210938</real>
+							<real>155</real>
+							<real>200.99998474121094</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -166,8 +166,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>4.1379117965698242</real>
-							<real>4.7602834701538086</real>
+							<real>4.9903769493103027</real>
+							<real>4.297297477722168</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -434,6 +434,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -465,8 +467,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>362</real>
-							<real>95.999984741210938</real>
+							<real>395</real>
+							<real>198.99998474121094</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -490,8 +492,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>4.1379117965698242</real>
-							<real>4.7602834701538086</real>
+							<real>4.5884218215942383</real>
+							<real>4.3163766860961914</real>
 							<false/>
 							<integer>0</integer>
 						</array>
