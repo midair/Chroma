@@ -82,7 +82,7 @@
     x = max(20, radius * cos(CC_DEGREES_TO_RADIANS(angle))-25);
     y = max(20, radius * sin(CC_DEGREES_TO_RADIANS(angle))-25);
     
-    if (_dotNum == 0) {
+    if (_dotNum == 0 && dotColor == YELLOW) {
         
         dotColor = BLUE;
         [self setColor:[CCColor blueColor]];

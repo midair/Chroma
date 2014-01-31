@@ -53,11 +53,11 @@
         }
         else if (!dot.neutralizingColor && dot.dotNum<2) {
             [_dotNeut setString:@""];
-            [_dotPal setString: @"Select the dot’s opposite color from the wheel."];
+            [_dotPal setString: @"Select the dot’s opposite color."];
         }
         else if (dot.dotNum<4) {
-            [_dotNeut setString:@""];
-            [_dotPal setString: @"Hold down the palate to select color from under dots."];
+            [_dotPal setString:@""];
+            [_dotNeut setString: @"Hold the palate to select color from under dots."];
             [_palateLabel setString:[NSString stringWithFormat:@"%@\r%@", @"Thumb",@"Here"]];
         }
         if (dot.dotNum > 3) {
