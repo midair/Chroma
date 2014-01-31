@@ -57,7 +57,7 @@
         }
         else if (dot.dotNum<4) {
             [_dotNeut setString:@""];
-            [_dotPal setString: @"Hold down the palate to select color from under a dot."];
+            [_dotPal setString: @"Hold down the palate to select color from under dots."];
             [_palateLabel setString:[NSString stringWithFormat:@"%@\r%@", @"Thumb",@"Here"]];
         }
         if (dot.dotNum > 3) {

@@ -10,6 +10,14 @@
 
 @implementation DotTutorial
 
+-(void) didLoadFromCCB {
+    rate = 1.0;
+    self.userInteractionEnabled = TRUE;
+    _dotNum = 0;
+    [self randomizeValues];
+    
+}
+
 -(void) update:(CCTime)delta {
     if (!self.tutorialLayer.pauseGame) {
         if (neutralizeColor == self.tutorialLayer.colorState){
@@ -19,7 +27,7 @@
             self.neutralizingColor = FALSE;
         }
         if (_dotNum > 1) {
-            self.scale = 1.9;
+            self.scale = 3.4;
         }
     }
 }
@@ -29,11 +37,12 @@
     if (neutralizeColor == self.tutorialLayer.colorState && !self.tutorialLayer.pauseGame) {
         self.scale = self.scale / 2;
         rate += 0.5;
-        if (self.scale < 1) {
+        if (TRUE) {
             rate = 1.0;
             [self.tutorialLayer dotPopPuff:ccp(x,y)];
             [self randomizeValues];
             _dotNum++;
+            CCLOG(@"%i",_dotNum);
         }
         
     }
@@ -68,8 +77,21 @@
         [self setColor:[CCColor purpleColor]];
     }
     
+
+    
     x = max(20, radius * cos(CC_DEGREES_TO_RADIANS(angle))-25);
     y = max(20, radius * sin(CC_DEGREES_TO_RADIANS(angle))-25);
+    
+    if (_dotNum == 1) {
+        
+        dotColor = YELLOW;
+        [self setColor:[CCColor yellowColor]];
+        neutralizeColor = VIOLET;
+
+        x = 44;
+        y = 58;
+        _dotNum++;
+    }
     
     self.position = ccpAdd(ccp(x,y), ccp(327, 327));
     self.scale = 1;
