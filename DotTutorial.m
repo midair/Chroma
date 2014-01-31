@@ -27,7 +27,7 @@
             self.neutralizingColor = FALSE;
         }
         if (_dotNum > 1) {
-            self.scale = 3.4;
+            self.scale = 3.8;
         }
     }
 }
@@ -82,6 +82,14 @@
     x = max(20, radius * cos(CC_DEGREES_TO_RADIANS(angle))-25);
     y = max(20, radius * sin(CC_DEGREES_TO_RADIANS(angle))-25);
     
+    if (_dotNum == 0) {
+        
+        dotColor = BLUE;
+        [self setColor:[CCColor blueColor]];
+        neutralizeColor = ORANGE;
+        
+    }
+    
     if (_dotNum == 1) {
         
         dotColor = YELLOW;
@@ -89,7 +97,7 @@
         neutralizeColor = VIOLET;
 
         x = 44;
-        y = 58;
+        y = 65;
         _dotNum++;
     }
     
