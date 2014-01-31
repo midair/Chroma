@@ -26,9 +26,7 @@
         else {
             self.neutralizingColor = FALSE;
         }
-        if (_dotNum > 1) {
-            self.scale = 3.8;
-        }
+        
     }
 }
 
@@ -39,7 +37,6 @@
         rate += 0.5;
         if (TRUE) {
             rate = 1.0;
-            [self.tutorialLayer dotPopPuff:ccp(x,y)];
             [self randomizeValues];
             _dotNum++;
             CCLOG(@"%i",_dotNum);
@@ -82,24 +79,9 @@
     x = max(20, radius * cos(CC_DEGREES_TO_RADIANS(angle))-25);
     y = max(20, radius * sin(CC_DEGREES_TO_RADIANS(angle))-25);
     
-    if (_dotNum == 0 && dotColor == YELLOW) {
-        
-        dotColor = BLUE;
-        [self setColor:[CCColor blueColor]];
-        neutralizeColor = ORANGE;
-        
-    }
-    
-    if (_dotNum == 1) {
-        
-        dotColor = YELLOW;
-        [self setColor:[CCColor yellowColor]];
-        neutralizeColor = VIOLET;
 
-        x = 44;
-        y = 65;
-        _dotNum++;
-    }
+    
+
     
     self.position = ccpAdd(ccp(x,y), ccp(327, 327));
     self.scale = 1;

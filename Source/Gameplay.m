@@ -62,7 +62,7 @@
             [_mode setString: [NSString stringWithFormat:@"%@\r%@", @"Time:",@"Dots:"]];
 
             numSeconds = numSeconds + delta;
-            float timeLeft = 60.0 - numSeconds;
+            float timeLeft = 10.0 - numSeconds;
 
 
             killNumberTotal = 0;
@@ -373,7 +373,14 @@
     }
     else if (gameOver && self.pauseGame) {
         self.pauseGame = FALSE;
-        [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
+        Gameplay *gameplayNew = (Gameplay*) [CCBReader load:@"Gameplay"];
+        gameplayNew.easy =_easy;
+        CCScene *gameplayScene = [[CCScene alloc] init];
+        
+        [gameplayScene addChild:gameplayNew];
+        
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
+//        [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
     }
     else {
         [_gameOver setString:@" "];

@@ -15,6 +15,5 @@
 @property ColorState colorState;
 @property BOOL pauseGame;
 
--(void) dotPopPuff:(CGPoint)positionPuff;
 
 @end

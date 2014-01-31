@@ -47,20 +47,16 @@
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
-        if (dot.neutralizingColor && dot.dotNum<2) {
+        if (dot.neutralizingColor && dot.dotNum<6) {
             [_dotNeut setString:@"Then neutralize the dot by tapping on it."];
             [_dotPal setString: @""];
         }
-        else if (!dot.neutralizingColor && dot.dotNum<2) {
+        else if (!dot.neutralizingColor && dot.dotNum<6) {
             [_dotNeut setString:@""];
             [_dotPal setString: @"Select the dot’s opposite color."];
         }
-        else if (dot.dotNum<4) {
-            [_dotPal setString:@""];
-            [_dotNeut setString: @"Hold the palate to select color from under dots."];
-            [_palateLabel setString:[NSString stringWithFormat:@"%@\r%@", @"Thumb",@"Here"]];
-        }
-        if (dot.dotNum > 3) {
+        
+        if (dot.dotNum > 5) {
             [_dotNeut setString:@""];
             [_dotPal setString: [NSString stringWithFormat:@"%@\r%@", @"When you're ready to start playing,",@"head back to the Main Menu!"]];
         }
@@ -70,14 +66,7 @@
     }
 }
 
--(void) dotPopPuff:(CGPoint)positionPuff
-{
-    CCLOG(@"PUFF");
-    //    CCParticleSystem *pop = (CCParticleSystem*)[CCBReader load:@"DotPop"];
-    //    pop.position = positionPuff;
-    //    [_background addChild: pop z:10];
-    //    pop.autoRemoveOnFinish = YES;
-}
+
 
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
