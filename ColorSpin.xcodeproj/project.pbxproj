@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E23FF74189B359C00F91397 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23FF73189B359C00F91397 /* Default-568h@2x.png */; };
+		7E23FF78189B35A700F91397 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23FF77189B35A700F91397 /* Default@2x.png */; };
+		7E23FF7A189B35B100F91397 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23FF79189B35B100F91397 /* Default.png */; };
+		7E23FF7C189B35DF00F91397 /* treyz_icon 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23FF7B189B35DF00F91397 /* treyz_icon 114.png */; };
+		7E23FF7E189B35E600F91397 /* treyz_icon 57.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E23FF7D189B35E600F91397 /* treyz_icon 57.png */; };
 		7E72E1E318983F2E00018760 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1E218983F2E00018760 /* Tutorial.m */; };
 		7E72E1E81898454100018760 /* DotTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1E71898454100018760 /* DotTutorial.m */; };
 		7E72E1EB1899E26900018760 /* Mode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E72E1EA1899E26900018760 /* Mode.m */; };
@@ -110,6 +115,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E23FF73189B359C00F91397 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7E23FF77189B35A700F91397 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7E23FF79189B35B100F91397 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7E23FF7B189B35DF00F91397 /* treyz_icon 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treyz_icon 114.png"; sourceTree = "<group>"; };
+		7E23FF7D189B35E600F91397 /* treyz_icon 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treyz_icon 57.png"; sourceTree = "<group>"; };
 		7E72E1E118983F2E00018760 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
 		7E72E1E218983F2E00018760 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
 		7E72E1E61898454100018760 /* DotTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotTutorial.h; sourceTree = "<group>"; };
@@ -315,6 +325,11 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
+				7E23FF7D189B35E600F91397 /* treyz_icon 57.png */,
+				7E23FF7B189B35DF00F91397 /* treyz_icon 114.png */,
+				7E23FF79189B35B100F91397 /* Default.png */,
+				7E23FF77189B35A700F91397 /* Default@2x.png */,
+				7E23FF73189B359C00F91397 /* Default-568h@2x.png */,
 				B737893C1807616C0076A88C /* Source */,
 				B77F1B4617B978D7009739AE /* Resources */,
 				B77F1B5E17B978D7009739AE /* libs */,
@@ -628,6 +643,11 @@
 				7E72E1ED189B12AF00018760 /* chromaMUSIC.mp3 in Resources */,
 				7E72E1EF189B13F600018760 /* spaceMUSIC.mp3 in Resources */,
 				7E72E1F1189B2DA100018760 /* credit.wav in Resources */,
+				7E23FF74189B359C00F91397 /* Default-568h@2x.png in Resources */,
+				7E23FF78189B35A700F91397 /* Default@2x.png in Resources */,
+				7E23FF7A189B35B100F91397 /* Default.png in Resources */,
+				7E23FF7C189B35DF00F91397 /* treyz_icon 114.png in Resources */,
+				7E23FF7E189B35E600F91397 /* treyz_icon 57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

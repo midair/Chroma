@@ -1196,7 +1196,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Sunny</string>
+							<string>Beach</string>
 							<false/>
 						</array>
 					</dict>
@@ -1406,6 +1406,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
