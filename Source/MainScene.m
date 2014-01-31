@@ -36,6 +36,14 @@
 
 }
 
+-(void) soundOn {
+    [[OALSimpleAudio sharedInstance] playBg:@"chromaMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
+}
+
+-(void) soundOff {
+    [[OALSimpleAudio sharedInstance] stopBg];
+
+}
 
 -(void) play {
     CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];

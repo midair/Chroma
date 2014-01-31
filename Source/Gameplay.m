@@ -62,7 +62,7 @@
             [_mode setString: [NSString stringWithFormat:@"%@\r%@", @"Time:",@"Dots:"]];
 
             numSeconds = numSeconds + delta;
-            float timeLeft = 15.0 - numSeconds;
+            float timeLeft = 60.0 - numSeconds;
 
 
             killNumberTotal = 0;
