@@ -33,7 +33,7 @@
     [[OALSimpleAudio sharedInstance] preloadEffect:@"pop.wav"];
     rate = 1.0;
     self.userInteractionEnabled = TRUE;
-
+    _killNumber = 0;
     [self randomizeValues];
     
 }
@@ -45,9 +45,9 @@
         rate += 0.5;
         if (self.scale < 1) {
             rate = 1.0;
-            [self.gameplayLayer dotPopPuff:ccp(x,y)];
             [[OALSimpleAudio sharedInstance] playEffect:@"pop.wav"];
             [self randomizeValues];
+            _killNumber++;
         }
     }
 }

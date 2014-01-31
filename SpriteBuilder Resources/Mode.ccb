@@ -32,7 +32,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>modemenu</string>
+				<string>modemenu2</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -81,7 +81,7 @@
 						<array>
 							<real>1.9630000591278076</real>
 							<real>1.9630000591278076</real>
-							<false/>
+							<true/>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -93,7 +93,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>modemenu.png</string>
+							<string>modemenu2.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1082,8 +1082,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

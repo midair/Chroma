@@ -18,17 +18,23 @@
     CCButton *_mainMenu;
     CCLabelTTF *_timeField;
     CCLabelTTF *_gameOver;
+    CCLabelTTF *_lastLabel;
+    CCLabelTTF *_bestLabel;
+    CCLabelTTF *_mode;
     BOOL colorPicking;
     BOOL gameOver;
     UITouch *colorPickTouch;
     float numSeconds;
     NSMutableArray *dotList;
     int deathTotal;
+    int killNumberTotal;
     BOOL pulseGrow;
 }
 
 // is called when CCB file has completed loading
 -(void)didLoadFromCCB {
+
+
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     [self setMultipleTouchEnabled:TRUE];
@@ -45,6 +51,7 @@
     gameOver = FALSE;
     [_lifeBar setColor:[CCColor greenColor]];
     self.colorState = 6;
+
     
 }
 
@@ -52,10 +59,13 @@
 {
     if (!self.pauseGame) {
         if (_easy) {
+            [_mode setString: [NSString stringWithFormat:@"%@\r%@", @"Time:",@"Dots:"]];
+
             numSeconds = numSeconds + delta;
-            
-            [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
-            deathTotal = 0;
+            float timeLeft = 15.0 - numSeconds;
+
+
+            killNumberTotal = 0;
             int dotNum = [dotList count];
             if (numSeconds < 10) {
                 _background.rotation += 1.80 * delta * numSeconds;
@@ -64,7 +74,7 @@
                 _background.rotation += 18.0 * delta;
             }
             else {
-                _background.rotation += 27 * delta;
+                _background.rotation += 27.0 * delta;
             }
             if ((numSeconds > 40) && (dotNum < 2)) {
                 Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
@@ -76,32 +86,39 @@
             
             for (int i = 0; i < dotNum; i++) {
                 Dot *dot = (Dot*) [dotList objectAtIndex:i];
-                deathTotal += dot.deathLevel;
-                if ((deathTotal/sqrtf(dotNum)) > 3){
-                    [_lifeBar setColor:[CCColor redColor]];
-                }
-                else if ((deathTotal/sqrtf(dotNum)) >1){
-                    [_lifeBar setColor:[CCColor yellowColor]];
-                }
-                else {
-                    [_lifeBar setColor:[CCColor greenColor]];
-                }
+                killNumberTotal += dot.killNumber;
+                
+
+            
                 
                 
-                
-                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum));
-                if ((deathTotal/sqrtf(dotNum)) > 4) {
-                    _lifeBar.scaleY = 0.0;
+//                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum));
+                if (timeLeft <= 0.0) {
                     gameOver = TRUE;
                     self.pauseGame = TRUE;
                     [_pauseButton setTitle:@"Retry"];
-                    [_gameOver setString:@"GAME OVER"];
+                    [_gameOver setString:@"TIME'S UP"];
+                    [_mainMenu setTitle:@"Main Menu"];
+                    _mainMenu.userInteractionEnabled = TRUE;
+                    [self saveScore];
                     
+                    [_lastLabel setString:[NSString stringWithFormat:@"LAST: %i", killNumberTotal]];
+                    
+                    NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
+                    int hsE = [currentHighScoreE intValue];
+                    
+                    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %i", hsE]];
+                    [_mode setString:@"Mode:"];
+                    [_timeField setString:@"Calm"];
                 }
+            }
+            if (timeLeft > 0.0) {
+                [_timeField setString: [NSString stringWithFormat:@"%@\r%@", [NSString stringWithFormat:@"%.1f", fabsf(timeLeft)],[NSString stringWithFormat:@"%i", killNumberTotal]]];
             }
         }
         
         else {
+            _lifeBar.opacity = 1.0;
             numSeconds = numSeconds + delta;
             
             [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
@@ -110,9 +127,9 @@
             if (numSeconds < 10) {
                 _background.rotation += 3.60 * delta * numSeconds;
             }
-//            else if (numSeconds < 35) {
-//                _background.rotation += 36.0 * delta;
-//            }
+            else if (numSeconds < 15) {
+                _background.rotation += 36.0 * delta;
+            }
             else if (numSeconds < 20){
                 _background.rotation += 56.0 * delta;
             }
@@ -191,6 +208,18 @@
                     self.pauseGame = TRUE;
                     [_pauseButton setTitle:@"Retry"];
                     [_gameOver setString:@"GAME OVER"];
+                    [self saveScore];
+                    
+                    [_lastLabel setString:[NSString stringWithFormat:@"LAST: %.2f", numSeconds]];
+                    
+                    NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
+                    float hsH = [currentHighScoreH floatValue];
+
+                    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %.2f", hsH]];
+                    
+                    [_mode setString:@"Mode:"];
+                    [_timeField setString:@"Chaos"];
+
                     [_mainMenu setTitle:@"Main Menu"];
                     _mainMenu.userInteractionEnabled = TRUE;
                     
@@ -201,25 +230,30 @@
     }
 }
 
--(void) dotPopPuff:(CGPoint)positionPuff
-{
-//    CCLOG(@"PUFF");
-////    CCParticleSystem *pop = (CCParticleSystem*)[CCBReader load:@"DotPop"];
-////    pop.position = positionPuff;
-////    [_background addChild: pop z:10];
-////    pop.autoRemoveOnFinish = YES;
-//    
-//    
-//    // load particle effect
-//    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"DotPop"];
-//    // make the particle effect clean itself up, once it is completed
-//    explosion.autoRemoveOnFinish = TRUE;
-//    // place the particle effect on the seals position
-//    explosion.position = ccp(320,320);
-//    // add the particle effect to the same node the seal is on
-//    [_background addChild:explosion];
+-(void) saveScore {
+    if (_easy) {
+        NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
+        int hsE = [currentHighScoreE intValue];
+        if (killNumberTotal > hsE) {
+            NSNumber *highScoreE = [NSNumber numberWithInt:killNumberTotal];
+            [[NSUserDefaults standardUserDefaults] setObject:highScoreE forKey:@"highScoreE"];
+        }
+    }
+    else {
+        NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
+        float hsH = [currentHighScoreH floatValue];
+        if (numSeconds > hsH) {
+            NSNumber *highScoreH = [NSNumber numberWithFloat:numSeconds];
+            [[NSUserDefaults standardUserDefaults] setObject:highScoreH forKey:@"highScoreH"];
+        }
+    }
     
+    
+
+
 }
+
+
 
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event

@@ -19,7 +19,7 @@
     float rate;
 }
 
-
+@property int killNumber;
 @property int deathLevel;
 @property Gameplay* gameplayLayer;
 
