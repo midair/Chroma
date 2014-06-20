@@ -55,7 +55,7 @@
 
 
 -(void) randomizeValues {
-    int radius = arc4random_uniform(180);
+    int radius = arc4random_uniform(100);
     int angle = arc4random_uniform(360);
     dotColor = arc4random_uniform(6);
     if (dotColor == RED) {
@@ -86,7 +86,7 @@
     x = radius * cos(CC_DEGREES_TO_RADIANS(angle));
     y = radius * sin(CC_DEGREES_TO_RADIANS(angle));
     
-    self.position = ccpAdd(ccp(x,y), ccp(327, 327));
+    self.position = ccpAdd(ccp(x,y), ccp(212, 212));
     self.scale = 1;
 
 

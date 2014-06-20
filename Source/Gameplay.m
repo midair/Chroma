@@ -12,6 +12,7 @@
 
 @implementation Gameplay {
     CCNode *_background;
+//    CCNode *_backgroundColor;
     CCNode *_palette;
     CCNode *_lifeBar;
     CCButton *_pauseButton;
@@ -284,6 +285,8 @@
         }
         
     }
+    
+    _palette.rotation = _background.rotation;
 }
 
 -(void) saveScore {
