@@ -33,8 +33,10 @@
     BOOL best;
     BOOL checked;
     int hsEasy;
+    int oldHSEasy;
     int hsHard;
     float bestTime;
+    float oldBestTime;
 }
 
 // is called when CCB file has completed loading
@@ -47,6 +49,7 @@
     [_mainMenu setTitle:@""];
     _mainMenu.userInteractionEnabled = FALSE;
     numSeconds = 0.0;
+    oldBestTime = 0.0;
     Dot *dot = (Dot*)[CCBReader load:@"Dot"];
     dot.gameplayLayer = self;
     [_background addChild:dot];
@@ -117,14 +120,24 @@
                     _mainMenu.userInteractionEnabled = TRUE;
                     [self saveScore];
                     
-                    [_lastLabel setString:[NSString stringWithFormat:@"LAST: %i", killNumberTotal]];
-                    
                     NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
                     int hsE = [currentHighScoreE intValue];
                     
-                    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %i", hsE]];
                     [_mode setString:@"Mode:"];
                     [_timeField setString:@"Calm"];
+                    
+                    if (best) {
+                        [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %i", oldHSEasy]];
+                        [_bestLabel setString:[NSString stringWithFormat:@"NEW BEST: %i", hsE]];
+                        
+                    }
+                    else {
+                        [_lastLabel setString:[NSString stringWithFormat:@"LAST: %i", killNumberTotal]];
+                        [_bestLabel setString:[NSString stringWithFormat:@"BEST: %i", hsE]];
+
+                    }
+
+                    
                 }
             }
             
@@ -136,6 +149,7 @@
                     if (killNumberTotal > hsEasy && hsEasy > 0 && !checked) {
                         CCLOG(@"BEST");
                         [_gameOver setString:@"NEW BEST"];
+                        oldBestTime = fmaxf(bestTime,0.0);
                         bestTime = numSeconds + 0.4;
                         checked = TRUE;
                     }
@@ -286,7 +300,7 @@
         
     }
     
-    _palette.rotation = _background.rotation;
+    _palette.rotation = -_background.rotation;
 }
 
 -(void) saveScore {
@@ -295,6 +309,7 @@
         int hsE = [currentHighScoreE intValue];
         if (killNumberTotal > hsE) {
             [_gameOver setString:@"NEW RECORD"];
+            oldHSEasy = hsE;
             NSNumber *highScoreE = [NSNumber numberWithInt:killNumberTotal];
             [[NSUserDefaults standardUserDefaults] setObject:highScoreE forKey:@"highScoreE"];
         }
@@ -428,6 +443,7 @@
     //reload this level
     if (!self.pauseGame && !gameOver){
         [_gameOver setString:@"PAUSED"];
+        [_pauseButton setTitle:@"Unpause"];
         [_mainMenu setTitle:@"Main Menu"];
         _mainMenu.userInteractionEnabled = TRUE;
         
@@ -446,6 +462,7 @@
     else {
         [_gameOver setString:@" "];
         [_mainMenu setTitle:@""];
+        [_pauseButton setTitle:@"Pause"];
         _mainMenu.userInteractionEnabled = FALSE;
     }
     self.pauseGame = !self.pauseGame;

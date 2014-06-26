@@ -59,6 +59,12 @@
         if (dot.dotNum > 5) {
             [_dotNeut setString:@""];
             [_dotPal setString: [NSString stringWithFormat:@"%@\r%@", @"When you're ready to start playing,",@"head back to the Main Menu!"]];
+            [_gameOver setString:@"YOU GOT IT!"];
+
+        }
+        if (dot.dotNum > 6) {
+            [_gameOver setString:@""];
+
         }
         
             

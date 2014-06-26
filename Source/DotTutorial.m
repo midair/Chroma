@@ -8,9 +8,12 @@
 
 #import "DotTutorial.h"
 
-@implementation DotTutorial
+@implementation DotTutorial {
+    int oldColor;
+}
 
 -(void) didLoadFromCCB {
+    oldColor = 4;
     rate = 1.0;
     self.userInteractionEnabled = TRUE;
     _dotNum = 0;
@@ -46,9 +49,14 @@
 }
 
 -(void) randomizeValues {
-    int radius = arc4random_uniform(180);
+    int radius = arc4random_uniform(100);
     int angle = arc4random_uniform(360);
     dotColor = arc4random_uniform(6);
+    while (dotColor == oldColor) {
+        dotColor = arc4random_uniform(6);
+    }
+    oldColor = dotColor;
+    
     if (dotColor == RED) {
         neutralizeColor = GREEN;
         [self setColor:[CCColor redColor]];
@@ -86,7 +94,7 @@
     
 
     
-    self.position = ccpAdd(ccp(x,y), ccp(327, 327));
+    self.position = ccpAdd(ccp(x,y), ccp(162, 162));
     self.scale = 1;
     
     

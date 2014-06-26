@@ -55,8 +55,9 @@
 
 
 -(void) randomizeValues {
-    int radius = arc4random_uniform(100);
+    int radius = arc4random_uniform(110);
     int angle = arc4random_uniform(360);
+    NSLog(@"angle is %i", angle);
     dotColor = arc4random_uniform(6);
     if (dotColor == RED) {
         neutralizeColor = GREEN;
@@ -86,7 +87,20 @@
     x = radius * cos(CC_DEGREES_TO_RADIANS(angle));
     y = radius * sin(CC_DEGREES_TO_RADIANS(angle));
     
-    self.position = ccpAdd(ccp(x,y), ccp(212, 212));
+//    int wpos = arc4random_uniform(200);
+//    int vpos = arc4random_uniform(200);
+//    wpos = wpos-100;
+//    vpos = vpos -100;
+//
+//    int width=[[UIScreen mainScreen] bounds].size.width;
+//    int height=[[UIScreen mainScreen] bounds].size.height;
+////    self.position=ccpAdd(ccp(width/2,height/2), ccp(w,v));
+//    self.position = ccp(wpos,vpos);
+    
+//    NSLog(@"position is: %i, %i", wpos, vpos);
+
+    
+    self.position = ccpAdd(ccp(x,y), ccp(163, 163));
     self.scale = 1;
 
 
