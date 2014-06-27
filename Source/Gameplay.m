@@ -281,12 +281,22 @@
                     [_gameOver setString:@"GAME OVER"];
                     [self saveScore];
                     
-                    [_lastLabel setString:[NSString stringWithFormat:@"LAST: %.2f", numSeconds]];
                     
                     NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
                     float hsH = [currentHighScoreH floatValue];
 
-                    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %.2f", hsH]];
+//                    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %.2f", hsH]];
+                    
+                    if (best) {
+                        [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %.2f", oldBestTime]];
+                        [_bestLabel setString:[NSString stringWithFormat:@"NEW BEST: %.2f", hsH]];
+                        
+                    }
+                    else {
+                        [_lastLabel setString:[NSString stringWithFormat:@"LAST: %.2f", numSeconds]];
+                        [_bestLabel setString:[NSString stringWithFormat:@"BEST: %.2f", hsH]];
+                        
+                    }
                     
                     [_mode setString:@"Mode:"];
                     [_timeField setString:@"Chaos"];
@@ -319,6 +329,7 @@
         float hsH = [currentHighScoreH floatValue];
         if (numSeconds > hsH) {
             [_gameOver setString:@"NEW RECORD"];
+            oldBestTime = hsH;
             NSNumber *highScoreH = [NSNumber numberWithFloat:numSeconds];
             [[NSUserDefaults standardUserDefaults] setObject:highScoreH forKey:@"highScoreH"];
         }

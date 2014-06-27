@@ -57,7 +57,7 @@
 -(void) randomizeValues {
     int radius = arc4random_uniform(110);
     int angle = arc4random_uniform(360);
-    NSLog(@"angle is %i", angle);
+//    NSLog(@"angle is %i", angle);
     dotColor = arc4random_uniform(6);
     if (dotColor == RED) {
         neutralizeColor = GREEN;
