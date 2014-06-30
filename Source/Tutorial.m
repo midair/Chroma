@@ -13,11 +13,18 @@
     CCNode *_background;
     CCNode *_palette;
     CCNode *_lifeBar;
+    CCSprite *_blue;
+    CCSprite *_purple;
+    CCSprite *_red;
+    CCSprite *_orange;
+    CCSprite *_yellow;
+    CCSprite *_green;
     CCButton *_pauseButton;
     CCLabelTTF *_gameOver;
     CCLabelTTF *_dotNeut;
     CCLabelTTF *_dotPal;
     CCLabelTTF *_palateLabel;
+    NSInteger blinkNum;
     NSMutableArray *dotList;
     BOOL colorPicking;
     BOOL gameOver;
@@ -39,7 +46,14 @@
     self.pauseGame = FALSE;
     gameOver = FALSE;
     numSeconds = 0.0;
+    blinkNum = 0;
     self.colorState = 6;
+    _blue.visible = FALSE;
+    _purple.visible = FALSE;
+    _red.visible = FALSE;
+    _orange.visible = FALSE;
+    _yellow.visible = FALSE;
+    _green.visible = FALSE;
 }
 
 -(void) update:(CCTime) delta
@@ -48,7 +62,7 @@
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
         if (dot.neutralizingColor && dot.dotNum<6) {
-            [_dotNeut setString:@"Then neutralize the dot by tapping on it."];
+            [_dotNeut setString:@"Then tap on the dot to neutralize it."];
             [_dotPal setString: @""];
         }
         else if (!dot.neutralizingColor && dot.dotNum<6) {
@@ -66,8 +80,61 @@
             [_gameOver setString:@""];
 
         }
-        
+
+        if (dot.dotColorNum == 0 && blinkNum== 5) {
+            _red.visible = !_red.visible;
+            _blue.visible = FALSE;
+            _purple.visible = FALSE;
+            _orange.visible = FALSE;
+            _yellow.visible = FALSE;
+            _green.visible = FALSE;
+        }
+        else if (dot.dotColorNum==1&& blinkNum== 5) {
+            _orange.visible = !_orange.visible;
+            _blue.visible = FALSE;
+            _purple.visible = FALSE;
+            _red.visible = FALSE;
+            _yellow.visible = FALSE;
+            _green.visible = FALSE;
+        }
+        else if (dot.dotColorNum==2&& blinkNum== 5) {
+            _yellow.visible = !_yellow.visible;
+            _blue.visible = FALSE;
+            _purple.visible = FALSE;
+            _red.visible = FALSE;
+            _orange.visible = FALSE;
+            _green.visible = FALSE;
             
+        }
+        else if (dot.dotColorNum==3&& blinkNum== 5) {
+            _green.visible = !_green.visible;
+            _blue.visible = FALSE;
+            _purple.visible = FALSE;
+            _red.visible = FALSE;
+            _orange.visible = FALSE;
+            _yellow.visible = FALSE;
+        }
+        else if (dot.dotColorNum==4&& blinkNum== 5) {
+            _blue.visible = !_blue.visible;
+            _purple.visible = FALSE;
+            _red.visible = FALSE;
+            _orange.visible = FALSE;
+            _yellow.visible = FALSE;
+            _green.visible = FALSE;
+        }
+        else if (dot.dotColorNum==5&& blinkNum== 5) {
+            _purple.visible = !_purple.visible;
+            _blue.visible = FALSE;
+            _red.visible = FALSE;
+            _orange.visible = FALSE;
+            _yellow.visible = FALSE;
+            _green.visible = FALSE;
+        }
+        
+        blinkNum++;
+        if (blinkNum == 8) {
+            blinkNum = 0;
+        }
         
     }
 }
@@ -102,14 +169,12 @@
         if (ccpLength(centered) < 160) {
             float Q =  fmod(CC_RADIANS_TO_DEGREES(atan2(centered.y, centered.x)) + _background.rotation +360, 360);
             if ((Q < 30) || (Q > 330)) {
-                CCLOG(@"RED");
                 self.colorState = RED;
                 [_palette setColor:[CCColor redColor]];
                 
             }
             else if (Q > 30 && Q < 90)
             {
-                CCLOG(@"VIOLET");
                 self.colorState = VIOLET;
                 [_palette setColor:[CCColor purpleColor]];
                 
@@ -117,28 +182,25 @@
             }
             else if (Q > 90 && Q < 150)
             {
-                CCLOG(@"BLUE");
                 self.colorState = BLUE;
                 [_palette setColor:[CCColor blueColor]];
                 
             }
             else if (Q > 150 && Q < 210)
             {
-                CCLOG(@"GREEN");
                 self.colorState = GREEN;
                 [_palette setColor:[CCColor greenColor]];
                 
             }
             else if (Q > 210 && Q < 270)
             {
-                CCLOG(@"YELLOW");
                 self.colorState = YELLOW;
                 [_palette setColor:[CCColor yellowColor]];
                 
             }
             else if (Q > 270 && Q < 330)
             {
-                CCLOG(@"ORANGE");
+
                 self.colorState = ORANGE;
                 [_palette setColor:[CCColor orangeColor]];
                 

@@ -10,11 +10,11 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>19</integer>
+	<integer>21</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -162,7 +162,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.27460384368896484</real>
+							<real>0.5</real>
 							<real>0.5</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -176,7 +176,7 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>0.5</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -344,7 +344,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -353,7 +353,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>100</real>
+							<real>80</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -854,8 +854,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -2040,7 +2038,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.02624683640897274</real>
+							<real>0.028007399290800095</real>
 							<real>0.13266906142234802</real>
 							<integer>2</integer>
 							<integer>2</integer>

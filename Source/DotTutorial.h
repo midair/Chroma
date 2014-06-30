@@ -12,7 +12,8 @@
 @interface DotTutorial : Dot
 
 @property Tutorial* tutorialLayer;
-@property int dotNum;
+@property int dotNum; //number of times dot has been tapped
+@property int dotColorNum; //color of dot
 @property BOOL neutralizingColor;
 
 @end

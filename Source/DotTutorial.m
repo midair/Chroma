@@ -42,7 +42,7 @@
             rate = 1.0;
             [self randomizeValues];
             _dotNum++;
-            CCLOG(@"%i",_dotNum);
+//            CCLOG(@"%i",_dotNum);
         }
         
     }
@@ -52,6 +52,7 @@
     int radius = arc4random_uniform(100);
     int angle = arc4random_uniform(360);
     dotColor = arc4random_uniform(6);
+//    NSLog(@"color state %i", dotColor);
     while (dotColor == oldColor) {
         dotColor = arc4random_uniform(6);
     }
@@ -59,26 +60,32 @@
     
     if (dotColor == RED) {
         neutralizeColor = GREEN;
+        self.dotColorNum = 3;
         [self setColor:[CCColor redColor]];
     }
     else if (dotColor == ORANGE) {
         neutralizeColor = BLUE;
+        self.dotColorNum = 4;
         [self setColor:[CCColor orangeColor]];
     }
     else if (dotColor == YELLOW) {
         neutralizeColor = VIOLET;
+        self.dotColorNum = 5;
         [self setColor:[CCColor yellowColor]];
     }
     else if (dotColor == GREEN) {
         neutralizeColor = RED;
+        self.dotColorNum = 0;
         [self setColor:[CCColor greenColor]];
     }
     else if (dotColor == BLUE) {
         neutralizeColor = ORANGE;
+        self.dotColorNum = 1;
         [self setColor:[CCColor blueColor]];
     }
     else if (dotColor == VIOLET) {
         neutralizeColor = YELLOW;
+        self.dotColorNum = 2;
         [self setColor:[CCColor purpleColor]];
     }
     
