@@ -166,15 +166,11 @@
 		</dict>
 		<key>menu.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>tabletScale</key>
 			<integer>1</integer>
 		</dict>
 		<key>menuFULLCOLOR.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>tabletScale</key>
 			<integer>1</integer>
 		</dict>

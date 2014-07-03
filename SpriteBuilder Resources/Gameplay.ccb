@@ -306,7 +306,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -513,7 +513,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -672,7 +672,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>44</real>
+							<real>50</real>
 							<real>301</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -854,7 +854,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -981,6 +981,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1062,7 +1064,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1296,8 +1298,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1513,7 +1513,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1721,7 +1721,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1928,7 +1928,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>

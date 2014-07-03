@@ -727,7 +727,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1192,7 +1192,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1536,7 +1536,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1878,7 +1878,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2220,7 +2220,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2428,7 +2428,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2635,7 +2635,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2794,7 +2794,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0859089195728302</real>
+							<real>0.10000000149011612</real>
 							<real>0.0090055782347917557</real>
 							<integer>3</integer>
 							<integer>2</integer>
@@ -2976,7 +2976,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -3136,7 +3136,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>5.7962646484375</real>
+							<real>6.4000000953674316</real>
 							<real>2.8817849159240723</real>
 							<integer>3</integer>
 							<integer>0</integer>
@@ -3318,7 +3318,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Futura-CondensedExtraBold</string>
+						<string>ccbResources/Cloudy With a Chance of Love.ttf</string>
 					</dict>
 					<dict>
 						<key>name</key>

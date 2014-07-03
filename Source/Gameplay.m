@@ -32,11 +32,12 @@
     BOOL pulseGrow;
     BOOL best;
     BOOL checked;
+    BOOL tutorial;
     int hsEasy;
     int oldHSEasy;
-    int hsHard;
-    float bestTime;
-    float oldBestTime;
+    float hsHard;
+    float bestTime; //time when the new best happened
+    float oldHSHard;
 }
 
 // is called when CCB file has completed loading
@@ -49,7 +50,7 @@
     [_mainMenu setTitle:@""];
     _mainMenu.userInteractionEnabled = FALSE;
     numSeconds = 0.0;
-    oldBestTime = 0.0;
+    oldHSHard = 0.0;
     Dot *dot = (Dot*)[CCBReader load:@"Dot"];
     dot.gameplayLayer = self;
     [_background addChild:dot];
@@ -65,13 +66,31 @@
 
     NSNumber *currentHighScoreEasy = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
     hsEasy = [currentHighScoreEasy intValue];
-    
     NSNumber *currentHighScoreHard = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
-    hsHard = [currentHighScoreHard intValue];
+    hsHard = [currentHighScoreHard floatValue];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorial"]) {
+        
+        CCScene *tutorialScene = [CCBReader loadAsScene:@"Tutorial"];
+        [[CCDirector sharedDirector] replaceScene:tutorialScene];
+    }
     
 
     
 }
+
+//-(void) saveUserDefaultScores:(NSInteger) hsE withHardScore:(float) hsH {
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSNumber *easyHighScore = [NSNumber numberWithInt:(int)hsE];
+//    NSNumber *hardHighScore = [NSNumber numberWithFloat:hsH];
+//    
+//    [defaults setObject:easyHighScore forKey:@"highScoreEasy"];
+//    [defaults setObject:hardHighScore forKey:@"highScoreHard"];
+//    [defaults setBool:tutorial forKey:@"age"];
+//    
+//    [defaults synchronize];
+//}
 
 -(void) update:(CCTime) delta
 {
@@ -122,7 +141,6 @@
                     
                     NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
                     int hsE = [currentHighScoreE intValue];
-                    
                     [_mode setString:@"Mode:"];
                     [_timeField setString:@"Calm"];
                     
@@ -145,17 +163,14 @@
             if (timeLeft > 0.0) {
                 [_timeField setString: [NSString stringWithFormat:@"%@\r%@", [NSString stringWithFormat:@"%.1f", fabsf(timeLeft)],[NSString stringWithFormat:@"%i", killNumberTotal]]];
                 if (!best) {
-                    
                     if (killNumberTotal > hsEasy && hsEasy > 0 && !checked) {
-                        CCLOG(@"BEST");
+
                         [_gameOver setString:@"NEW BEST"];
-                        oldBestTime = fmaxf(bestTime,0.0);
                         bestTime = numSeconds + 0.4;
                         checked = TRUE;
                     }
                     
                     if (numSeconds > bestTime && checked) {
-                        CCLOG(@"CHECKED");
                         [_gameOver setString:@""];
                         best = TRUE;
                         
@@ -240,15 +255,15 @@
             
             if (!best) {
                 
-                if (numSeconds > hsHard && hsHard > 0 && !checked) {
-                    CCLOG(@"BEST");
+                if (numSeconds > hsHard && hsHard > 0.0 && !checked) {
+
                     [_gameOver setString:@"NEW BEST"];
                     bestTime = numSeconds + 0.4;
                     checked = TRUE;
                 }
                 
                 if (numSeconds > bestTime && checked) {
-                    CCLOG(@"CHECKED");
+
                     [_gameOver setString:@""];
                     best = TRUE;
 
@@ -288,7 +303,7 @@
 //                    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %.2f", hsH]];
                     
                     if (best) {
-                        [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %.2f", oldBestTime]];
+                        [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %.2f", oldHSHard]];
                         [_bestLabel setString:[NSString stringWithFormat:@"NEW BEST: %.2f", hsH]];
                         
                     }
@@ -314,6 +329,7 @@
 }
 
 -(void) saveScore {
+
     if (_easy) {
         NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
         int hsE = [currentHighScoreE intValue];
@@ -329,7 +345,7 @@
         float hsH = [currentHighScoreH floatValue];
         if (numSeconds > hsH) {
             [_gameOver setString:@"NEW RECORD"];
-            oldBestTime = hsH;
+            oldHSHard = hsH;
             NSNumber *highScoreH = [NSNumber numberWithFloat:numSeconds];
             [[NSUserDefaults standardUserDefaults] setObject:highScoreH forKey:@"highScoreH"];
         }
