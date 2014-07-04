@@ -8,13 +8,16 @@
 
 #import "MainScene.h"
 #import "OALSimpleAudio.h"
-
+#import <Appsee/Appsee.h>
 @implementation MainScene
 
 
 -(void)didLoadFromCCB {
-
+    [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
     [[OALSimpleAudio sharedInstance] playBg:@"chromaMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"OGUser"];
+    }
     
 }
 
@@ -42,6 +45,14 @@
 
 -(void) soundOff {
     [[OALSimpleAudio sharedInstance] stopBg];
+}
+
+-(void) facebook {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://facebook.com/TheChromaGame"]];
+}
+
+-(void) twitter {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/TheChromaGame"]];
 
 }
 

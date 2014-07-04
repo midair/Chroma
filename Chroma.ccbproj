@@ -165,10 +165,7 @@
 			<integer>1</integer>
 		</dict>
 		<key>menu.png</key>
-		<dict>
-			<key>tabletScale</key>
-			<integer>1</integer>
-		</dict>
+		<dict/>
 		<key>menuFULLCOLOR.png</key>
 		<dict>
 			<key>tabletScale</key>

@@ -105,7 +105,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>ccbSliderHandleWhite.png</string>
+					<string>WhiteDot.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -122,6 +122,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

@@ -8,6 +8,7 @@
 
 #import "Tutorial.h"
 #import "DotTutorial.h"
+#import <Appsee/Appsee.h>
 
 @implementation Tutorial {
     CCNode *_background;
@@ -35,6 +36,7 @@
     float numSeconds;
     int numDots;
     BOOL playMode;
+    float timeToCompleteTutorial;
 }
 
 // is called when CCB file has completed loading
@@ -42,6 +44,7 @@
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     [self setMultipleTouchEnabled:TRUE];
+    timeToCompleteTutorial = 0.0;
     DotTutorial *dot = (DotTutorial*)[CCBReader load:@"DotTutorial"];
     dot.tutorialLayer = self;
     [_background addChild:dot];
@@ -64,6 +67,7 @@
 
 -(void) update:(CCTime) delta
 {
+    timeToCompleteTutorial+=delta;
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
@@ -257,11 +261,15 @@
 
 -(void) mainMenu {
     if (playMode) {
+        NSDictionary *properties = @{@"tutorialCompletionTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
+        [Appsee addEvent:@"tutorialEnded" withProperties:properties];
         CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
         [[CCDirector sharedDirector] replaceScene:modeScene];
 
     }
     else {
+        NSDictionary *properties = @{@"tutorialQuitTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
+        [Appsee addEvent:@"tutorialQuit" withProperties:properties];
         CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
         [[CCDirector sharedDirector] replaceScene:mainScene];
     }

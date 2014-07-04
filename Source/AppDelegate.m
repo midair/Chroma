@@ -24,7 +24,7 @@
  */
 
 #import "cocos2d.h"
-
+#import <Appsee/Appsee.h>
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 
@@ -32,6 +32,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
     // Configure Cocos2d with the options set in SpriteBuilder
     NSString* configPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Published-iOS"]; // TODO: add support for Published-Android support
     configPath = [configPath stringByAppendingPathComponent:@"configCocos2d.plist"];

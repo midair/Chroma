@@ -9,6 +9,8 @@
 #import "Gameplay.h"
 #import "Dot.h"
 #import "OALSimpleAudio.h"
+#import <Appsee/Appsee.h>
+
 
 @implementation Gameplay {
     CCNode *_background;
@@ -309,8 +311,10 @@
 }
 
 -(void) saveScore {
-
     if (_easy) {
+        NSDictionary *properties = @{@"easyScore": [NSNumber numberWithInt:killNumberTotal]};
+        [Appsee addEvent:@"easyGameEnded" withProperties:properties];
+        
         NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
         int hsE = [currentHighScoreE intValue];
         if (killNumberTotal > hsE) {
@@ -321,6 +325,9 @@
         }
     }
     else {
+        NSDictionary *properties = @{@"hardScore": [NSNumber numberWithFloat:numSeconds]};
+        [Appsee addEvent:@"hardGameEnded" withProperties:properties];
+
         NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
         float hsH = [currentHighScoreH floatValue];
         if (numSeconds > hsH) {
