@@ -32,7 +32,7 @@
     BOOL pulseGrow;
     BOOL best;
     BOOL checked;
-    BOOL tutorial;
+//    BOOL tutorial;
     int hsEasy;
     int oldHSEasy;
     float hsHard;
@@ -69,28 +69,8 @@
     NSNumber *currentHighScoreHard = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
     hsHard = [currentHighScoreHard floatValue];
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorial"]) {
-        
-        CCScene *tutorialScene = [CCBReader loadAsScene:@"Tutorial"];
-        [[CCDirector sharedDirector] replaceScene:tutorialScene];
-    }
-    
-
     
 }
-
-//-(void) saveUserDefaultScores:(NSInteger) hsE withHardScore:(float) hsH {
-//    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSNumber *easyHighScore = [NSNumber numberWithInt:(int)hsE];
-//    NSNumber *hardHighScore = [NSNumber numberWithFloat:hsH];
-//    
-//    [defaults setObject:easyHighScore forKey:@"highScoreEasy"];
-//    [defaults setObject:hardHighScore forKey:@"highScoreHard"];
-//    [defaults setBool:tutorial forKey:@"age"];
-//    
-//    [defaults synchronize];
-//}
 
 -(void) update:(CCTime) delta
 {
@@ -141,7 +121,7 @@
                     
                     NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
                     int hsE = [currentHighScoreE intValue];
-                    [_mode setString:@"Mode:"];
+                    [_mode setString:@"Mode:  "];
                     [_timeField setString:@"Calm"];
                     
                     if (best) {
@@ -313,7 +293,7 @@
                         
                     }
                     
-                    [_mode setString:@"Mode:"];
+                    [_mode setString:@"Mode:    "];
                     [_timeField setString:@"Chaos"];
 
                     [_mainMenu setTitle:@"Main Menu"];

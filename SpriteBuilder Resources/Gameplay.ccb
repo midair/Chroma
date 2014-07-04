@@ -258,7 +258,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>92</real>
+							<real>75</real>
 							<real>8.000030517578125</real>
 							<integer>2</integer>
 							<integer>0</integer>
@@ -272,7 +272,7 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>1</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -465,7 +465,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>33</real>
+							<real>20</real>
 							<real>315</real>
 							<integer>3</integer>
 							<integer>0</integer>
@@ -479,7 +479,7 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>1</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -639,6 +639,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -981,8 +983,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1311,7 +1311,7 @@
 				<key>displayName</key>
 				<string>Main Menu</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_mainMenu</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>

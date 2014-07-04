@@ -24,6 +24,9 @@
     CCLabelTTF *_dotNeut;
     CCLabelTTF *_dotPal;
     CCLabelTTF *_palateLabel;
+    CCButton *_mainMenu;
+    CCLabelTTF *_tutorialBlink;
+    CCLabelTTF *_tutorialLabel;
     NSInteger blinkNum;
     NSMutableArray *dotList;
     BOOL colorPicking;
@@ -31,6 +34,7 @@
     UITouch *colorPickTouch;
     float numSeconds;
     int numDots;
+    BOOL playMode;
 }
 
 // is called when CCB file has completed loading
@@ -45,6 +49,7 @@
     [dotList addObject:dot];
     self.pauseGame = FALSE;
     gameOver = FALSE;
+    playMode = FALSE;
     numSeconds = 0.0;
     blinkNum = 0;
     self.colorState = 6;
@@ -54,6 +59,7 @@
     _orange.visible = FALSE;
     _yellow.visible = FALSE;
     _green.visible = FALSE;
+
 }
 
 -(void) update:(CCTime) delta
@@ -61,80 +67,90 @@
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
-        if (dot.neutralizingColor && dot.dotNum<6) {
+        if (dot.neutralizingColor && dot.dotNum<5) {
             [_dotNeut setString:@"Then tap on the dot to neutralize it."];
             [_dotPal setString: @""];
         }
-        else if (!dot.neutralizingColor && dot.dotNum<6) {
+        else if (!dot.neutralizingColor && dot.dotNum<5) {
             [_dotNeut setString:@""];
             [_dotPal setString: @"Select the dot’s opposite color."];
         }
         
-        if (dot.dotNum > 5) {
-            [_dotNeut setString:@""];
-            [_dotPal setString: [NSString stringWithFormat:@"%@\r%@", @"When you're ready to start playing,",@"head back to the Main Menu!"]];
+        if (dot.dotNum > 4) {
+            _red.visible = FALSE;
+            _blue.visible = FALSE;
+            _purple.visible = FALSE;
+            _orange.visible = FALSE;
+            _yellow.visible = FALSE;
+            _green.visible = FALSE;
+            [_tutorialBlink setString:@""];
+            [_tutorialLabel setString:@""];
             [_gameOver setString:@"YOU GOT IT!"];
+            [_dotNeut setString:@""];
+            [_mainMenu setTitle:@"Play"];
+            [_tutorialBlink setString:@""];
+            [_mainMenu.label setFontSize:55.0];
+            playMode = TRUE;
+            dot.visible = FALSE;
 
         }
-        if (dot.dotNum > 6) {
-            [_gameOver setString:@""];
-
-        }
-
-        if (dot.dotColorNum == 0 && blinkNum== 5) {
-            _red.visible = !_red.visible;
-            _blue.visible = FALSE;
-            _purple.visible = FALSE;
-            _orange.visible = FALSE;
-            _yellow.visible = FALSE;
-            _green.visible = FALSE;
-        }
-        else if (dot.dotColorNum==1&& blinkNum== 5) {
-            _orange.visible = !_orange.visible;
-            _blue.visible = FALSE;
-            _purple.visible = FALSE;
-            _red.visible = FALSE;
-            _yellow.visible = FALSE;
-            _green.visible = FALSE;
-        }
-        else if (dot.dotColorNum==2&& blinkNum== 5) {
-            _yellow.visible = !_yellow.visible;
-            _blue.visible = FALSE;
-            _purple.visible = FALSE;
-            _red.visible = FALSE;
-            _orange.visible = FALSE;
-            _green.visible = FALSE;
+        if (dot.dotNum < 5) {
+            if (dot.dotColorNum == 0 && blinkNum== 5) {
+                _red.visible = !_red.visible;
+                _blue.visible = FALSE;
+                _purple.visible = FALSE;
+                _orange.visible = FALSE;
+                _yellow.visible = FALSE;
+                _green.visible = FALSE;
+            }
+            else if (dot.dotColorNum==1&& blinkNum== 5) {
+                _orange.visible = !_orange.visible;
+                _blue.visible = FALSE;
+                _purple.visible = FALSE;
+                _red.visible = FALSE;
+                _yellow.visible = FALSE;
+                _green.visible = FALSE;
+            }
+            else if (dot.dotColorNum==2&& blinkNum== 5) {
+                _yellow.visible = !_yellow.visible;
+                _blue.visible = FALSE;
+                _purple.visible = FALSE;
+                _red.visible = FALSE;
+                _orange.visible = FALSE;
+                _green.visible = FALSE;
+                
+            }
+            else if (dot.dotColorNum==3&& blinkNum== 5) {
+                _green.visible = !_green.visible;
+                _blue.visible = FALSE;
+                _purple.visible = FALSE;
+                _red.visible = FALSE;
+                _orange.visible = FALSE;
+                _yellow.visible = FALSE;
+            }
+            else if (dot.dotColorNum==4&& blinkNum== 5) {
+                _blue.visible = !_blue.visible;
+                _purple.visible = FALSE;
+                _red.visible = FALSE;
+                _orange.visible = FALSE;
+                _yellow.visible = FALSE;
+                _green.visible = FALSE;
+            }
+            else if (dot.dotColorNum==5&& blinkNum== 5) {
+                _purple.visible = !_purple.visible;
+                _blue.visible = FALSE;
+                _red.visible = FALSE;
+                _orange.visible = FALSE;
+                _yellow.visible = FALSE;
+                _green.visible = FALSE;
+            }
             
+            blinkNum++;
+            if (blinkNum == 8) {
+                blinkNum = 0;
+            }
         }
-        else if (dot.dotColorNum==3&& blinkNum== 5) {
-            _green.visible = !_green.visible;
-            _blue.visible = FALSE;
-            _purple.visible = FALSE;
-            _red.visible = FALSE;
-            _orange.visible = FALSE;
-            _yellow.visible = FALSE;
-        }
-        else if (dot.dotColorNum==4&& blinkNum== 5) {
-            _blue.visible = !_blue.visible;
-            _purple.visible = FALSE;
-            _red.visible = FALSE;
-            _orange.visible = FALSE;
-            _yellow.visible = FALSE;
-            _green.visible = FALSE;
-        }
-        else if (dot.dotColorNum==5&& blinkNum== 5) {
-            _purple.visible = !_purple.visible;
-            _blue.visible = FALSE;
-            _red.visible = FALSE;
-            _orange.visible = FALSE;
-            _yellow.visible = FALSE;
-            _green.visible = FALSE;
-        }
-        
-        blinkNum++;
-        if (blinkNum == 8) {
-            blinkNum = 0;
-        }
+
         
     }
 }
@@ -240,8 +256,16 @@
 
 
 -(void) mainMenu {
-    CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
-    [[CCDirector sharedDirector] replaceScene:mainScene];
+    if (playMode) {
+        CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
+        [[CCDirector sharedDirector] replaceScene:modeScene];
+
+    }
+    else {
+        CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
+        [[CCDirector sharedDirector] replaceScene:mainScene];
+    }
+    
 }
 
 -(void)pause

@@ -11,6 +11,7 @@
 
 @implementation Mode
 
+
 -(void) easy {
     Gameplay *gameplay = (Gameplay*) [CCBReader load:@"Gameplay"];
     gameplay.easy =TRUE;

@@ -46,8 +46,16 @@
 }
 
 -(void) play {
-    CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
-    [[CCDirector sharedDirector] replaceScene:modeScene];
+
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"tutorial"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"True" forKey:@"tutorial"];
+        CCScene *tutorialScene = [CCBReader loadAsScene:@"Tutorial"];
+        [[CCDirector sharedDirector] replaceScene:tutorialScene];
+    }
+    else {
+        CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
+        [[CCDirector sharedDirector] replaceScene:modeScene];
+    }
 }
 
 -(void) tutorial {
