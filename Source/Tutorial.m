@@ -72,12 +72,12 @@
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
         if (dot.neutralizingColor && dot.dotNum<5) {
-            [_dotNeut setString:@"Then tap on the dot to neutralize it."];
+            [_dotNeut setString:@"Tap the dot to neutralize it."];
             [_dotPal setString: @""];
         }
         else if (!dot.neutralizingColor && dot.dotNum<5) {
             [_dotNeut setString:@""];
-            [_dotPal setString: @"Select the dot’s opposite color."];
+            [_dotPal setString: @"Tap the dot’s opposite color."];
         }
         
         if (dot.dotNum > 4) {

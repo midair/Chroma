@@ -20,7 +20,7 @@
 }
 
 @property int killNumber;
-@property int deathLevel;
+@property float deathLevel;
 @property Gameplay* gameplayLayer;
 
 -(void) randomizeValues;

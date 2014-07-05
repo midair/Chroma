@@ -102,7 +102,7 @@
 
     
     self.position = ccpAdd(ccp(x,y), ccp(162, 162));
-    self.scale = 1;
+    self.scale = 0.15;
     
     
 }

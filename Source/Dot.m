@@ -9,20 +9,22 @@
 #import "OALSimpleAudio.h"
 #import "Dot.h"
 
+
 @implementation Dot
 
 -(void) update:(CCTime)delta {
     if (!self.gameplayLayer.pauseGame) {
+
         if (self.gameplayLayer.easy) {
-            if (self.scale < 3.0) {
+            if (self.scale*7 < 3.0) {
                 self.scale = self.scale + rate*delta/4.4;
-                _deathLevel = floor(self.scale);
+                _deathLevel = (self.scale*7);
             }
         }
         else {
-            if (self.scale < 7.0) {
+            if (self.scale*7 < 7.0) {
                 self.scale = self.scale + rate*delta/2.2;
-                _deathLevel = floor(self.scale);
+                _deathLevel = (self.scale*7);
             }
         }
     }
@@ -30,8 +32,9 @@
 }
 
 -(void) didLoadFromCCB {
+    self.scale = 0.15;
     [[OALSimpleAudio sharedInstance] preloadEffect:@"pop.wav"];
-    rate = 1.0;
+    rate = 0.15;
     self.userInteractionEnabled = TRUE;
     _killNumber = 0;
     [self randomizeValues];
@@ -42,9 +45,9 @@
 {
     if (neutralizeColor == self.gameplayLayer.colorState && !self.gameplayLayer.pauseGame) {
         self.scale = self.scale / 2;
-        rate += 0.5;
-        if (self.scale < 1) {
-            rate = 1.0;
+        rate += 0.05;
+        if (self.scale < 0.2) {
+            rate = 0.15;
             [[OALSimpleAudio sharedInstance] playEffect:@"pop.wav"];
             [self randomizeValues];
             _killNumber++;
@@ -87,22 +90,11 @@
     x = radius * cos(CC_DEGREES_TO_RADIANS(angle));
     y = radius * sin(CC_DEGREES_TO_RADIANS(angle));
     
-//    int wpos = arc4random_uniform(200);
-//    int vpos = arc4random_uniform(200);
-//    wpos = wpos-100;
-//    vpos = vpos -100;
-//
-//    int width=[[UIScreen mainScreen] bounds].size.width;
-//    int height=[[UIScreen mainScreen] bounds].size.height;
-////    self.position=ccpAdd(ccp(width/2,height/2), ccp(w,v));
-//    self.position = ccp(wpos,vpos);
-    
-//    NSLog(@"position is: %i, %i", wpos, vpos);
 
     
     self.position = ccpAdd(ccp(x,y), ccp(163, 163));
-    self.scale = 1;
-
+    self.scale = 0.15;
+    rate = 0.15;
 
 }
 
