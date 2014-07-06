@@ -14,6 +14,7 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>Icon-60</string>
 				<string>Icon-40</string>
 				<string>Icon-Small</string>
 				<string>Icon</string>
@@ -35,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.ClaireTreyz.Chroma</string>
+	<string>com.clairetreyz.chroma</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
