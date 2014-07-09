@@ -41,6 +41,7 @@
         if (TRUE) {
             rate = 1.0;
             [self randomizeValues];
+            [[OALSimpleAudio sharedInstance] playEffect:@"pop.wav"];
             _dotNum++;
 //            CCLOG(@"%i",_dotNum);
         }

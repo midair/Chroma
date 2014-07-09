@@ -1,6 +1,10 @@
 {
     "assets": [
         {
+            "asset": "../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist", 
+            "target": "ResourceRules.plist"
+        }, 
+        {
             "asset": "Source/Resources/ios7/Icon-Small-50@2x.png", 
             "target": "Icon-Small-50@2x.png"
         }, 
@@ -151,10 +155,6 @@
         {
             "asset": "Source/Resources/Published-iOS/pop.caf", 
             "target": "Published-iOS/pop.caf"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/Settings.ccbi", 
-            "target": "Published-iOS/Settings.ccbi"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/spaceMUSIC.mp3", 
@@ -457,12 +457,32 @@
             "target": "Published-iOS/resources-phone/newDot.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/social_facebook_box_blue.png", 
+            "target": "Published-iOS/resources-phone/social_facebook_box_blue.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phone/treyz_icon 114.png", 
             "target": "Published-iOS/resources-phone/treyz_icon 114.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/treyz_icon 57.png", 
             "target": "Published-iOS/resources-phone/treyz_icon 57.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/twitterbutton.png", 
+            "target": "Published-iOS/resources-phone/twitterbutton.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/WhiteDot.png", 
+            "target": "Published-iOS/resources-phone/WhiteDot.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/WhiteDot2.png", 
+            "target": "Published-iOS/resources-phone/WhiteDot2.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/whitedot3.png", 
+            "target": "Published-iOS/resources-phone/whitedot3.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/ccbButtonHighlightedWhite.png", 
@@ -561,12 +581,32 @@
             "target": "Published-iOS/resources-phonehd/newDot.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/social_facebook_box_blue.png", 
+            "target": "Published-iOS/resources-phonehd/social_facebook_box_blue.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/treyz_icon 114.png", 
             "target": "Published-iOS/resources-phonehd/treyz_icon 114.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/treyz_icon 57.png", 
             "target": "Published-iOS/resources-phonehd/treyz_icon 57.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/twitterbutton.png", 
+            "target": "Published-iOS/resources-phonehd/twitterbutton.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/WhiteDot.png", 
+            "target": "Published-iOS/resources-phonehd/WhiteDot.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/WhiteDot2.png", 
+            "target": "Published-iOS/resources-phonehd/WhiteDot2.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/whitedot3.png", 
+            "target": "Published-iOS/resources-phonehd/whitedot3.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/ccbButtonHighlightedWhite.png", 
@@ -665,12 +705,32 @@
             "target": "Published-iOS/resources-tablet/newDot.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/social_facebook_box_blue.png", 
+            "target": "Published-iOS/resources-tablet/social_facebook_box_blue.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/treyz_icon 114.png", 
             "target": "Published-iOS/resources-tablet/treyz_icon 114.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/treyz_icon 57.png", 
             "target": "Published-iOS/resources-tablet/treyz_icon 57.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/twitterbutton.png", 
+            "target": "Published-iOS/resources-tablet/twitterbutton.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/WhiteDot.png", 
+            "target": "Published-iOS/resources-tablet/WhiteDot.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/WhiteDot2.png", 
+            "target": "Published-iOS/resources-tablet/WhiteDot2.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/whitedot3.png", 
+            "target": "Published-iOS/resources-tablet/whitedot3.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/ccbButtonHighlightedWhite.png", 
@@ -769,12 +829,32 @@
             "target": "Published-iOS/resources-tablethd/newDot.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/social_facebook_box_blue.png", 
+            "target": "Published-iOS/resources-tablethd/social_facebook_box_blue.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/treyz_icon 114.png", 
             "target": "Published-iOS/resources-tablethd/treyz_icon 114.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/treyz_icon 57.png", 
             "target": "Published-iOS/resources-tablethd/treyz_icon 57.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/twitterbutton.png", 
+            "target": "Published-iOS/resources-tablethd/twitterbutton.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/WhiteDot.png", 
+            "target": "Published-iOS/resources-tablethd/WhiteDot.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/WhiteDot2.png", 
+            "target": "Published-iOS/resources-tablethd/WhiteDot2.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/whitedot3.png", 
+            "target": "Published-iOS/resources-tablethd/whitedot3.png"
         }, 
         {
             "asset": "Source/Resources/ios7/Icon-60.png", 
@@ -839,7 +919,7 @@
     ], 
     "config": {
         "APPLICATION_FULL_NAME": "Chroma", 
-        "APPLICATION_IDENTIFIER": "com.apportable.Chroma", 
+        "APPLICATION_IDENTIFIER": "com.clairetreyz.chroma", 
         "APPLICATION_NAME": "Chroma", 
         "FEATURES": [
             "opengles2"
@@ -854,15 +934,19 @@
     "defines": {
         "NDEBUG": 1, 
         "NS_BLOCK_ASSERTIONS": 1, 
-        "__IPHONE_OS_VERSION_MIN_REQUIRED": 50000
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 60000
     }, 
     "deps": [
         "UIKit", 
+        "SystemConfiguration", 
+        "CoreVideo", 
+        "CoreMedia", 
         "GLKit", 
         "QuartzCore", 
         "OpenGLES", 
         "OpenAL", 
         "AudioToolbox", 
+        "Appsee", 
         "AVFoundation", 
         "UIKit", 
         "Foundation", 
@@ -974,7 +1058,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpssH6F4/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -1042,11 +1126,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpssH6F4/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpssH6F4/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

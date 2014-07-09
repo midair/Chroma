@@ -1,6 +1,10 @@
 {
     "assets": [
         {
+            "asset": "../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist", 
+            "target": "ResourceRules.plist"
+        }, 
+        {
             "asset": "Source/Resources/ios7/Icon-Small-50@2x.png", 
             "target": "Icon-Small-50@2x.png"
         }, 
@@ -175,7 +179,7 @@
     ], 
     "config": {
         "APPLICATION_FULL_NAME": "Chroma", 
-        "APPLICATION_IDENTIFIER": "com.apportable.Chroma", 
+        "APPLICATION_IDENTIFIER": "com.clairetreyz.chroma", 
         "APPLICATION_NAME": "Chroma", 
         "LONG_VERSION": "1.0", 
         "TEMPLATE_VALUES": {
@@ -186,15 +190,19 @@
     "defines": {
         "NDEBUG": 1, 
         "NS_BLOCK_ASSERTIONS": 1, 
-        "__IPHONE_OS_VERSION_MIN_REQUIRED": 50000
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 60000
     }, 
     "deps": [
         "UIKit", 
+        "SystemConfiguration", 
+        "CoreVideo", 
+        "CoreMedia", 
         "GLKit", 
         "QuartzCore", 
         "OpenGLES", 
         "OpenAL", 
         "AudioToolbox", 
+        "Appsee", 
         "AVFoundation", 
         "UIKit", 
         "Foundation", 
@@ -306,7 +314,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpssH6F4/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -374,11 +382,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpssH6F4/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpssH6F4/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

@@ -9,43 +9,37 @@
 #import "MainScene.h"
 #import "OALSimpleAudio.h"
 #import <Appsee/Appsee.h>
-@implementation MainScene
+@implementation MainScene {
+    CCButton *_onButton;
+    CCButton *_offButton;
+}
 
 
 -(void)didLoadFromCCB {
     [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
-    [[OALSimpleAudio sharedInstance] playBg:@"chromaMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]) {
         [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"OGUser"];
     }
     
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"Off"] && ![OALSimpleAudio sharedInstance].bgPlaying) {
+        [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
+        [_onButton setTitle:@"ON"];
+        [_offButton setTitle:@"off"];
+    }
+    else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"Off"]){
+        [_onButton setTitle:@"on"];
+        [_offButton setTitle:@"OFF"];
+    }
+    else {
+        [_onButton setTitle:@"ON"];
+        [_offButton setTitle:@"off"];
+
+    }
+
+    
+
 }
 
--(void) chroma {
-    [[OALSimpleAudio sharedInstance] stopBg];
-    [[OALSimpleAudio sharedInstance] playBg:@"chromaMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
-
-}
-
--(void) credit {
-    [[OALSimpleAudio sharedInstance] stopBg];
-    [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
-
-}
-
--(void) space {
-    [[OALSimpleAudio sharedInstance] stopBg];
-    [[OALSimpleAudio sharedInstance] playBg:@"spaceMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
-
-}
-
--(void) soundOn {
-    [[OALSimpleAudio sharedInstance] playBg:@"chromaMUSIC.mp3" volume:0.5 pan:0.0 loop:YES];
-}
-
--(void) soundOff {
-    [[OALSimpleAudio sharedInstance] stopBg];
-}
 
 -(void) facebook {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://facebook.com/TheChromaGame"]];
@@ -57,7 +51,10 @@
 }
 
 -(void) play {
+    [[self animationManager] runAnimationsForSequenceNamed:@"Exit"];
+}
 
+-(void) modeSelect {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"tutorial"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"True" forKey:@"tutorial"];
         CCScene *tutorialScene = [CCBReader loadAsScene:@"Tutorial"];
@@ -67,6 +64,33 @@
         CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
         [[CCDirector sharedDirector] replaceScene:modeScene];
     }
+}
+
+-(void) settings {
+    [[self animationManager] runAnimationsForSequenceNamed:@"Main2Setting"];
+}
+
+-(void) mainMenu {
+    [[self animationManager] runAnimationsForSequenceNamed:@"Setting2Main"];
+
+}
+
+-(void) soundOn {
+    [_onButton setTitle:@"ON"];
+    [_offButton setTitle:@"off"];
+    
+
+    [[NSUserDefaults standardUserDefaults] setObject:@"On" forKey:@"musicOn"];
+    [[OALSimpleAudio sharedInstance] stopBg];
+    [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
+    
+}
+
+-(void) soundOff {
+    [_onButton setTitle:@"on"];
+    [_offButton setTitle:@"OFF"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"Off" forKey:@"musicOn"];
+    [[OALSimpleAudio sharedInstance] stopBg];
 }
 
 -(void) tutorial {

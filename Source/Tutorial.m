@@ -8,7 +8,7 @@
 
 #import "Tutorial.h"
 #import "DotTutorial.h"
-#import <Appsee/Appsee.h>
+//#import <Appsee/Appsee.h>
 
 @implementation Tutorial {
     CCNode *_background;
@@ -71,16 +71,16 @@
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
-        if (dot.neutralizingColor && dot.dotNum<5) {
+        if (dot.neutralizingColor && dot.dotNum<3) {
             [_dotNeut setString:@"Tap the dot to neutralize it."];
             [_dotPal setString: @""];
         }
-        else if (!dot.neutralizingColor && dot.dotNum<5) {
+        else if (!dot.neutralizingColor && dot.dotNum<3) {
             [_dotNeut setString:@""];
             [_dotPal setString: @"Tap the dot’s opposite color."];
         }
         
-        if (dot.dotNum > 4) {
+        if (dot.dotNum > 2) {
             _red.visible = FALSE;
             _blue.visible = FALSE;
             _purple.visible = FALSE;
@@ -98,7 +98,7 @@
             dot.visible = FALSE;
 
         }
-        if (dot.dotNum < 5) {
+        if (dot.dotNum < 3) {
             if (dot.dotColorNum == 0 && blinkNum== 5) {
                 _red.visible = !_red.visible;
                 _blue.visible = FALSE;
@@ -262,14 +262,14 @@
 -(void) mainMenu {
     if (playMode) {
         NSDictionary *properties = @{@"tutorialCompletionTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
-        [Appsee addEvent:@"tutorialEnded" withProperties:properties];
+//        [Appsee addEvent:@"tutorialEnded" withProperties:properties];
         CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
         [[CCDirector sharedDirector] replaceScene:modeScene];
 
     }
     else {
         NSDictionary *properties = @{@"tutorialQuitTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
-        [Appsee addEvent:@"tutorialQuit" withProperties:properties];
+//        [Appsee addEvent:@"tutorialQuit" withProperties:properties];
         CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
         [[CCDirector sharedDirector] replaceScene:mainScene];
     }

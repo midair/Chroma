@@ -82,6 +82,8 @@
 		</dict>
 		<key>Sprites</key>
 		<dict/>
+		<key>ccbButtonHighlightedWhite.png</key>
+		<dict/>
 		<key>ccbResources</key>
 		<dict>
 			<key>previewFolderHidden</key>
