@@ -363,9 +363,9 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
+							<real>0.90196079015731812</real>
+							<real>0.90196079015731812</real>
+							<real>0.90196079015731812</real>
 							<real>1</real>
 						</array>
 					</dict>
@@ -536,6 +536,19 @@
 					</dict>
 					<dict>
 						<key>name</key>
+						<string>color</string>
+						<key>type</key>
+						<string>Color3</string>
+						<key>value</key>
+						<array>
+							<real>0.90196079015731812</real>
+							<real>0.90196079015731812</real>
+							<real>0.90196079015731812</real>
+							<real>1</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>dimensions</string>
 						<key>type</key>
 						<string>Size</string>
@@ -639,6 +652,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

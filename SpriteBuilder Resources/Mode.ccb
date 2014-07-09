@@ -14,9 +14,9 @@
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>docDimensionsType</key>
 	<integer>0</integer>
 	<key>fileType</key>
@@ -251,8 +251,8 @@
 											<integer>3</integer>
 											<key>value</key>
 											<array>
-												<real>0.31161972880363464</real>
-												<real>0.69999998807907104</real>
+												<real>0.37091657519340515</real>
+												<real>0.47044968605041504</real>
 											</array>
 										</dict>
 									</array>
@@ -297,8 +297,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.31161972880363464</real>
-									<real>1.440000057220459</real>
+									<real>0.37091657519340515</real>
+									<real>0.47044968605041504</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -311,8 +311,8 @@
 								<string>Point</string>
 								<key>value</key>
 								<array>
-									<real>0.5</real>
-									<real>0.5</real>
+									<real>1</real>
+									<real>0.0</real>
 								</array>
 							</dict>
 							<dict>
@@ -614,6 +614,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -778,7 +780,7 @@
 								<key>value</key>
 								<array>
 									<real>0.68661969900131226</real>
-									<real>-0.20000000298023224</real>
+									<real>0.52499997615814209</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -1196,7 +1198,7 @@
 								<key>type</key>
 								<string>Check</string>
 								<key>value</key>
-								<false/>
+								<true/>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -1756,7 +1758,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

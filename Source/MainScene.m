@@ -10,8 +10,9 @@
 #import "OALSimpleAudio.h"
 #import <Appsee/Appsee.h>
 @implementation MainScene {
-    CCButton *_onButton;
-    CCButton *_offButton;
+    CCButton *_onToggle;
+    CCButton *_offToggle;
+    BOOL musicOn;
 }
 
 
@@ -23,18 +24,19 @@
     
     if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"Off"] && ![OALSimpleAudio sharedInstance].bgPlaying) {
         [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
-        [_onButton setTitle:@"ON"];
-        [_offButton setTitle:@"off"];
-    }
-    else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"Off"]){
-        [_onButton setTitle:@"on"];
-        [_offButton setTitle:@"OFF"];
-    }
-    else {
-        [_onButton setTitle:@"ON"];
-        [_offButton setTitle:@"off"];
+        musicOn = TRUE;
+        
 
     }
+    else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"Off"]){
+        musicOn = FALSE;
+    }
+    else {
+        musicOn = TRUE;
+
+    }
+    _onToggle.visible = musicOn;
+    _offToggle.visible = !musicOn;
 
     
 
@@ -75,22 +77,27 @@
 
 }
 
--(void) soundOn {
-    [_onButton setTitle:@"ON"];
-    [_offButton setTitle:@"off"];
+-(void) musicOn {
     
-
-    [[NSUserDefaults standardUserDefaults] setObject:@"On" forKey:@"musicOn"];
+    
+    _onToggle.visible = FALSE;
+    _offToggle.visible = TRUE;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"Off" forKey:@"musicOn"];
     [[OALSimpleAudio sharedInstance] stopBg];
-    [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
+
     
 }
 
--(void) soundOff {
-    [_onButton setTitle:@"on"];
-    [_offButton setTitle:@"OFF"];
-    [[NSUserDefaults standardUserDefaults] setObject:@"Off" forKey:@"musicOn"];
+-(void) musicOff {
+    _onToggle.visible = TRUE;
+    _offToggle.visible = FALSE;
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"On" forKey:@"musicOn"];
     [[OALSimpleAudio sharedInstance] stopBg];
+    [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
+
 }
 
 -(void) tutorial {

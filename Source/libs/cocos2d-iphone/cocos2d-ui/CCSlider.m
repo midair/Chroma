@@ -81,6 +81,9 @@
     CGPoint worldLocation = [touch locationInWorld];
     
     [self inputEnteredWithWorlPos:worldLocation];
+    
+    if (self.enabled) [self triggerAction];
+
 }
 
 - (void) touchUpInside:(UITouch*)touch withEvent:(UIEvent*)event
