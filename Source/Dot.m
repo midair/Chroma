@@ -95,7 +95,7 @@
     self.position = ccpAdd(ccp(x,y), ccp(163, 163));
     self.scale = 0.15;
     rate = 0.15;
-
+    [self.gameplayLayer reorderDot:self];
 }
 
 

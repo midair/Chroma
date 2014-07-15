@@ -8,6 +8,7 @@
 
 #import "CCNode.h"
 #import "ColorState.h"
+@class Dot;
 
 @interface Gameplay : CCNode
 
@@ -16,6 +17,7 @@
 @property BOOL easy;
 
 -(void) saveScore;
+-(void) reorderDot:(Dot*) dotToChange;
 
 
 @end

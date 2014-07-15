@@ -22,6 +22,7 @@
 @property int killNumber;
 @property float deathLevel;
 @property Gameplay* gameplayLayer;
+@property int dotCreationNumber;
 
 -(void) randomizeValues;
 

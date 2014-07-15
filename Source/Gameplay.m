@@ -40,6 +40,9 @@
     float hsHard;
     float bestTime; //time when the new best happened
     float oldHSHard;
+    Dot *dot;
+    Dot *dot2;
+    Dot *dot3;
 }
 
 // is called when CCB file has completed loading
@@ -53,8 +56,9 @@
     _mainMenu.userInteractionEnabled = FALSE;
     numSeconds = 0.0;
     oldHSHard = 0.0;
-    Dot *dot = (Dot*)[CCBReader load:@"Dot"];
+    dot = (Dot*)[CCBReader load:@"Dot"];
     dot.gameplayLayer = self;
+    dot.dotCreationNumber = 1;
     [_background addChild:dot];
     dotList = [NSMutableArray array];
     [dotList addObject:dot];
@@ -95,16 +99,17 @@
             else {
                 _background.rotation += 27.0 * delta;
             }
-            if ((numSeconds > 40) && (dotNum < 2)) {
-                Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
+            if ((numSeconds > 20) && (dotNum < 2)) {
+                dot2 = (Dot*)[CCBReader load:@"Dot"];
                 dot2.gameplayLayer = self;
+                dot2.dotCreationNumber = 2;
                 [_background addChild:dot2];
                 dotNum++;
                 [dotList addObject:dot2];
             }
             
             for (int i = 0; i < dotNum; i++) {
-                Dot *dot = (Dot*) [dotList objectAtIndex:i];
+                dot = (Dot*) [dotList objectAtIndex:i];
                 killNumberTotal += dot.killNumber;
                 
 
@@ -220,15 +225,17 @@
                 }
             }
             if ((numSeconds > 25) && (dotNum < 2)) {
-                Dot *dot2 = (Dot*)[CCBReader load:@"Dot"];
+                dot2 = (Dot*)[CCBReader load:@"Dot"];
+                dot2.dotCreationNumber = 2;
                 dot2.gameplayLayer = self;
                 [_background addChild:dot2];
                 dotNum++;
                 [dotList addObject:dot2];
             }
             if ((numSeconds > 65) && (dotNum < 3)) {
-                Dot *dot3 = (Dot*)[CCBReader load:@"Dot"];
+                dot3 = (Dot*)[CCBReader load:@"Dot"];
                 dot3.gameplayLayer = self;
+                dot3.dotCreationNumber = 3;
                 [_background addChild:dot3];
                 dotNum++;
                 [dotList addObject:dot3];
@@ -253,8 +260,8 @@
             }
             
             for (int i = 0; i < dotNum; i++) {
-                Dot *dot = (Dot*) [dotList objectAtIndex:i];
-                deathTotal += dot.deathLevel;
+                Dot *doti = (Dot*) [dotList objectAtIndex:i];
+                deathTotal += doti.deathLevel;
                 if ((deathTotal/sqrtf(dotNum)) > 3){
                     [_lifeBar setColor:[CCColor redColor]];
                 }
@@ -343,10 +350,14 @@
 
 }
 
+-(void) reorderDot:(Dot*) dotToChange {
+    [dotToChange removeFromParent];
+    [_background addChild:dotToChange];
+
+}
 
 
-
--(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+-(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)even
 {
     CGPoint pointLocation = touch.locationInWorld;
     if (!colorPicking) {        
@@ -355,8 +366,8 @@
             colorPicking = TRUE;
             colorPickTouch = touch;
             for (int i = 0; i < [dotList count]; i++) {
-                Dot *dot = (Dot*) [dotList objectAtIndex:i];
-                dot.userInteractionEnabled = FALSE;
+                Dot *doti = (Dot*) [dotList objectAtIndex:i];
+                doti.userInteractionEnabled = FALSE;
                     
                 
             }
@@ -433,8 +444,8 @@
         colorPicking = FALSE;
         colorPickTouch = nil;
         for (int i = 0; i < [dotList count]; i++) {
-            Dot *dot = (Dot*) [dotList objectAtIndex:i];
-            dot.userInteractionEnabled = TRUE;
+            Dot *doti = (Dot*) [dotList objectAtIndex:i];
+            doti.userInteractionEnabled = TRUE;
             
         }
     
