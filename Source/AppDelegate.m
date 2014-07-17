@@ -24,7 +24,9 @@
  */
 
 #import "cocos2d.h"
+#ifdef __CC_PLATFORM_IOS
 #import <Appsee/Appsee.h>
+#endif
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 

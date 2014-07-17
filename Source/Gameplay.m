@@ -9,7 +9,10 @@
 #import "Gameplay.h"
 #import "Dot.h"
 #import "OALSimpleAudio.h"
+
+#ifdef __CC_PLATFORM_IOS
 #import <Appsee/Appsee.h>
+#endif
 
 
 @implementation Gameplay {
@@ -19,6 +22,7 @@
     CCNode *_lifeBar;
     CCButton *_pauseButton;
     CCButton *_mainMenu;
+    CCButton *_modeButton;
     CCLabelTTF *_timeField;
     CCLabelTTF *_gameOver;
     CCLabelTTF *_lastLabel;
@@ -29,7 +33,7 @@
     UITouch *colorPickTouch;
     float numSeconds;
     NSMutableArray *dotList;
-    int deathTotal;
+    float deathTotal;
     int killNumberTotal;
     BOOL pulseGrow;
     BOOL best;
@@ -52,8 +56,10 @@
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     [self setMultipleTouchEnabled:TRUE];
-    [_mainMenu setTitle:@""];
+    _mainMenu.visible = FALSE;
     _mainMenu.userInteractionEnabled = FALSE;
+    _modeButton.visible = FALSE;
+    _modeButton.userInteractionEnabled = FALSE;
     numSeconds = 0.0;
     oldHSHard = 0.0;
     dot = (Dot*)[CCBReader load:@"Dot"];
@@ -69,7 +75,6 @@
     self.colorState = 6;
     best = FALSE;
     checked = FALSE;
-
     NSNumber *currentHighScoreEasy = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
     hsEasy = [currentHighScoreEasy intValue];
     NSNumber *currentHighScoreHard = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
@@ -80,6 +85,7 @@
 
 -(void) update:(CCTime) delta
 {
+    self.currentRotation = _background.rotation;
     if (!self.pauseGame) {
         if (_easy) {
             [_mode setString: [NSString stringWithFormat:@"%@\r%@", @"Time:",@"Dots:"]];
@@ -122,8 +128,10 @@
                     self.pauseGame = TRUE;
                     [_pauseButton setTitle:@"Retry"];
                     [_gameOver setString:@"TIME'S UP"];
-                    [_mainMenu setTitle:@"Main Menu"];
+                    _mainMenu.visible = TRUE;
                     _mainMenu.userInteractionEnabled = TRUE;
+                    _modeButton.visible = TRUE;
+                    _modeButton.userInteractionEnabled = TRUE;
                     [self saveScore];
                     
                     NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
@@ -174,8 +182,8 @@
             numSeconds = numSeconds + delta;
             
             [_timeField setString:[NSString stringWithFormat:@"%.1f", numSeconds]];
-            deathTotal = 0;
-            int dotNum = [dotList count];
+            deathTotal = 0.0;
+            float dotNum = [dotList count];
             if (numSeconds < 10) {
                 _background.rotation += 3.60 * delta * numSeconds;
             }
@@ -265,7 +273,7 @@
                 if ((deathTotal/sqrtf(dotNum)) > 3){
                     [_lifeBar setColor:[CCColor redColor]];
                 }
-                else if ((deathTotal/sqrtf(dotNum)) >1){
+                else if ((deathTotal/sqrtf(dotNum)) >1.5){
                     [_lifeBar setColor:[CCColor yellowColor]];
                 }
                 else {
@@ -305,8 +313,10 @@
                     [_mode setString:@"Mode:    "];
                     [_timeField setString:@"Chaos"];
 
-                    [_mainMenu setTitle:@"Main Menu"];
+                    _mainMenu.visible = TRUE;
                     _mainMenu.userInteractionEnabled = TRUE;
+                    _modeButton.visible = TRUE;
+                    _modeButton.userInteractionEnabled = TRUE;
                     
                 }
             }
@@ -320,7 +330,10 @@
 -(void) saveScore {
     if (_easy) {
         NSDictionary *properties = @{@"easyScore": [NSNumber numberWithInt:killNumberTotal]};
-        [Appsee addEvent:@"easyGameEnded" withProperties:properties];
+        #ifdef __CC_PLATFORM_IOS
+                [Appsee addEvent:@"easyGameEnded" withProperties:properties];
+
+        #endif
         
         NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
         int hsE = [currentHighScoreE intValue];
@@ -333,7 +346,10 @@
     }
     else {
         NSDictionary *properties = @{@"hardScore": [NSNumber numberWithFloat:numSeconds]};
+        
+#ifdef __CC_PLATFORM_IOS
         [Appsee addEvent:@"hardGameEnded" withProperties:properties];
+#endif
 
         NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
         float hsH = [currentHighScoreH floatValue];
@@ -385,38 +401,37 @@
             float Q =  fmod(CC_RADIANS_TO_DEGREES(atan2(centered.y, centered.x)) + _background.rotation +360, 360);
             if ((Q < 30) || (Q > 330)) {
                 self.colorState = RED;
-                [_palette setColor:[CCColor redColor]];
-                
+                [[self animationManager] runAnimationsForSequenceNamed:@"Red"];
             }
             else if (Q > 30 && Q < 90)
             {
                 self.colorState = VIOLET;
-                [_palette setColor:[CCColor purpleColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
 
 
             }
             else if (Q > 90 && Q < 150)
             {
                 self.colorState = BLUE;
-                [_palette setColor:[CCColor blueColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
 
             }
             else if (Q > 150 && Q < 210)
             {
                 self.colorState = GREEN;
-                [_palette setColor:[CCColor greenColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Green"];
 
             }
             else if (Q > 210 && Q < 270)
             {
                 self.colorState = YELLOW;
-                [_palette setColor:[CCColor yellowColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Yellow"];
 
             }
             else if (Q > 270 && Q < 330)
             {
                 self.colorState = ORANGE;
-                [_palette setColor:[CCColor orangeColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
 
             }
         }
@@ -425,7 +440,7 @@
 
 -(void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
-
+    
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
@@ -463,14 +478,32 @@
     [[CCDirector sharedDirector] replaceScene:mainScene];
 }
 
+-(void) switchModes {
+    Gameplay *gameplayNew = (Gameplay*) [CCBReader load:@"Gameplay"];
+    gameplayNew.easy =!_easy;
+    CCScene *gameplayScene = [[CCScene alloc] init];
+    
+    [gameplayScene addChild:gameplayNew];
+    
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
 -(void)pause
 {
+    if (self.easy) {
+        [_modeButton setTitle: @"Chaos Mode"];
+    }
+    else {
+        [_modeButton setTitle: @"Calm Mode"];
+    }
     //reload this level
     if (!self.pauseGame && !gameOver){
         [_gameOver setString:@"PAUSED"];
         [_pauseButton setTitle:@"Unpause"];
-        [_mainMenu setTitle:@"Main Menu"];
+        _mainMenu.visible = TRUE;
         _mainMenu.userInteractionEnabled = TRUE;
+        _modeButton.visible = TRUE;
+        _modeButton.userInteractionEnabled = TRUE;
         
     }
     else if (gameOver && self.pauseGame) {
@@ -486,9 +519,11 @@
     }
     else {
         [_gameOver setString:@" "];
-        [_mainMenu setTitle:@""];
+        _mainMenu.visible = FALSE;
         [_pauseButton setTitle:@"Pause"];
         _mainMenu.userInteractionEnabled = FALSE;
+        _modeButton.visible = FALSE;
+        _modeButton.userInteractionEnabled = FALSE;
     }
     self.pauseGame = !self.pauseGame;
 }

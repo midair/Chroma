@@ -78,7 +78,11 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 #import "../../ccMacros.h"
 #import "../../CCConfiguration.h"
 #import "CCScene.h"
+
+//#ifdef __CC_PLATFORM_IOS
 #import <Appsee/Appsee.h>
+//#endif
+
 #import "CCDirector_Private.h"
 
 //CLASS IMPLEMENTATIONS:
@@ -274,7 +278,10 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 			glDiscardFramebufferEXT(GL_FRAMEBUFFER, 1, attachments);
 		}
 	}
-    [Appsee appendGLFrame:self];
+//#ifdef __CC_PLATFORM_IOS
+        [Appsee appendGLFrame:self];
+
+//#endif
 	if(![_context presentRenderbuffer:GL_RENDERBUFFER])
 		CCLOG(@"cocos2d: Failed to swap renderbuffer in %s\n", __FUNCTION__);
 

@@ -8,7 +8,10 @@
 
 #import "Tutorial.h"
 #import "DotTutorial.h"
-//#import <Appsee/Appsee.h>
+#ifdef __CC_PLATFORM_IOS
+#import <Appsee/Appsee.h>
+
+#endif
 
 @implementation Tutorial {
     CCNode *_background;
@@ -190,39 +193,39 @@
             float Q =  fmod(CC_RADIANS_TO_DEGREES(atan2(centered.y, centered.x)) + _background.rotation +360, 360);
             if ((Q < 30) || (Q > 330)) {
                 self.colorState = RED;
-                [_palette setColor:[CCColor redColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Red"];
                 
             }
             else if (Q > 30 && Q < 90)
             {
                 self.colorState = VIOLET;
-                [_palette setColor:[CCColor purpleColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
                 
                 
             }
             else if (Q > 90 && Q < 150)
             {
                 self.colorState = BLUE;
-                [_palette setColor:[CCColor blueColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
                 
             }
             else if (Q > 150 && Q < 210)
             {
                 self.colorState = GREEN;
-                [_palette setColor:[CCColor greenColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Green"];
                 
             }
             else if (Q > 210 && Q < 270)
             {
                 self.colorState = YELLOW;
-                [_palette setColor:[CCColor yellowColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Yellow"];
                 
             }
             else if (Q > 270 && Q < 330)
             {
 
                 self.colorState = ORANGE;
-                [_palette setColor:[CCColor orangeColor]];
+                [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
                 
             }
         }
@@ -261,15 +264,22 @@
 
 -(void) mainMenu {
     if (playMode) {
+
         NSDictionary *properties = @{@"tutorialCompletionTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
-//        [Appsee addEvent:@"tutorialEnded" withProperties:properties];
+#ifdef __CC_PLATFORM_IOS
+                [Appsee addEvent:@"tutorialEnded" withProperties:properties];
+
+#endif
         CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
         [[CCDirector sharedDirector] replaceScene:modeScene];
 
     }
     else {
         NSDictionary *properties = @{@"tutorialQuitTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
-//        [Appsee addEvent:@"tutorialQuit" withProperties:properties];
+#ifdef __CC_PLATFORM_IOS
+                [Appsee addEvent:@"tutorialQuit" withProperties:properties];
+
+#endif
         CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
         [[CCDirector sharedDirector] replaceScene:mainScene];
     }

@@ -173,6 +173,234 @@
             "target": "Published-iOS/Tutorial.ccbi"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/Untitled.ccbi", 
+            "target": "Published-iOS/Untitled.ccbi"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/background_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/background_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/background_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/background_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/background_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/background_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/dot_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/dot_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/dot_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/dot_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/dot_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/dot_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/dot_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/dot_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/dot_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/dot_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/dot_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/dot_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/dot_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/dot_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/wheel_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/wheel_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/background_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/background_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/background_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/background_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/background_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/background_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/dot_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/dot_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/dot_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/dot_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/dot_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/dot_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/dot_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/dot_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/dot_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/dot_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/dot_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/dot_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/dot_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/dot_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/wheel_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/wheel_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/background_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/background_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/background_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/background_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/background_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/background_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/dot_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/dot_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/dot_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/dot_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/dot_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/dot_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/dot_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/dot_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/dot_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/dot_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/dot_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/dot_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/dot_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/dot_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/wheel_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/wheel_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/background_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/background_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/background_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/background_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/background_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/background_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/dot_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/dot_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/dot_blue_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/dot_blue_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/dot_green_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/dot_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/dot_orange_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/dot_orange_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/dot_purple_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/dot_purple_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/dot_red_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/dot_red_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/dot_yellow_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/dot_yellow_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/wheel_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/wheel_1.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/chunky.ttf", 
             "target": "Published-iOS/ccbResources/chunky.ttf"
         }, 
@@ -183,6 +411,10 @@
         {
             "asset": "Source/Resources/Published-iOS/ccbResources/8bit-wonder/8BIT WONDER.TTF", 
             "target": "Published-iOS/ccbResources/8bit-wonder/8BIT WONDER.TTF"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/buttonBackground.png", 
+            "target": "Published-iOS/ccbResources/resources-phone/buttonBackground.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/ccbButtonHighlighted.png", 
@@ -217,6 +449,10 @@
             "target": "Published-iOS/ccbResources/resources-phone/ccbSliderBgHighlighted.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/ccbSliderBgHighlightedWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-phone/ccbSliderBgHighlightedWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/ccbSliderBgNormal.png", 
             "target": "Published-iOS/ccbResources/resources-phone/ccbSliderBgNormal.png"
         }, 
@@ -225,8 +461,24 @@
             "target": "Published-iOS/ccbResources/resources-phone/ccbSliderHandle.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/ccbSliderHandleWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-phone/ccbSliderHandleWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/ccbTextField.png", 
             "target": "Published-iOS/ccbResources/resources-phone/ccbTextField.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/toggleOff.png", 
+            "target": "Published-iOS/ccbResources/resources-phone/toggleOff.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phone/toggleOn.png", 
+            "target": "Published-iOS/ccbResources/resources-phone/toggleOn.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/buttonBackground.png", 
+            "target": "Published-iOS/ccbResources/resources-phonehd/buttonBackground.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/ccbButtonHighlighted.png", 
@@ -261,6 +513,10 @@
             "target": "Published-iOS/ccbResources/resources-phonehd/ccbSliderBgHighlighted.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/ccbSliderBgHighlightedWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-phonehd/ccbSliderBgHighlightedWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/ccbSliderBgNormal.png", 
             "target": "Published-iOS/ccbResources/resources-phonehd/ccbSliderBgNormal.png"
         }, 
@@ -269,8 +525,24 @@
             "target": "Published-iOS/ccbResources/resources-phonehd/ccbSliderHandle.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/ccbSliderHandleWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-phonehd/ccbSliderHandleWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/ccbTextField.png", 
             "target": "Published-iOS/ccbResources/resources-phonehd/ccbTextField.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/toggleOff.png", 
+            "target": "Published-iOS/ccbResources/resources-phonehd/toggleOff.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-phonehd/toggleOn.png", 
+            "target": "Published-iOS/ccbResources/resources-phonehd/toggleOn.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/buttonBackground.png", 
+            "target": "Published-iOS/ccbResources/resources-tablet/buttonBackground.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/ccbButtonHighlighted.png", 
@@ -305,6 +577,10 @@
             "target": "Published-iOS/ccbResources/resources-tablet/ccbSliderBgHighlighted.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/ccbSliderBgHighlightedWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-tablet/ccbSliderBgHighlightedWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/ccbSliderBgNormal.png", 
             "target": "Published-iOS/ccbResources/resources-tablet/ccbSliderBgNormal.png"
         }, 
@@ -313,8 +589,24 @@
             "target": "Published-iOS/ccbResources/resources-tablet/ccbSliderHandle.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/ccbSliderHandleWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-tablet/ccbSliderHandleWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/ccbTextField.png", 
             "target": "Published-iOS/ccbResources/resources-tablet/ccbTextField.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/toggleOff.png", 
+            "target": "Published-iOS/ccbResources/resources-tablet/toggleOff.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablet/toggleOn.png", 
+            "target": "Published-iOS/ccbResources/resources-tablet/toggleOn.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/buttonBackground.png", 
+            "target": "Published-iOS/ccbResources/resources-tablethd/buttonBackground.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/ccbButtonHighlighted.png", 
@@ -349,6 +641,10 @@
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbSliderBgHighlighted.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/ccbSliderBgHighlightedWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-tablethd/ccbSliderBgHighlightedWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/ccbSliderBgNormal.png", 
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbSliderBgNormal.png"
         }, 
@@ -357,8 +653,24 @@
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbSliderHandle.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/ccbSliderHandleWhite.png", 
+            "target": "Published-iOS/ccbResources/resources-tablethd/ccbSliderHandleWhite.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/ccbTextField.png", 
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbTextField.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/toggleOff.png", 
+            "target": "Published-iOS/ccbResources/resources-tablethd/toggleOff.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ccbResources/resources-tablethd/toggleOn.png", 
+            "target": "Published-iOS/ccbResources/resources-tablethd/toggleOn.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/buttonBackground.png", 
+            "target": "Published-iOS/resources-phone/buttonBackground.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/ccbButtonHighlightedWhite.png", 
@@ -367,6 +679,18 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/ccbSliderHandleWhite.png", 
             "target": "Published-iOS/resources-phone/ccbSliderHandleWhite.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/Chroma Pause Button.png", 
+            "target": "Published-iOS/resources-phone/Chroma Pause Button.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/ChromaBlueBackgroundMenu.png", 
+            "target": "Published-iOS/resources-phone/ChromaBlueBackgroundMenu.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/ChromaUnpauseButton.png", 
+            "target": "Published-iOS/resources-phone/ChromaUnpauseButton.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/circle jello.png", 
@@ -429,6 +753,10 @@
             "target": "Published-iOS/resources-phone/menu.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/menuFULLCOLOR copy.png", 
+            "target": "Published-iOS/resources-phone/menuFULLCOLOR copy.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phone/menuFULLCOLOR.png", 
             "target": "Published-iOS/resources-phone/menuFULLCOLOR.png"
         }, 
@@ -455,6 +783,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/newDot.png", 
             "target": "Published-iOS/resources-phone/newDot.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/SettingGear.png", 
+            "target": "Published-iOS/resources-phone/SettingGear.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/social_facebook_box_blue.png", 
@@ -485,12 +817,32 @@
             "target": "Published-iOS/resources-phone/whitedot3.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/whitedot4.png", 
+            "target": "Published-iOS/resources-phone/whitedot4.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/buttonBackground.png", 
+            "target": "Published-iOS/resources-phonehd/buttonBackground.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/ccbButtonHighlightedWhite.png", 
             "target": "Published-iOS/resources-phonehd/ccbButtonHighlightedWhite.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/ccbSliderHandleWhite.png", 
             "target": "Published-iOS/resources-phonehd/ccbSliderHandleWhite.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/Chroma Pause Button.png", 
+            "target": "Published-iOS/resources-phonehd/Chroma Pause Button.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/ChromaBlueBackgroundMenu.png", 
+            "target": "Published-iOS/resources-phonehd/ChromaBlueBackgroundMenu.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/ChromaUnpauseButton.png", 
+            "target": "Published-iOS/resources-phonehd/ChromaUnpauseButton.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/circle jello.png", 
@@ -553,6 +905,10 @@
             "target": "Published-iOS/resources-phonehd/menu.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/menuFULLCOLOR copy.png", 
+            "target": "Published-iOS/resources-phonehd/menuFULLCOLOR copy.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/menuFULLCOLOR.png", 
             "target": "Published-iOS/resources-phonehd/menuFULLCOLOR.png"
         }, 
@@ -579,6 +935,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/newDot.png", 
             "target": "Published-iOS/resources-phonehd/newDot.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/SettingGear.png", 
+            "target": "Published-iOS/resources-phonehd/SettingGear.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/social_facebook_box_blue.png", 
@@ -609,12 +969,32 @@
             "target": "Published-iOS/resources-phonehd/whitedot3.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/whitedot4.png", 
+            "target": "Published-iOS/resources-phonehd/whitedot4.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/buttonBackground.png", 
+            "target": "Published-iOS/resources-tablet/buttonBackground.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/ccbButtonHighlightedWhite.png", 
             "target": "Published-iOS/resources-tablet/ccbButtonHighlightedWhite.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/ccbSliderHandleWhite.png", 
             "target": "Published-iOS/resources-tablet/ccbSliderHandleWhite.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/Chroma Pause Button.png", 
+            "target": "Published-iOS/resources-tablet/Chroma Pause Button.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/ChromaBlueBackgroundMenu.png", 
+            "target": "Published-iOS/resources-tablet/ChromaBlueBackgroundMenu.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/ChromaUnpauseButton.png", 
+            "target": "Published-iOS/resources-tablet/ChromaUnpauseButton.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/circle jello.png", 
@@ -677,6 +1057,10 @@
             "target": "Published-iOS/resources-tablet/menu.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/menuFULLCOLOR copy.png", 
+            "target": "Published-iOS/resources-tablet/menuFULLCOLOR copy.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/menuFULLCOLOR.png", 
             "target": "Published-iOS/resources-tablet/menuFULLCOLOR.png"
         }, 
@@ -703,6 +1087,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/newDot.png", 
             "target": "Published-iOS/resources-tablet/newDot.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/SettingGear.png", 
+            "target": "Published-iOS/resources-tablet/SettingGear.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/social_facebook_box_blue.png", 
@@ -733,12 +1121,32 @@
             "target": "Published-iOS/resources-tablet/whitedot3.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/whitedot4.png", 
+            "target": "Published-iOS/resources-tablet/whitedot4.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/buttonBackground.png", 
+            "target": "Published-iOS/resources-tablethd/buttonBackground.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/ccbButtonHighlightedWhite.png", 
             "target": "Published-iOS/resources-tablethd/ccbButtonHighlightedWhite.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/ccbSliderHandleWhite.png", 
             "target": "Published-iOS/resources-tablethd/ccbSliderHandleWhite.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/Chroma Pause Button.png", 
+            "target": "Published-iOS/resources-tablethd/Chroma Pause Button.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/ChromaBlueBackgroundMenu.png", 
+            "target": "Published-iOS/resources-tablethd/ChromaBlueBackgroundMenu.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/ChromaUnpauseButton.png", 
+            "target": "Published-iOS/resources-tablethd/ChromaUnpauseButton.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/circle jello.png", 
@@ -801,6 +1209,10 @@
             "target": "Published-iOS/resources-tablethd/menu.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/menuFULLCOLOR copy.png", 
+            "target": "Published-iOS/resources-tablethd/menuFULLCOLOR copy.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/menuFULLCOLOR.png", 
             "target": "Published-iOS/resources-tablethd/menuFULLCOLOR.png"
         }, 
@@ -829,6 +1241,10 @@
             "target": "Published-iOS/resources-tablethd/newDot.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/SettingGear.png", 
+            "target": "Published-iOS/resources-tablethd/SettingGear.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/social_facebook_box_blue.png", 
             "target": "Published-iOS/resources-tablethd/social_facebook_box_blue.png"
         }, 
@@ -855,6 +1271,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/whitedot3.png", 
             "target": "Published-iOS/resources-tablethd/whitedot3.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/whitedot4.png", 
+            "target": "Published-iOS/resources-tablethd/whitedot4.png"
         }, 
         {
             "asset": "Source/Resources/ios7/Icon-60.png", 
@@ -1058,7 +1478,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmphyWRCp/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -1126,11 +1546,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmphyWRCp/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmp5pWt94/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmphyWRCp/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

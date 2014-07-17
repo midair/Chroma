@@ -8,7 +8,12 @@
 
 #import "MainScene.h"
 #import "OALSimpleAudio.h"
+
+#ifdef __CC_PLATFORM_IOS
+
 #import <Appsee/Appsee.h>
+
+#endif
 @implementation MainScene {
     CCButton *_onToggle;
     CCButton *_offToggle;
@@ -17,7 +22,10 @@
 
 
 -(void)didLoadFromCCB {
-    [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
+#ifdef __CC_PLATFORM_IOS
+        [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
+
+#endif
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]) {
         [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"OGUser"];
     }
@@ -77,6 +85,14 @@
 
 }
 
+-(void) credits {
+    [[self animationManager] runAnimationsForSequenceNamed:@"Setting2Credit"];
+}
+
+-(void) backToSetting {
+    [[self animationManager] runAnimationsForSequenceNamed:@"Credit2Setting"];
+}
+
 -(void) musicOn {
     
     
@@ -103,6 +119,11 @@
 -(void) tutorial {
     CCScene *tutorialScene = [CCBReader loadAsScene:@"Tutorial"];
     [[CCDirector sharedDirector] replaceScene:tutorialScene];
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return (1 << UIInterfaceOrientationLandscapeLeft) | (1 << UIInterfaceOrientationLandscapeRight);
 }
 
 @end

@@ -15,6 +15,7 @@
 @property ColorState colorState;
 @property BOOL pauseGame;
 @property BOOL easy;
+@property (nonatomic, assign) float currentRotation;
 
 -(void) saveScore;
 -(void) reorderDot:(Dot*) dotToChange;

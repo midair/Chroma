@@ -62,32 +62,32 @@
     if (dotColor == RED) {
         neutralizeColor = GREEN;
         self.dotColorNum = 3;
-        [self setColor:[CCColor redColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Red"];
     }
     else if (dotColor == ORANGE) {
         neutralizeColor = BLUE;
         self.dotColorNum = 4;
-        [self setColor:[CCColor orangeColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
     }
     else if (dotColor == YELLOW) {
         neutralizeColor = VIOLET;
         self.dotColorNum = 5;
-        [self setColor:[CCColor yellowColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Yellow"];
     }
     else if (dotColor == GREEN) {
         neutralizeColor = RED;
         self.dotColorNum = 0;
-        [self setColor:[CCColor greenColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Green"];
     }
     else if (dotColor == BLUE) {
         neutralizeColor = ORANGE;
         self.dotColorNum = 1;
-        [self setColor:[CCColor blueColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
     }
     else if (dotColor == VIOLET) {
         neutralizeColor = YELLOW;
         self.dotColorNum = 2;
-        [self setColor:[CCColor purpleColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
     }
     
 

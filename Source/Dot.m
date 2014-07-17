@@ -14,7 +14,7 @@
 
 -(void) update:(CCTime)delta {
     if (!self.gameplayLayer.pauseGame) {
-
+        self.rotation = -self.gameplayLayer.currentRotation;
         if (self.gameplayLayer.easy) {
             if (self.scale*7 < 3.0) {
                 self.scale = self.scale + rate*delta/4.4;
@@ -38,6 +38,7 @@
     self.userInteractionEnabled = TRUE;
     _killNumber = 0;
     [self randomizeValues];
+    self.rotation = -self.gameplayLayer.currentRotation;
     
 }
 
@@ -64,27 +65,26 @@
     dotColor = arc4random_uniform(6);
     if (dotColor == RED) {
         neutralizeColor = GREEN;
-        [self setColor:[CCColor redColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Red"];
     }
     else if (dotColor == ORANGE) {
         neutralizeColor = BLUE;
-        [self setColor:[CCColor orangeColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
     }
     else if (dotColor == YELLOW) {
         neutralizeColor = VIOLET;
-        [self setColor:[CCColor yellowColor]];
-    }
+        [[self animationManager] runAnimationsForSequenceNamed:@"Yellow"];    }
     else if (dotColor == GREEN) {
         neutralizeColor = RED;
-        [self setColor:[CCColor greenColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Green"];
     }
     else if (dotColor == BLUE) {
         neutralizeColor = ORANGE;
-        [self setColor:[CCColor blueColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
     }
     else if (dotColor == VIOLET) {
         neutralizeColor = YELLOW;
-        [self setColor:[CCColor purpleColor]];
+        [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
     }
     
     x = radius * cos(CC_DEGREES_TO_RADIANS(angle));
