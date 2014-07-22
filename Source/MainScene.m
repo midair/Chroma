@@ -17,6 +17,9 @@
 @implementation MainScene {
     CCButton *_onToggle;
     CCButton *_offToggle;
+    CCButton *_onToggle2;
+    CCButton *_offToggle2;
+
     BOOL musicOn;
 }
 
@@ -114,6 +117,18 @@
     [[OALSimpleAudio sharedInstance] stopBg];
     [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
 
+}
+
+-(void) easyOn {
+    _onToggle2.visible = FALSE;
+    _offToggle2.visible = TRUE;
+    [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"Easy Mode"];
+}
+
+-(void) easyOff {
+    _onToggle2.visible = TRUE;
+    _offToggle2.visible = FALSE;
+    [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"Easy Mode"];
 }
 
 -(void) tutorial {

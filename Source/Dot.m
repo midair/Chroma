@@ -10,7 +10,9 @@
 #import "Dot.h"
 
 
-@implementation Dot
+@implementation Dot {
+    BOOL sameColorMode;
+}
 
 -(void) update:(CCTime)delta {
     if (!self.gameplayLayer.pauseGame) {
@@ -37,8 +39,15 @@
     rate = 0.15;
     self.userInteractionEnabled = TRUE;
     _killNumber = 0;
-    [self randomizeValues];
     self.rotation = -self.gameplayLayer.currentRotation;
+    sameColorMode = [[NSUserDefaults standardUserDefaults]  boolForKey:@"Easy Mode"];
+    if (!sameColorMode) {
+        [self randomizeValues];
+    }
+    else {
+        [self randomizeValuesSameColor];
+        
+    }
     
 }
 
@@ -50,11 +59,59 @@
         if (self.scale < 0.2) {
             rate = 0.15;
             [[OALSimpleAudio sharedInstance] playEffect:@"pop.wav"];
-            [self randomizeValues];
+            if (!sameColorMode) {
+                [self randomizeValues];
+            }
+            else {
+                [self randomizeValuesSameColor];
+
+            }
             _killNumber++;
         }
     }
 }
+
+
+-(void) randomizeValuesSameColor {
+    int radius = arc4random_uniform(110);
+    int angle = arc4random_uniform(360);
+    //    NSLog(@"angle is %i", angle);
+    dotColor = arc4random_uniform(6);
+    if (dotColor == RED) {
+        neutralizeColor = RED;
+        [[self animationManager] runAnimationsForSequenceNamed:@"Red"];
+    }
+    else if (dotColor == ORANGE) {
+        neutralizeColor = ORANGE;
+        [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
+    }
+    else if (dotColor == YELLOW) {
+        neutralizeColor = YELLOW;
+        [[self animationManager] runAnimationsForSequenceNamed:@"Yellow"];    }
+    else if (dotColor == GREEN) {
+        neutralizeColor = GREEN;
+        [[self animationManager] runAnimationsForSequenceNamed:@"Green"];
+    }
+    else if (dotColor == BLUE) {
+        neutralizeColor = BLUE;
+        [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
+    }
+    else if (dotColor == VIOLET) {
+        neutralizeColor = VIOLET;
+        [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
+    }
+    
+    x = radius * cos(CC_DEGREES_TO_RADIANS(angle));
+    y = radius * sin(CC_DEGREES_TO_RADIANS(angle));
+    
+    
+    
+    self.position = ccpAdd(ccp(x,y), ccp(163, 163));
+    self.scale = 0.15;
+    rate = 0.15;
+    [self.gameplayLayer reorderDot:self];
+}
+
 
 
 
