@@ -40,6 +40,7 @@
     int numDots;
     BOOL playMode;
     float timeToCompleteTutorial;
+    NSArray *colorOutlines;
 }
 
 // is called when CCB file has completed loading
@@ -59,13 +60,12 @@
     numSeconds = 0.0;
     blinkNum = 0;
     self.colorState = 6;
-    _blue.visible = FALSE;
-    _purple.visible = FALSE;
-    _red.visible = FALSE;
-    _orange.visible = FALSE;
-    _yellow.visible = FALSE;
-    _green.visible = FALSE;
-
+    
+    colorOutlines = @[_red, _orange, _yellow, _green, _blue, _purple];
+    
+    for (CCSprite *color in colorOutlines) {
+        color.visible = FALSE;
+    }
 }
 
 -(void) update:(CCTime) delta
@@ -74,23 +74,11 @@
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
-        if (dot.neutralizingColor && dot.dotNum<3) {
-            [_dotNeut setString:@"Tap the dot to neutralize it."];
-            [_dotPal setString: @""];
-        }
-        else if (!dot.neutralizingColor && dot.dotNum<3) {
-            [_dotNeut setString:@""];
-            [_dotPal setString: @"Tap the dot’s opposite color."];
-        }
-        
-        if (dot.dotNum > 2) {
-            _red.visible = FALSE;
-            _blue.visible = FALSE;
-            _purple.visible = FALSE;
-            _orange.visible = FALSE;
-            _yellow.visible = FALSE;
-            _green.visible = FALSE;
-            [_tutorialBlink setString:@""];
+        if (dot.dotNum > 4) {
+            for (CCSprite *color in colorOutlines) {
+                color.visible = FALSE;
+            }            [_tutorialBlink setString:@""];
+            
             [_tutorialLabel setString:@""];
             [_gameOver setString:@"YOU GOT IT!"];
             [_dotNeut setString:@""];
@@ -101,63 +89,27 @@
             dot.visible = FALSE;
 
         }
-        if (dot.dotNum < 3) {
-            if (dot.dotColorNum == 0 && blinkNum== 5) {
-                _red.visible = !_red.visible;
-                _blue.visible = FALSE;
-                _purple.visible = FALSE;
-                _orange.visible = FALSE;
-                _yellow.visible = FALSE;
-                _green.visible = FALSE;
+        else {
+            if (dot.neutralizingColor) {
+                [_dotNeut setString:@"Tap the dot to neutralize it."];
+                [_dotPal setString: @""];
             }
-            else if (dot.dotColorNum==1&& blinkNum== 5) {
-                _orange.visible = !_orange.visible;
-                _blue.visible = FALSE;
-                _purple.visible = FALSE;
-                _red.visible = FALSE;
-                _yellow.visible = FALSE;
-                _green.visible = FALSE;
+            else if (!dot.neutralizingColor) {
+                [_dotNeut setString:@""];
+                [_dotPal setString: @"Tap the dot’s opposite color."];
             }
-            else if (dot.dotColorNum==2&& blinkNum== 5) {
-                _yellow.visible = !_yellow.visible;
-                _blue.visible = FALSE;
-                _purple.visible = FALSE;
-                _red.visible = FALSE;
-                _orange.visible = FALSE;
-                _green.visible = FALSE;
-                
+
+            for (CCSprite *color in colorOutlines) {
+                color.visible = FALSE;
             }
-            else if (dot.dotColorNum==3&& blinkNum== 5) {
-                _green.visible = !_green.visible;
-                _blue.visible = FALSE;
-                _purple.visible = FALSE;
-                _red.visible = FALSE;
-                _orange.visible = FALSE;
-                _yellow.visible = FALSE;
-            }
-            else if (dot.dotColorNum==4&& blinkNum== 5) {
-                _blue.visible = !_blue.visible;
-                _purple.visible = FALSE;
-                _red.visible = FALSE;
-                _orange.visible = FALSE;
-                _yellow.visible = FALSE;
-                _green.visible = FALSE;
-            }
-            else if (dot.dotColorNum==5&& blinkNum== 5) {
-                _purple.visible = !_purple.visible;
-                _blue.visible = FALSE;
-                _red.visible = FALSE;
-                _orange.visible = FALSE;
-                _yellow.visible = FALSE;
-                _green.visible = FALSE;
+
+            if (blinkNum < 4) {
+                ((CCSprite*)colorOutlines[dot.dotColorNum]).visible = TRUE;
             }
             
             blinkNum++;
-            if (blinkNum == 8) {
-                blinkNum = 0;
-            }
+            blinkNum = blinkNum%8;
         }
-
         
     }
 }
@@ -194,40 +146,35 @@
             if ((Q < 30) || (Q > 330)) {
                 self.colorState = RED;
                 [[self animationManager] runAnimationsForSequenceNamed:@"Red"];
-                
             }
-            else if (Q > 30 && Q < 90)
+            else if (Q > 270 && Q < 330)
             {
-                self.colorState = VIOLET;
-                [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
-                
-                
-            }
-            else if (Q > 90 && Q < 150)
-            {
-                self.colorState = BLUE;
-                [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
-                
-            }
-            else if (Q > 150 && Q < 210)
-            {
-                self.colorState = GREEN;
-                [[self animationManager] runAnimationsForSequenceNamed:@"Green"];
-                
+                self.colorState = ORANGE;
+                [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
             }
             else if (Q > 210 && Q < 270)
             {
                 self.colorState = YELLOW;
                 [[self animationManager] runAnimationsForSequenceNamed:@"Yellow"];
-                
             }
-            else if (Q > 270 && Q < 330)
+            else if (Q > 150 && Q < 210)
             {
-
-                self.colorState = ORANGE;
-                [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
-                
+                self.colorState = GREEN;
+                [[self animationManager] runAnimationsForSequenceNamed:@"Green"];
             }
+            else if (Q > 90 && Q < 150)
+            {
+                self.colorState = BLUE;
+                [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
+            }
+            else if (Q > 30 && Q < 90)
+            {
+                self.colorState = VIOLET;
+                [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
+            }
+
+
+
         }
     }
 }

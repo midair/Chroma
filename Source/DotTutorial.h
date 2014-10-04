@@ -13,7 +13,7 @@
 
 @property Tutorial* tutorialLayer;
 @property int dotNum; //number of times dot has been tapped
-@property int dotColorNum; //color of dot
+@property int dotColorNum; //color of dot (red, orange, yellow, green, blue, violet)
 @property BOOL neutralizingColor;
 
 @end
