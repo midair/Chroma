@@ -5,14 +5,6 @@
             "target": "ResourceRules.plist"
         }, 
         {
-            "asset": "Source/Resources/ios7/Icon-Small-50@2x.png", 
-            "target": "Icon-Small-50@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon-Small-50@2x.png", 
-            "target": "Icon-Small-50@2x.png"
-        }, 
-        {
             "asset": "Source/Resources/Icons/Settings.png", 
             "target": "Settings.png"
         }, 
@@ -25,68 +17,12 @@
             "target": "iPad@2x.png"
         }, 
         {
-            "asset": "Source/Resources/ios7/Icon-72.png", 
-            "target": "Icon-72.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon-72.png", 
-            "target": "Icon-72.png"
-        }, 
-        {
             "asset": "Source/Resources/Icons/iPad.png", 
             "target": "iPad.png"
         }, 
         {
-            "asset": "Source/Resources/ios7/iTunesArtwork.png", 
-            "target": "iTunesArtwork.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/iTunesArtwork.png", 
-            "target": "iTunesArtwork.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon-72@2x.png", 
-            "target": "Icon-72@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/iTunesArtwork@2x.png", 
-            "target": "iTunesArtwork@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/iTunesArtwork@2x.png", 
-            "target": "iTunesArtwork@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon@2x.png", 
-            "target": "Icon@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon@2x.png", 
-            "target": "Icon@2x.png"
-        }, 
-        {
             "asset": "Source/Resources/Icons/iPad-old@2x.png", 
             "target": "iPad-old@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon-Small.png", 
-            "target": "Icon-Small.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon-Small.png", 
-            "target": "Icon-Small.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon.png", 
-            "target": "Icon.png"
-        }, 
-        {
-            "asset": "Source/Resources/Icon.png", 
-            "target": "Icon.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon.png", 
-            "target": "Icon.png"
         }, 
         {
             "asset": "Source/Resources/Icon~iphone.png", 
@@ -97,20 +33,8 @@
             "target": "iPhone-old@2x.png"
         }, 
         {
-            "asset": "Source/Resources/ios7/Icon~ipad.png", 
-            "target": "Icon~ipad.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon-Small@2x.png", 
-            "target": "Icon-Small@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon-Small@2x.png", 
-            "target": "Icon-Small@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon-40.png", 
-            "target": "Icon-40.png"
+            "asset": "Source/Resources/Icon.png", 
+            "target": "Icon.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/chromaMUSIC.mp3", 
@@ -185,6 +109,10 @@
             "target": "Published-iOS/ASSETS 2/resources-phone/background_green_1.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_grey_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phone/background_grey_1.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phone/background_orange_1.png", 
             "target": "Published-iOS/ASSETS 2/resources-phone/background_orange_1.png"
         }, 
@@ -239,6 +167,10 @@
         {
             "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_green_1.png", 
             "target": "Published-iOS/ASSETS 2/resources-phonehd/background_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_grey_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-phonehd/background_grey_1.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-phonehd/background_orange_1.png", 
@@ -297,6 +229,10 @@
             "target": "Published-iOS/ASSETS 2/resources-tablet/background_green_1.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_grey_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablet/background_grey_1.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablet/background_orange_1.png", 
             "target": "Published-iOS/ASSETS 2/resources-tablet/background_orange_1.png"
         }, 
@@ -351,6 +287,10 @@
         {
             "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_green_1.png", 
             "target": "Published-iOS/ASSETS 2/resources-tablethd/background_green_1.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_grey_1.png", 
+            "target": "Published-iOS/ASSETS 2/resources-tablethd/background_grey_1.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/ASSETS 2/resources-tablethd/background_orange_1.png", 
@@ -1277,20 +1217,8 @@
             "target": "Published-iOS/resources-tablethd/whitedot4.png"
         }, 
         {
-            "asset": "Source/Resources/ios7/Icon-60.png", 
-            "target": "Icon-60.png"
-        }, 
-        {
             "asset": "Source/Resources/Icons/Settings@2x.png", 
             "target": "Settings@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios/Icon-Small-50.png", 
-            "target": "Icon-Small-50.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon-Small-50.png", 
-            "target": "Icon-Small-50.png"
         }, 
         {
             "asset": "Source/Resources/Default-Landscape~ipad.png", 
@@ -1305,28 +1233,12 @@
             "target": "iPhone.png"
         }, 
         {
-            "asset": "Source/Resources/ios7/Icon-76.png", 
-            "target": "Icon-76.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon-76@2x.png", 
-            "target": "Icon-76@2x.png"
-        }, 
-        {
             "asset": "Source/Resources/Default-568h@2x.png", 
             "target": "Default-568h@2x.png"
         }, 
         {
             "asset": "Source/Resources/Icons/iPhone@2x.png", 
             "target": "iPhone@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon-60@2x.png", 
-            "target": "Icon-60@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/ios7/Icon-40@2x.png", 
-            "target": "Icon-40@2x.png"
         }, 
         {
             "asset": "Source/Resources/Default.png", 
@@ -1345,7 +1257,7 @@
             "opengles2"
         ], 
         "ICU_CONFIG": "normal", 
-        "LONG_VERSION": "1.0", 
+        "LONG_VERSION": "1.1", 
         "TEMPLATE_VALUES": {
             "EXECUTABLE_NAME": "Chroma", 
             "PRODUCT_NAME": "Chroma"
@@ -1478,7 +1390,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmphyWRCp/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpPxQV0t/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -1546,11 +1458,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmphyWRCp/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpPxQV0t/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmphyWRCp/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/gf/vjn54w3n4sdd97b42w5y1lr80000gn/T/tmpPxQV0t/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

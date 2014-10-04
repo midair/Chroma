@@ -10,7 +10,7 @@
 #import "Dot.h"
 #import "OALSimpleAudio.h"
 
-#ifdef __CC_PLATFORM_IOS
+#ifndef APPORTABLE
 #import <Appsee/Appsee.h>
 #endif
 
@@ -330,7 +330,7 @@
 -(void) saveScore {
     if (_easy) {
         NSDictionary *properties = @{@"easyScore": [NSNumber numberWithInt:killNumberTotal]};
-        #ifdef __CC_PLATFORM_IOS
+        #ifndef APPORTABLE
                 [Appsee addEvent:@"easyGameEnded" withProperties:properties];
 
         #endif
@@ -347,7 +347,7 @@
     else {
         NSDictionary *properties = @{@"hardScore": [NSNumber numberWithFloat:numSeconds]};
         
-#ifdef __CC_PLATFORM_IOS
+#ifndef APPORTABLE
         [Appsee addEvent:@"hardGameEnded" withProperties:properties];
 #endif
 

@@ -9,7 +9,7 @@
 #import "MainScene.h"
 #import "OALSimpleAudio.h"
 
-#ifdef __CC_PLATFORM_IOS
+#ifndef APPORTABLE
 
 #import <Appsee/Appsee.h>
 
@@ -25,7 +25,7 @@
 
 
 -(void)didLoadFromCCB {
-#ifdef __CC_PLATFORM_IOS
+#ifndef APPORTABLE
         [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
 
 #endif
@@ -37,18 +37,30 @@
         [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
         musicOn = TRUE;
         
+        
 
     }
     else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"Off"]){
         musicOn = FALSE;
+
     }
     else {
         musicOn = TRUE;
 
     }
+    
     _onToggle.visible = musicOn;
     _offToggle.visible = !musicOn;
 
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"Easy Mode"]) {
+        _onToggle2.visible = TRUE;
+        _offToggle2.visible = FALSE;
+    }
+    else {
+        _onToggle2.visible = FALSE;
+        _offToggle2.visible = TRUE;
+
+    }
     
 
 }
@@ -74,7 +86,7 @@
         [[CCDirector sharedDirector] replaceScene:tutorialScene];
     }
     else {
-        CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
+        CCScene *modeScene = [CCBReader loadAsScene:@"Untitled"];
         [[CCDirector sharedDirector] replaceScene:modeScene];
     }
 }

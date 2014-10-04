@@ -3,7 +3,7 @@
 //  ColorSpin
 //
 //  Created by Claire Treyz on 1/29/14.
-//  Copyright (c) 2014 Apportable. All rights reserved.
+//  Copyright (c) 2014 Claire Treyz. All rights reserved.
 //
 
 #import "Mode.h"

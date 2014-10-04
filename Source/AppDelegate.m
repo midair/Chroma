@@ -24,7 +24,7 @@
  */
 
 #import "cocos2d.h"
-#ifdef __CC_PLATFORM_IOS
+#ifndef APPORTABLE
 #import <Appsee/Appsee.h>
 #endif
 #import "AppDelegate.h"

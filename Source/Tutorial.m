@@ -8,9 +8,9 @@
 
 #import "Tutorial.h"
 #import "DotTutorial.h"
-#ifdef __CC_PLATFORM_IOS
-#import <Appsee/Appsee.h>
 
+#ifndef APPORTABLE
+#import <Appsee/Appsee.h>
 #endif
 
 @implementation Tutorial {
@@ -266,7 +266,7 @@
     if (playMode) {
 
         NSDictionary *properties = @{@"tutorialCompletionTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
-#ifdef __CC_PLATFORM_IOS
+#ifndef APPORTABLE
                 [Appsee addEvent:@"tutorialEnded" withProperties:properties];
 
 #endif
@@ -276,7 +276,7 @@
     }
     else {
         NSDictionary *properties = @{@"tutorialQuitTime":[NSNumber numberWithFloat:timeToCompleteTutorial]};
-#ifdef __CC_PLATFORM_IOS
+#ifndef APPORTABLE
                 [Appsee addEvent:@"tutorialQuit" withProperties:properties];
 
 #endif
