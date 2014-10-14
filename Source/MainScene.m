@@ -144,7 +144,7 @@
 }
 
 -(void) tutorial {
-    CCScene *tutorialIntroScene = [CCBReader loadAsScene:@"TutorialIntro"];
+    CCScene *tutorialIntroScene = [CCBReader loadAsScene:@"TutorialIntro" owner:self];
     [[CCDirector sharedDirector] pushScene:tutorialIntroScene];
 
 }

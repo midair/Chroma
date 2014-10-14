@@ -91,6 +91,7 @@
         }
         else {
             if (dot.neutralizingColor) {
+                blinkNum = 4;
                 [_dotNeut setString:@"Tap the dot to neutralize it."];
                 [_dotPal setString: @""];
             }
