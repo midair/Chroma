@@ -173,6 +173,17 @@
 			<key>tabletScale</key>
 			<integer>1</integer>
 		</dict>
+		<key>spaceMUSIC.mp3</key>
+		<dict>
+			<key>format_android_sound</key>
+			<integer>0</integer>
+			<key>format_android_sound_quality</key>
+			<integer>0</integer>
+			<key>format_ios_sound</key>
+			<integer>0</integer>
+			<key>format_ios_sound_quality</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>versionStr</key>
 	<string>Version: 1.1.0

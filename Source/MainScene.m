@@ -82,11 +82,11 @@
 -(void) modeSelect {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"tutorial"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"True" forKey:@"tutorial"];
-        CCScene *tutorialScene = [CCBReader loadAsScene:@"Tutorial"];
-        [[CCDirector sharedDirector] replaceScene:tutorialScene];
+        CCScene *tutorialScene = [CCBReader loadAsScene:@"TutorialIntro" owner:self];
+        [[CCDirector sharedDirector] pushScene:tutorialScene];
     }
     else {
-        CCScene *modeScene = [CCBReader loadAsScene:@"Untitled"];
+        CCScene *modeScene = [CCBReader loadAsScene:@"Mode"];
         [[CCDirector sharedDirector] replaceScene:modeScene];
     }
 }
