@@ -16,6 +16,7 @@
 		7E3769E61967076F005B8D1B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3769E51967076F005B8D1B /* CoreVideo.framework */; };
 		7E3769E819670779005B8D1B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3769E719670779005B8D1B /* SystemConfiguration.framework */; };
 		7E3769ED19670F9C005B8D1B /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3769EB19670F9C005B8D1B /* MainScene.m */; };
+		7EB0976319F57E9C00E6804A /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB0976219F57E9C00E6804A /* HeyzapAds.framework */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -79,6 +80,7 @@
 		7E3769E719670779005B8D1B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7E3769EB19670F9C005B8D1B /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
 		7E3769EC19670F9C005B8D1B /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
+		7EB0976219F57E9C00E6804A /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeyzapAds.framework; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
+				7EB0976319F57E9C00E6804A /* HeyzapAds.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
 				7E3769E11967072B005B8D1B /* Appsee.framework in Frameworks */,
 				B77F1B3A17B978D7009739AE /* AVFoundation.framework in Frameworks */,
@@ -235,6 +238,7 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EB0976219F57E9C00E6804A /* HeyzapAds.framework */,
 				7E3769E719670779005B8D1B /* SystemConfiguration.framework */,
 				7E3769E51967076F005B8D1B /* CoreVideo.framework */,
 				7E3769E319670762005B8D1B /* CoreMedia.framework */,
@@ -486,6 +490,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconCorrect;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageCorrect;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -527,6 +532,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconCorrect;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageCorrect;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
 				COPY_PHASE_STRIP = NO;

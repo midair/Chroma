@@ -14,6 +14,8 @@
 #import <Appsee/Appsee.h>
 #endif
 
+#import <HeyzapAds/HeyzapAds.h>
+
 
 @implementation Gameplay {
     CCNode *_background;
@@ -52,6 +54,8 @@
 // is called when CCB file has completed loading
 -(void)didLoadFromCCB {
 
+    [HZVideoAd fetch];
+    [HZIncentivizedAd fetch];
 
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
@@ -124,6 +128,7 @@
                 
 //                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum));
                 if (timeLeft <= 0.0) {
+                    [HZInterstitialAd show];
                     gameOver = TRUE;
                     self.pauseGame = TRUE;
                     [_pauseButton setTitle:@"Retry"];
@@ -286,6 +291,8 @@
                 
                 _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(2.0*sqrtf(dotNum));
                 if ((deathTotal/sqrtf(dotNum)) > 4) {
+//                    [self showVideoAd];
+                    [HZIncentivizedAd show];
                     _lifeBar.scaleY = 0.0;
                     gameOver = TRUE;
                     self.pauseGame = TRUE;
@@ -325,6 +332,15 @@
     }
     
     _palette.rotation = -_background.rotation;
+}
+
+-(void) showVideoAd {
+    [[OALSimpleAudio sharedInstance] stopBg];
+    [HZVideoAd show];
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"On"]){
+        [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
+    }
+    [HZVideoAd fetch];
 }
 
 -(void) saveScore {

@@ -23,6 +23,14 @@
  * THE SOFTWARE.
  */
 
+
+@import StoreKit;
+@import QuartzCore;
+@import AdSupport;
+@import MediaPlayer;
+@import CoreTelephony;
+
+#import <HeyzapAds/HeyzapAds.h>
 #import "cocos2d.h"
 #ifndef APPORTABLE
 #import <Appsee/Appsee.h>
@@ -38,6 +46,9 @@
     // Configure Cocos2d with the options set in SpriteBuilder
     NSString* configPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Published-iOS"]; // TODO: add support for Published-Android support
     configPath = [configPath stringByAppendingPathComponent:@"configCocos2d.plist"];
+    
+    // Your Publisher ID is: cd3dd44acb8a1a5e4393caaae7407a97
+    [HeyzapAds startWithPublisherID: @"cd3dd44acb8a1a5e4393caaae7407a97"];
     
     NSMutableDictionary* cocos2dSetup = [NSMutableDictionary dictionaryWithContentsOfFile:configPath];
     

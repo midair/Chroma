@@ -37,6 +37,7 @@
     BOOL gameOver;
     UITouch *colorPickTouch;
     float numSeconds;
+    float numSecondsSinceOpposite;
     int numDots;
     BOOL playMode;
     float timeToCompleteTutorial;
@@ -58,6 +59,7 @@
     gameOver = FALSE;
     playMode = FALSE;
     numSeconds = 0.0;
+    numSecondsSinceOpposite = 0.0;
     blinkNum = 0;
     self.colorState = 6;
     
@@ -74,6 +76,7 @@
     if (!self.pauseGame) {
         DotTutorial *dot = (DotTutorial*) [dotList objectAtIndex:0];
         numSeconds += delta;
+        numSecondsSinceOpposite += delta;
         if (dot.dotNum > 4) {
             for (CCSprite *color in colorOutlines) {
                 color.visible = FALSE;
@@ -87,10 +90,10 @@
             [_mainMenu.label setFontSize:55.0];
             playMode = TRUE;
             dot.visible = FALSE;
-
         }
         else {
             if (dot.neutralizingColor) {
+                numSecondsSinceOpposite = 0.0;
                 blinkNum = 4;
                 [_dotNeut setString:@"Tap the dot to neutralize it."];
                 [_dotPal setString: @""];
@@ -104,7 +107,7 @@
                 color.visible = FALSE;
             }
 
-            if (blinkNum < 4) {
+            if (blinkNum < 4 && numSecondsSinceOpposite > 4) {
                 ((CCSprite*)colorOutlines[dot.dotColorNum]).visible = TRUE;
             }
             
