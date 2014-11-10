@@ -40,6 +40,7 @@
     BOOL pulseGrow;
     BOOL best;
     BOOL checked;
+    BOOL adShown;
 //    BOOL tutorial;
     int hsEasy;
     int oldHSEasy;
@@ -54,8 +55,6 @@
 // is called when CCB file has completed loading
 -(void)didLoadFromCCB {
 
-    [HZVideoAd fetch];
-    [HZIncentivizedAd fetch];
 
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
@@ -128,8 +127,20 @@
                 
 //                _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(5.0*sqrtf(dotNum));
                 if (timeLeft <= 0.0) {
-                    [HZInterstitialAd show];
                     gameOver = TRUE;
+                    adShown = FALSE;
+                    int randomNumber = arc4random_uniform(100);
+                    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]){
+                        adShown = TRUE;
+                    }
+                    else if (randomNumber > 55) {
+                        [self scheduleBlock:^(CCTimer *timer) {
+                            [HZInterstitialAd show];
+                            adShown = TRUE;
+                        } delay:2.0];
+                    } else {
+                        adShown = TRUE;
+                    }
                     self.pauseGame = TRUE;
                     [_pauseButton setTitle:@"Retry"];
                     [_gameOver setString:@"TIME'S UP"];
@@ -291,8 +302,19 @@
                 
                 _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(2.0*sqrtf(dotNum));
                 if ((deathTotal/sqrtf(dotNum)) > 4) {
-//                    [self showVideoAd];
-                    [HZIncentivizedAd show];
+                    adShown = FALSE;
+                    int randomNumber = arc4random_uniform(100);
+                    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]){
+                        adShown = TRUE;
+                    }
+                    else if (randomNumber > 80) {
+                        [self scheduleBlock:^(CCTimer *timer) {
+                            [HZInterstitialAd show];
+                            adShown = TRUE;
+                        } delay:2.0];
+                    } else {
+                        adShown = TRUE;
+                    }
                     _lifeBar.scaleY = 0.0;
                     gameOver = TRUE;
                     self.pauseGame = TRUE;
@@ -334,14 +356,6 @@
     _palette.rotation = -_background.rotation;
 }
 
--(void) showVideoAd {
-    [[OALSimpleAudio sharedInstance] stopBg];
-    [HZVideoAd show];
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"On"]){
-        [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
-    }
-    [HZVideoAd fetch];
-}
 
 -(void) saveScore {
     if (_easy) {
@@ -527,9 +541,10 @@
         Gameplay *gameplayNew = (Gameplay*) [CCBReader load:@"Gameplay"];
         gameplayNew.easy =_easy;
         CCScene *gameplayScene = [[CCScene alloc] init];
-        
         [gameplayScene addChild:gameplayNew];
-        
+        if (!adShown){
+            [HZInterstitialAd show];
+        }
         [[CCDirector sharedDirector] replaceScene:gameplayScene];
 //        [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
     }

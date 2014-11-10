@@ -42,13 +42,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
+#ifndef APPORTABLE
+    [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
+#endif
     // Configure Cocos2d with the options set in SpriteBuilder
     NSString* configPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Published-iOS"]; // TODO: add support for Published-Android support
     configPath = [configPath stringByAppendingPathComponent:@"configCocos2d.plist"];
     
     // Your Publisher ID is: cd3dd44acb8a1a5e4393caaae7407a97
     [HeyzapAds startWithPublisherID: @"cd3dd44acb8a1a5e4393caaae7407a97"];
+    [HZVideoAd fetch];
     
     NSMutableDictionary* cocos2dSetup = [NSMutableDictionary dictionaryWithContentsOfFile:configPath];
     
@@ -73,6 +76,7 @@
 
 - (CCScene*) startScene
 {
+    
     return [CCBReader loadAsScene:@"MainScene"];
 }
 

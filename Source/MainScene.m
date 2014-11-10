@@ -29,9 +29,9 @@
         [Appsee start:@"de3d1420e63f4ebb9659b9747fb3adb0"];
 
 #endif
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"OGUser"];
-    }
+//    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]) {
+//        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"OGUser"];
+//    }
     
     if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"musicOn"] isEqualToString:@"Off"] && ![OALSimpleAudio sharedInstance].bgPlaying) {
         [[OALSimpleAudio sharedInstance] playBg:@"credit.wav" volume:0.5 pan:0.0 loop:YES];
@@ -131,17 +131,17 @@
 
 }
 
--(void) easyOn {
-    _onToggle2.visible = FALSE;
-    _offToggle2.visible = TRUE;
-    [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"Easy Mode"];
-}
-
--(void) easyOff {
-    _onToggle2.visible = TRUE;
-    _offToggle2.visible = FALSE;
-    [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"Easy Mode"];
-}
+//-(void) easyOn {
+//    _onToggle2.visible = FALSE;
+//    _offToggle2.visible = TRUE;
+//    [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"Easy Mode"];
+//}
+//
+//-(void) easyOff {
+//    _onToggle2.visible = TRUE;
+//    _offToggle2.visible = FALSE;
+//    [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"Easy Mode"];
+//}
 
 -(void) tutorial {
     CCScene *tutorialIntroScene = [CCBReader loadAsScene:@"TutorialIntro" owner:self];
