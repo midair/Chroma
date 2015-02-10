@@ -173,7 +173,7 @@
             }
             else if (Q > 30 && Q < 90)
             {
-                self.colorState = VIOLET;
+                self.colorState = PURPLE;
                 [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
             }
 

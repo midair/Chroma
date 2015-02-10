@@ -52,15 +52,15 @@
     _onToggle.visible = musicOn;
     _offToggle.visible = !musicOn;
 
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"Easy Mode"]) {
-        _onToggle2.visible = TRUE;
-        _offToggle2.visible = FALSE;
-    }
-    else {
-        _onToggle2.visible = FALSE;
-        _offToggle2.visible = TRUE;
-
-    }
+//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"Easy Mode"]) {
+//        _onToggle2.visible = TRUE;
+//        _offToggle2.visible = FALSE;
+//    }
+//    else {
+//        _onToggle2.visible = FALSE;
+//        _offToggle2.visible = TRUE;
+//
+//    }
     
 
 }

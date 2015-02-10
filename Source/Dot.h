@@ -19,7 +19,7 @@
     float rate;
 }
 
-@property int killNumber;
+@property int numberOfTimesPopped; 
 @property float deathLevel;
 @property Gameplay* gameplayLayer;
 @property int dotCreationNumber;

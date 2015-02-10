@@ -8,6 +8,10 @@
 
 #include "claireLibrary.h"
 
-BOOL randTRUE(float percentage) {
-    
+BOOL randTRUE(int percentage) {
+  if (arc4random_uniform(100) > percentage){
+    return TRUE;
+  } else {
+    return FALSE;
+  }
 }

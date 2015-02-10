@@ -15,5 +15,8 @@ typedef enum colorStateTypes
     YELLOW,
     GREEN,
     BLUE,
-    VIOLET
+    PURPLE
 } ColorState;
+
+extern NSString * const ColorState_toString[];
+

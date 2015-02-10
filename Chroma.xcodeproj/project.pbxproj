@@ -12,12 +12,13 @@
 		7E04F2491976CE5C0009BA4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E04F2481976CE5C0009BA4F /* Images.xcassets */; };
 		7E04F24B1976CE780009BA4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E04F24A1976CE780009BA4F /* Images.xcassets */; };
 		7E3769E11967072B005B8D1B /* Appsee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3769E01967072B005B8D1B /* Appsee.framework */; };
-		7E3769E419670762005B8D1B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3769E319670762005B8D1B /* CoreMedia.framework */; };
 		7E3769E61967076F005B8D1B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3769E51967076F005B8D1B /* CoreVideo.framework */; };
 		7E3769E819670779005B8D1B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3769E719670779005B8D1B /* SystemConfiguration.framework */; };
 		7E3769ED19670F9C005B8D1B /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3769EB19670F9C005B8D1B /* MainScene.m */; };
+		7E606F2C1A8A7DB400E62F7F /* ColorState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E606F2B1A8A7DB400E62F7F /* ColorState.m */; };
 		7EB0976319F57E9C00E6804A /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB0976219F57E9C00E6804A /* HeyzapAds.framework */; };
 		7EB0976F19F865E300E6804A /* claireLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0976D19F865E300E6804A /* claireLibrary.m */; };
+		7EF235631A128D3000917460 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3769E319670762005B8D1B /* CoreMedia.framework */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -81,6 +82,7 @@
 		7E3769E719670779005B8D1B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7E3769EB19670F9C005B8D1B /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainScene.m; path = Source/MainScene.m; sourceTree = "<group>"; };
 		7E3769EC19670F9C005B8D1B /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Source/MainScene.h; sourceTree = "<group>"; };
+		7E606F2B1A8A7DB400E62F7F /* ColorState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorState.m; path = Source/ColorState.m; sourceTree = "<group>"; };
 		7EB0976219F57E9C00E6804A /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeyzapAds.framework; sourceTree = "<group>"; };
 		7EB0976D19F865E300E6804A /* claireLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = claireLibrary.m; sourceTree = "<group>"; };
 		7EB0976E19F865E300E6804A /* claireLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = claireLibrary.h; sourceTree = "<group>"; };
@@ -134,9 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF235631A128D3000917460 /* CoreMedia.framework in Frameworks */,
 				7E3769E819670779005B8D1B /* SystemConfiguration.framework in Frameworks */,
 				7E3769E61967076F005B8D1B /* CoreVideo.framework in Frameworks */,
-				7E3769E419670762005B8D1B /* CoreMedia.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -170,6 +172,7 @@
 				7E3769EB19670F9C005B8D1B /* MainScene.m */,
 				7E3769EC19670F9C005B8D1B /* MainScene.h */,
 				BC6BD391195BA86C0013602D /* ColorState.h */,
+				7E606F2B1A8A7DB400E62F7F /* ColorState.m */,
 				BC6BD392195BA86C0013602D /* Dot.h */,
 				BC6BD393195BA86C0013602D /* Dot.m */,
 				BC6BD394195BA86C0013602D /* DotTutorial.h */,
@@ -311,7 +314,7 @@
 		B77F1B2617B978D7009739AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					B77F1B2D17B978D7009739AE = {
@@ -411,6 +414,7 @@
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				7E3769ED19670F9C005B8D1B /* MainScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				7E606F2C1A8A7DB400E62F7F /* ColorState.m in Sources */,
 				BC6BD39F195BA86C0013602D /* DotTutorial.m in Sources */,
 				BC6BD39E195BA86C0013602D /* Dot.m in Sources */,
 				BC6BD3A2195BA86C0013602D /* Mode.m in Sources */,
@@ -439,8 +443,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -457,6 +463,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "b911166a-7910-4728-8d7e-cf4b914f3b3f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -470,8 +477,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -485,6 +494,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "b911166a-7910-4728-8d7e-cf4b914f3b3f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -498,9 +508,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageCorrect;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -525,7 +536,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Chroma;
-				PROVISIONING_PROFILE = "B578A34E-34CC-47F8-8E5B-A7FDFE80A5D7";
+				PROVISIONING_PROFILE = "ce2474a7-3ca1-4951-ae24-0b8dd1d15652";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
@@ -540,8 +551,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImageCorrect;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Claire Treyz (5SCJ4W979S)";
-				COPY_PHASE_STRIP = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -565,7 +577,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Chroma;
-				PROVISIONING_PROFILE = "B578A34E-34CC-47F8-8E5B-A7FDFE80A5D7";
+				PROVISIONING_PROFILE = "ce2474a7-3ca1-4951-ae24-0b8dd1d15652";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;

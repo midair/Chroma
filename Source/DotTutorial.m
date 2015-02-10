@@ -70,7 +70,7 @@
         [[self animationManager] runAnimationsForSequenceNamed:@"Orange"];
     }
     else if (dotColor == YELLOW) {
-        neutralizeColor = VIOLET;
+        neutralizeColor = PURPLE;
         self.dotColorNum = 5;
         [[self animationManager] runAnimationsForSequenceNamed:@"Yellow"];
     }
@@ -84,7 +84,7 @@
         self.dotColorNum = 1;
         [[self animationManager] runAnimationsForSequenceNamed:@"Blue"];
     }
-    else if (dotColor == VIOLET) {
+    else if (dotColor == PURPLE) {
         neutralizeColor = YELLOW;
         self.dotColorNum = 2;
         [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
