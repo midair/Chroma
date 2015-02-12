@@ -28,6 +28,12 @@ const float EASY_BACKGROUND_ROTATION_SPEED_1 = 1.80;
 const float EASY_BACKGROUND_ROTATION_SPEED_2 = 18.0;
 const float EASY_BACKGROUND_ROTATION_SPEED_3 = 27.0;
 
+const float HARD_BACKGROUND_ROTATION_SPEED_1 = 3.60;
+const float HARD_BACKGROUND_ROTATION_SPEED_2 = 36.0;
+const float HARD_BACKGROUND_ROTATION_SPEED_3 = 56.0;
+const float HARD_BACKGROUND_ROTATION_SPEED_4 = 72.0;
+
+
 
 @implementation Gameplay {
   CCNode *_background;
@@ -88,10 +94,10 @@ const float EASY_BACKGROUND_ROTATION_SPEED_3 = 27.0;
 
 -(void) easyUpdate:(CCTime) delta {
   [_mode setString: [NSString stringWithFormat:@"%@\r%@", @"Time:",@"Dots:"]];
-
+  
   numSeconds = numSeconds + delta;
   float timeLeft = EASY_GAME_LENGTH - numSeconds;
-
+  
   numberOfDotsPopped = 0;
   int dotNum = [dotList count];
   if (numSeconds < 10) {
@@ -130,53 +136,10 @@ const float EASY_BACKGROUND_ROTATION_SPEED_3 = 27.0;
       if (numSeconds > bestTime && checked) {
         [_gameOver setString:@""];
         best = TRUE;
-        
       }
     }
   } else {
     [self endEasyGame];
-  }
-}
-
--(void) endEasyGame {
-  
-  gameOver = TRUE;
-  adShown = FALSE;
-  int randomNumber = arc4random_uniform(100);
-  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]){
-    adShown = TRUE;
-  }
-  
-  else if (randomNumber > 55) {
-    [self scheduleBlock:^(CCTimer *timer) {
-      [HZInterstitialAd show];
-      adShown = TRUE;
-    } delay:2.0];
-  } else {
-    adShown = TRUE;
-  }
-  self.pauseGame = TRUE;
-  [_pauseButton setTitle:@"Retry"];
-  [_gameOver setString:@"TIME'S UP"];
-  _mainMenu.visible = TRUE;
-  _mainMenu.userInteractionEnabled = TRUE;
-  _modeButton.visible = TRUE;
-  _modeButton.userInteractionEnabled = TRUE;
-  [self saveScore];
-  
-  NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
-  int hsE = [currentHighScoreE intValue];
-  [_mode setString:@"Mode:  "];
-  [_timeField setString:@"Calm"];
-  
-  if (best) {
-    [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %i", oldHSEasy]];
-    [_bestLabel setString:[NSString stringWithFormat:@"NEW BEST: %i", hsE]];
-    
-  }
-  else {
-    [_lastLabel setString:[NSString stringWithFormat:@"LAST: %i", numberOfDotsPopped]];
-    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %i", hsE]];
   }
 }
 
@@ -189,16 +152,16 @@ const float EASY_BACKGROUND_ROTATION_SPEED_3 = 27.0;
   deathTotal = 0.0;
   float dotNum = [dotList count];
   if (numSeconds < 10) {
-    _background.rotation += 3.60 * delta * numSeconds;
+    _background.rotation += HARD_BACKGROUND_ROTATION_SPEED_1 * delta * numSeconds;
   }
   else if (numSeconds < 15) {
-    _background.rotation += 36.0 * delta;
+    _background.rotation += HARD_BACKGROUND_ROTATION_SPEED_2 * delta;
   }
   else if (numSeconds < 20){
-    _background.rotation += 56.0 * delta;
+    _background.rotation += HARD_BACKGROUND_ROTATION_SPEED_3 * delta;
   }
   else if (numSeconds <40) {
-    _background.rotation += 56.0 * delta;
+    _background.rotation += HARD_BACKGROUND_ROTATION_SPEED_3 * delta;
     if (pulseGrow){
       _background.scale = _background.scale+0.007;
       if (_background.scale >= 1.21) {
@@ -215,11 +178,11 @@ const float EASY_BACKGROUND_ROTATION_SPEED_3 = 27.0;
     }
   }
   else if (numSeconds < 55){
-    _background.rotation -= 72.0 * delta;
+    _background.rotation -= HARD_BACKGROUND_ROTATION_SPEED_4 * delta;
     
   }
   else {
-    _background.rotation -= 72.0 * delta;
+    _background.rotation -= HARD_BACKGROUND_ROTATION_SPEED_4 * delta;
     
     if (pulseGrow){
       _background.scale = _background.scale+0.007;
@@ -284,66 +247,93 @@ const float EASY_BACKGROUND_ROTATION_SPEED_3 = 27.0;
       [_lifeBar setColor:[CCColor greenColor]];
     }
     
-    
-    
-    
-    
     _lifeBar.scaleY = (5.0 * sqrtf(dotNum) - (deathTotal))/(2.0*sqrtf(dotNum));
     if ((deathTotal/sqrtf(dotNum)) > 4) {
       [self endHardGame];
     }
   }
-
-}
   
+}
+
 -(void) endHardGame {
-    adShown = FALSE;
-    int randomNumber = arc4random_uniform(100);
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]){
-      adShown = TRUE;
-    }
-    else if (randomNumber > 80) {
-      [self scheduleBlock:^(CCTimer *timer) {
-        [HZVideoAd show];
-        adShown = TRUE;
-      } delay:2.0];
-    } else {
-      adShown = TRUE;
-    }
-    _lifeBar.scaleY = 0.0;
-    gameOver = TRUE;
-    self.pauseGame = TRUE;
-    [_pauseButton setTitle:@"Retry"];
-    [_gameOver setString:@"GAME OVER"];
-    [self saveScore];
-    
-    
-    NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
-    float hsH = [currentHighScoreH floatValue];
-    
+  [self showAdWithProbablility:80];
+  _lifeBar.scaleY = 0.0;
+  [_gameOver setString:@"GAME OVER"];
+  [self endGame];
   
-    if (best) {
-      [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %.2f", oldHSHard]];
-      [_bestLabel setString:[NSString stringWithFormat:@"NEW BEST: %.2f", hsH]];
-      
-    }
-    else {
-      [_lastLabel setString:[NSString stringWithFormat:@"LAST: %.2f", numSeconds]];
-      [_bestLabel setString:[NSString stringWithFormat:@"BEST: %.2f", hsH]];
-      
-    }
+  NSNumber *currentHighScoreH = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreH"];
+  float hsH = [currentHighScoreH floatValue];
+  
+  
+  if (best) {
+    [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %.2f", oldHSHard]];
+    [_bestLabel setString:[NSString stringWithFormat:@"NEW BEST: %.2f", hsH]];
     
-    [_mode setString:@"Mode:    "];
-    [_timeField setString:@"Chaos"];
+  }
+  else {
+    [_lastLabel setString:[NSString stringWithFormat:@"LAST: %.2f", numSeconds]];
+    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %.2f", hsH]];
     
-    _mainMenu.visible = TRUE;
-    _mainMenu.userInteractionEnabled = TRUE;
-    _modeButton.visible = TRUE;
-    _modeButton.userInteractionEnabled = TRUE;
+  }
+  
+  [_mode setString:@"Mode:    "];
+  [_timeField setString:@"Chaos"];
+  
 }
 
--(void) update:(CCTime) delta
-{
+-(void) endEasyGame {
+  [self endGame];
+  [self showAdWithProbablility:55];
+  [_gameOver setString:@"TIME'S UP"];
+  
+  NSNumber *currentHighScoreE = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScoreE"];
+  int hsE = [currentHighScoreE intValue];
+  
+  [_mode setString:@"Mode:  "];
+  [_timeField setString:@"Calm"];
+  
+  if (best) {
+    [_lastLabel setString:[NSString stringWithFormat:@"OLD BEST: %i", oldHSEasy]];
+    [_bestLabel setString:[NSString stringWithFormat:@"NEW BEST: %i", hsE]];
+    
+  }
+  else {
+    [_lastLabel setString:[NSString stringWithFormat:@"LAST: %i", numberOfDotsPopped]];
+    [_bestLabel setString:[NSString stringWithFormat:@"BEST: %i", hsE]];
+  }
+}
+
+-(void) endGame {
+  _mainMenu.visible = TRUE;
+  _mainMenu.userInteractionEnabled = TRUE;
+  _modeButton.visible = TRUE;
+  _modeButton.userInteractionEnabled = TRUE;
+  
+  [self saveScore];
+  
+  gameOver = TRUE;
+  self.pauseGame = TRUE;
+  [_pauseButton setTitle:@"Retry"];
+
+}
+
+-(void) showAdWithProbablility:(int) percentage {
+  adShown = FALSE;
+  int randomNumber = arc4random_uniform(100);
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"OGUser"]){
+    adShown = TRUE;
+  }
+  else if (randomNumber > percentage) {
+    [self scheduleBlock:^(CCTimer *timer) {
+      [HZInterstitialAd show];
+      adShown = TRUE;
+    } delay:2.0];
+  } else {
+    adShown = TRUE;
+  }
+}
+
+-(void) update:(CCTime) delta {
   self.currentRotation = _background.rotation;
   if (!self.pauseGame) {
     if (_easy) {
@@ -417,7 +407,7 @@ const float EASY_BACKGROUND_ROTATION_SPEED_3 = 27.0;
       float Q =  fmod(CC_RADIANS_TO_DEGREES(atan2(centered.y, centered.x)) + _background.rotation +360, 360);
       [self colorStateTouchOccured:Q];
       [[self animationManager] runAnimationsForSequenceNamed:ColorState_toString[self.colorState]];
-
+      
     }
   }
 }

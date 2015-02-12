@@ -89,23 +89,13 @@
         self.dotColorNum = 2;
         [[self animationManager] runAnimationsForSequenceNamed:@"Purple"];
     }
-    
-
-//    x = max(20, radius * cos(CC_DEGREES_TO_RADIANS(angle))-25);
-//    y = max(20, radius * sin(CC_DEGREES_TO_RADIANS(angle))-25);
-    
+  
     x = radius * cos(CC_DEGREES_TO_RADIANS(angle))-25;
     y = radius * sin(CC_DEGREES_TO_RADIANS(angle))-25;
 
-    
-
-    
-
-    
     self.position = ccpAdd(ccp(x,y), ccp(162, 162));
     self.scale = 0.15;
-    
-    
+  
 }
 
 
